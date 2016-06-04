@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C0EF33A-0D92-482D-99E2-48D9774E76B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFTesting</RootNamespace>
+    <AssemblyName>EFTesting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.TouchSkins.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>C:\Users\HP\Desktop\Excel\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompanyVM.cs" />
+    <Compile Include="Reports\ConnectionSettings\ConnectionDetails.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\BarcodeLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BarcodeLabel.Designer.cs">
+      <DependentUpon>BarcodeLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\clsProductionSummary.cs" />
+    <Compile Include="Reports\dailyProductionByHour.cs" />
+    <Compile Include="Reports\Dataset\BundleTicket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BundleTicket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Dataset\dsetCutReport.cs">
+      <DependentUpon>dsetCutReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Dataset\dsetCutReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetCutReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HourlyIndividualProduction.cs" />
+    <Compile Include="Reports\HourlyProduction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HourlyProduction.Designer.cs">
+      <DependentUpon>HourlyProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HourlyProductionByOperation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HourlyProductionByOperation.Designer.cs">
+      <DependentUpon>HourlyProductionByOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MatirialDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MatirialDetails.Designer.cs">
+      <DependentUpon>MatirialDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\OprationBarcodeList.cs" />
+    <Compile Include="Reports\rptBarcodeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptBarcodeList.Designer.cs">
+      <DependentUpon>rptBarcodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptCutS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCutS.Designer.cs">
+      <DependentUpon>rptCutS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptCuttingDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCuttingDetails.Designer.cs">
+      <DependentUpon>rptCuttingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDayend.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDayend.Designer.cs">
+      <DependentUpon>rptDayend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDividingPlan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDividingPlan.Designer.cs">
+      <DependentUpon>rptDividingPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptHProduction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptHProduction.Designer.cs">
+      <DependentUpon>rptHProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPoDiliveries.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPoDiliveries.Designer.cs">
+      <DependentUpon>rptPoDiliveries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptTICKET.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTICKET.Designer.cs">
+      <DependentUpon>rptTICKET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDailiyProByHour.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDailiyProByHour.Designer.cs">
+      <DependentUpon>rptDailiyProByHour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BundleWiseProduction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BundleWiseProduction.Designer.cs">
+      <DependentUpon>BundleWiseProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StyleVM.cs" />
+    <Compile Include="UI\dailyProductionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\dailyProductionDialog.Designer.cs">
+      <DependentUpon>dailyProductionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\dlgBundleSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\dlgBundleSelect.Designer.cs">
+      <DependentUpon>dlgBundleSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\dlgdividingplan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\dlgdividingplan.Designer.cs">
+      <DependentUpon>dlgdividingplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\dlgSizelist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\dlgSizelist.Designer.cs">
+      <DependentUpon>dlgSizelist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmployeeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EmployeeMaster.Designer.cs">
+      <DependentUpon>EmployeeMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAward.Designer.cs">
+      <DependentUpon>frmAward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBundlePrintoption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBundlePrintoption.Designer.cs">
+      <DependentUpon>frmBundlePrintoption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBundlingMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBundlingMaster.Designer.cs">
+      <DependentUpon>frmBundlingMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBuyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBuyer.Designer.cs">
+      <DependentUpon>frmBuyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmcompanyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmcompanyDialog.Designer.cs">
+      <DependentUpon>frmcompanyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCuttingMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCuttingMaster.Designer.cs">
+      <DependentUpon>frmCuttingMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCuttingStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCuttingStatus.Designer.cs">
+      <DependentUpon>frmCuttingStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmDayend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDayend.Designer.cs">
+      <DependentUpon>frmDayend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmDividingPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDividingPlan.Designer.cs">
+      <DependentUpon>frmDividingPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmDividingPlanItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDividingPlanItem.Designer.cs">
+      <DependentUpon>frmDividingPlanItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmHourlyProductionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHourlyProductionDialog.Designer.cs">
+      <DependentUpon>frmHourlyProductionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmHourlyProductionOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHourlyProductionOut.Designer.cs">
+      <DependentUpon>frmHourlyProductionOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmIndividualProductionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmIndividualProductionDialog.Designer.cs">
+      <DependentUpon>frmIndividualProductionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmOfflineScaning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmOfflineScaning.Designer.cs">
+      <DependentUpon>frmOfflineScaning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmOparationScaning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmOparationScaning.Designer.cs">
+      <DependentUpon>frmOparationScaning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmOperation.Designer.cs">
+      <DependentUpon>frmOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmParts.Designer.cs">
+      <DependentUpon>frmParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPoDeliveriesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPoDeliveriesDialog.Designer.cs">
+      <DependentUpon>frmPoDeliveriesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPrintBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPrintBarcode.Designer.cs">
+      <DependentUpon>frmPrintBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmProduction.Designer.cs">
+      <DependentUpon>frmProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPurchaseOrder.Designer.cs">
+      <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmScaningTimeScadual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmScaningTimeScadual.Designer.cs">
+      <DependentUpon>frmScaningTimeScadual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSketchMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSketchMaster.Designer.cs">
+      <DependentUpon>frmSketchMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmStyleMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmStyleMaster.Designer.cs">
+      <DependentUpon>frmStyleMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPromotion.Designer.cs">
+      <DependentUpon>frmPromotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Opration List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Opration List.Designer.cs">
+      <DependentUpon>Opration List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PoItemsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PoItemsDialog.Designer.cs">
+      <DependentUpon>PoItemsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Accounts\frmLoging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\User Accounts\frmLoging.Designer.cs">
+      <DependentUpon>frmLoging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="ViewModel\ConnectionTools.cs" />
+    <Compile Include="ViewModel\CutReport.cs" />
+    <Compile Include="ViewModel\GenarateTags.cs" />
+    <Compile Include="ViewModel\HourlyProduction.cs" />
+    <Compile Include="ViewModel\ImportExcelHelper.cs" />
+    <Compile Include="ViewModel\MyExcel.cs" />
+    <Compile Include="ViewModel\OperationListSelection.cs" />
+    <Compile Include="ViewModel\PoDeliveries.cs" />
+    <Compile Include="ViewModel\PurchaseHeaderVM.cs" />
+    <Compile Include="ViewModel\TextFileReadingHelper.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\BarcodeLabel.resx">
+      <DependentUpon>BarcodeLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HourlyProduction.resx">
+      <DependentUpon>HourlyProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HourlyProductionByOperation.resx">
+      <DependentUpon>HourlyProductionByOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MatirialDetails.resx">
+      <DependentUpon>MatirialDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptBarcodeList.resx">
+      <DependentUpon>rptBarcodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCutS.resx">
+      <DependentUpon>rptCutS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCuttingDetails.resx">
+      <DependentUpon>rptCuttingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDailiyProByHour.resx">
+      <DependentUpon>rptDailiyProByHour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDayend.resx">
+      <DependentUpon>rptDayend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDividingPlan.resx">
+      <DependentUpon>rptDividingPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptHProduction.resx">
+      <DependentUpon>rptHProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPoDiliveries.resx">
+      <DependentUpon>rptPoDiliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTICKET.resx">
+      <DependentUpon>rptTICKET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BundleWiseProduction.resx">
+      <DependentUpon>BundleWiseProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\dailyProductionDialog.resx">
+      <DependentUpon>dailyProductionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\dlgBundleSelect.resx">
+      <DependentUpon>dlgBundleSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\dlgdividingplan.resx">
+      <DependentUpon>dlgdividingplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\dlgSizelist.resx">
+      <DependentUpon>dlgSizelist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EmployeeMaster.resx">
+      <DependentUpon>EmployeeMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAward.resx">
+      <DependentUpon>frmAward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBundlePrintoption.resx">
+      <DependentUpon>frmBundlePrintoption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBundlingMaster.resx">
+      <DependentUpon>frmBundlingMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBuyer.resx">
+      <DependentUpon>frmBuyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmcompanyDialog.resx">
+      <DependentUpon>frmcompanyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCuttingMaster.resx">
+      <DependentUpon>frmCuttingMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCuttingStatus.resx">
+      <DependentUpon>frmCuttingStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDayend.resx">
+      <DependentUpon>frmDayend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDividingPlan.resx">
+      <DependentUpon>frmDividingPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDividingPlanItem.resx">
+      <DependentUpon>frmDividingPlanItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmHourlyProductionDialog.resx">
+      <DependentUpon>frmHourlyProductionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmHourlyProductionOut.resx">
+      <DependentUpon>frmHourlyProductionOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmIndividualProductionDialog.resx">
+      <DependentUpon>frmIndividualProductionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmOfflineScaning.resx">
+      <DependentUpon>frmOfflineScaning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmOparationScaning.resx">
+      <DependentUpon>frmOparationScaning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmOperation.resx">
+      <DependentUpon>frmOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmParts.resx">
+      <DependentUpon>frmParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPoDeliveriesDialog.resx">
+      <DependentUpon>frmPoDeliveriesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPrintBarcode.resx">
+      <DependentUpon>frmPrintBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmProduction.resx">
+      <DependentUpon>frmProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPurchaseOrder.resx">
+      <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmScaningTimeScadual.resx">
+      <DependentUpon>frmScaningTimeScadual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSketchMaster.resx">
+      <DependentUpon>frmSketchMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmStyleMaster.resx">
+      <DependentUpon>frmStyleMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPromotion.resx">
+      <DependentUpon>frmPromotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Opration List.resx">
+      <DependentUpon>Opration List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PoItemsDialog.resx">
+      <DependentUpon>PoItemsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Accounts\frmLoging.resx">
+      <DependentUpon>frmLoging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\EFTesting.Reports.dailyProductionByHour.datasource" />
+    <None Include="Properties\DataSources\EFTesting.Reports.HourlyIndividualProduction.datasource" />
+    <None Include="Properties\DataSources\EFTesting.Reports.HourlyProductionByOperation.datasource" />
+    <None Include="Properties\DataSources\EFTesting.Reports.OprationBarcodeList.datasource" />
+    <None Include="Properties\DataSources\EFTesting.ViewModel.CutReport.datasource" />
+    <None Include="Properties\DataSources\EFTesting.ViewModel.CutReport1.datasource" />
+    <None Include="Properties\DataSources\EFTesting.ViewModel.CutReport2.datasource" />
+    <None Include="Properties\DataSources\EFTesting.ViewModel.HourlyProduction.datasource" />
+    <None Include="Properties\DataSources\EFTesting.ViewModel.HourlyProductionList.datasource" />
+    <None Include="Properties\DataSources\EFTesting.ViewModel.PoDeliveries.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.CuttingItem.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.DayendHeader.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.DividingPlanHeader.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.DividingPlanItem.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.LayinDetails.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.OprationBarcodes.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITRACK.models\ITRACK.models.csproj">
+      <Project>{0391badc-2dad-449d-8bfc-b1638de7a4a3}</Project>
+      <Name>ITRACK.models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\Dataset\BundleTicket.xsc">
+      <DependentUpon>BundleTicket.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Dataset\BundleTicket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BundleTicket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Dataset\BundleTicket.xss">
+      <DependentUpon>BundleTicket.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Dataset\dsetCutReport.xsc">
+      <DependentUpon>dsetCutReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Dataset\dsetCutReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetCutReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Dataset\dsetCutReport.xss">
+      <DependentUpon>dsetCutReport.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\55281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checklist-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard-Plan-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VideoBlend-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-contact-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-contact-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder-Accept-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\Report\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

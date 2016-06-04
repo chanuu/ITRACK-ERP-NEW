@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0391BADC-2DAD-449D-8BFC-B1638DE7A4A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITRACK.models</RootNamespace>
+    <AssemblyName>ITRACK.models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDBContext.cs" />
+    <Compile Include="AssetBarcode.cs" />
+    <Compile Include="AssetLedger.cs" />
+    <Compile Include="AssetVerification.cs" />
+    <Compile Include="AssetVerificationDetails.cs" />
+    <Compile Include="Award.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Bin.cs" />
+    <Compile Include="BundleDetails.cs" />
+    <Compile Include="BundleHeader.cs" />
+    <Compile Include="Buyer.cs" />
+    <Compile Include="clsTempOpration.cs" />
+    <Compile Include="company.cs" />
+    <Compile Include="ConnectionDetails.cs" />
+    <Compile Include="CustomeFieldSetup.cs" />
+    <Compile Include="CutIssuingHeader.cs" />
+    <Compile Include="CutIssuItem.cs" />
+    <Compile Include="CuttingHeader.cs" />
+    <Compile Include="CuttingItem.cs" />
+    <Compile Include="CuttingLedger.cs" />
+    <Compile Include="CuttingLedgerHeader.cs" />
+    <Compile Include="CuttingStock.cs" />
+    <Compile Include="CuttingSummary.cs" />
+    <Compile Include="DailyProduction.cs" />
+    <Compile Include="Dayend.cs" />
+    <Compile Include="DayendHeader.cs" />
+    <Compile Include="DividingPlan.cs" />
+    <Compile Include="DividingPlanItem.cs" />
+    <Compile Include="DividingPlanTemp.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="ExpressionBuilder.cs" />
+    <Compile Include="FabricDetails.cs" />
+    <Compile Include="GenaricRepository.cs" />
+    <Compile Include="GRN.cs" />
+    <Compile Include="GrnItems.cs" />
+    <Compile Include="group.cs" />
+    <Compile Include="IGenaricRepository.cs" />
+    <Compile Include="IndividualProductionDetails.cs" />
+    <Compile Include="IndividualProductionSummery.cs" />
+    <Compile Include="Interface\iUser.cs" />
+    <Compile Include="Items.cs" />
+    <Compile Include="ItrackContextInitializer.cs" />
+    <Compile Include="LayinDetails.cs" />
+    <Compile Include="MainStock.cs" />
+    <Compile Include="Migrations\201605180643294_InitialCreate.cs" />
+    <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
+      <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605180738443_01.cs" />
+    <Compile Include="Migrations\201605180738443_01.Designer.cs">
+      <DependentUpon>201605180738443_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605270521236__Cut_No.cs" />
+    <Compile Include="Migrations\201605270521236__Cut_No.Designer.cs">
+      <DependentUpon>201605270521236__Cut_No.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605280510570__cutNo_To_String.cs" />
+    <Compile Include="Migrations\201605280510570__cutNo_To_String.Designer.cs">
+      <DependentUpon>201605280510570__cutNo_To_String.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606010255463__merge_project.cs" />
+    <Compile Include="Migrations\201606010255463__merge_project.Designer.cs">
+      <DependentUpon>201606010255463__merge_project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606011049271__RunningNo.cs" />
+    <Compile Include="Migrations\201606011049271__RunningNo.Designer.cs">
+      <DependentUpon>201606011049271__RunningNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606030908051__CutNo_Op_Barcode.cs" />
+    <Compile Include="Migrations\201606030908051__CutNo_Op_Barcode.Designer.cs">
+      <DependentUpon>201606030908051__CutNo_Op_Barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NestedExpression.cs" />
+    <Compile Include="OfflineAssetScan.cs" />
+    <Compile Include="OperationPool.cs" />
+    <Compile Include="OprationBarcodes.cs" />
+    <Compile Include="PartDefinition.cs" />
+    <Compile Include="PastEmployeement.cs" />
+    <Compile Include="PO.cs" />
+    <Compile Include="PoItems.cs" />
+    <Compile Include="Promotion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder.cs" />
+    <Compile Include="PurchaseOrderItems.cs" />
+    <Compile Include="Rack.cs" />
+    <Compile Include="RunningNo.cs" />
+    <Compile Include="ScaningTime.cs" />
+    <Compile Include="SerialEntry.cs" />
+    <Compile Include="SketchDefinition.cs" />
+    <Compile Include="SpecialEntry.cs" />
+    <Compile Include="SqlBulkCopy.cs" />
+    <Compile Include="StockLedger.cs" />
+    <Compile Include="StockRequisition.cs" />
+    <Compile Include="StockRequisitionDetails.cs" />
+    <Compile Include="Style.cs" />
+    <Compile Include="StyleOperation.cs" />
+    <Compile Include="SupplierMaster.cs" />
+    <Compile Include="User Accounts\User.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="VehicleRequisition.cs" />
+    <Compile Include="Werehouse.cs" />
+    <Compile Include="Workflow.cs" />
+    <Compile Include="WorkflowSetup.cs" />
+    <Compile Include="Workstation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\55281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-contact-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-contact-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checklist-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard-Plan-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder-Accept-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-folded-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VideoBlend-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
+      <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605180738443_01.resx">
+      <DependentUpon>201605180738443_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605270521236__Cut_No.resx">
+      <DependentUpon>201605270521236__Cut_No.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605280510570__cutNo_To_String.resx">
+      <DependentUpon>201605280510570__cutNo_To_String.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606010255463__merge_project.resx">
+      <DependentUpon>201606010255463__merge_project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606011049271__RunningNo.resx">
+      <DependentUpon>201606011049271__RunningNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606030908051__CutNo_Op_Barcode.resx">
+      <DependentUpon>201606030908051__CutNo_Op_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
