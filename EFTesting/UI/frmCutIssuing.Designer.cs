@@ -469,7 +469,7 @@
             this.grdCutIssue.Location = new System.Drawing.Point(27, 56);
             this.grdCutIssue.MainView = this.gridView3;
             this.grdCutIssue.Name = "grdCutIssue";
-            this.grdCutIssue.Size = new System.Drawing.Size(1164, 33);
+            this.grdCutIssue.Size = new System.Drawing.Size(1164, 394);
             this.grdCutIssue.TabIndex = 54;
             this.grdCutIssue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

@@ -10,7 +10,7 @@ namespace EFTesting.ViewModel
     {
         public DateTime Date { get; set; }
 
-        public string  LineNo   { get; set; }
+        public string  PoNo   { get; set; }
 
         public string  Color { get; set; }
 

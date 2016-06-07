@@ -1065,8 +1065,9 @@ namespace EFTesting.UI
       private List<CutReport> GetList() {
           GenaricRepository<CuttingItem> _CuttingItemRepo = new GenaricRepository<CuttingItem>(new ItrackContext());
           List<CutReport> lst = new List<CutReport>();
+
           foreach (var item in _CuttingItemRepo.GetAll().ToList().Where(x=>x.CuttingHeader.StyleID==txtStyleNo.Text)) {
-              lst.Add(new CutReport {StyleNo=item.CuttingHeader.StyleID, Date= item.Date,LineNo = item.LineNo,Color=item.Color,Size=item.Size,Pcs=item.NoOfItem});
+              lst.Add(new CutReport {StyleNo=item.CuttingHeader.StyleID, Date= item.Date,PoNo = item.PoNo,Color=item.Color,Size=item.Size,Pcs=item.NoOfItem});
           }
           return lst;
       }

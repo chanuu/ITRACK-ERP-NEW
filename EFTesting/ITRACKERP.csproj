@@ -222,6 +222,12 @@
     <Compile Include="Reports\rptHProduction.Designer.cs">
       <DependentUpon>rptHProduction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptIssueNote.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptIssueNote.Designer.cs">
+      <DependentUpon>rptIssueNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\rptLedgerByPo.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -257,6 +263,12 @@
     </Compile>
     <Compile Include="Reports\BundleWiseProduction.Designer.cs">
       <DependentUpon>BundleWiseProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rtCutByStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rtCutByStyle.Designer.cs">
+      <DependentUpon>rtCutByStyle.cs</DependentUpon>
     </Compile>
     <Compile Include="StyleVM.cs" />
     <Compile Include="UI\Asset\frmAsset.cs">
@@ -625,6 +637,9 @@
     <EmbeddedResource Include="Reports\rptHProduction.resx">
       <DependentUpon>rptHProduction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptIssueNote.resx">
+      <DependentUpon>rptIssueNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptLedgerByPo.resx">
       <DependentUpon>rptLedgerByPo.cs</DependentUpon>
     </EmbeddedResource>
@@ -801,6 +816,7 @@
     <None Include="Properties\DataSources\EFTesting.ViewModel.HourlyProductionList.datasource" />
     <None Include="Properties\DataSources\EFTesting.ViewModel.PoDeliveries.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.AssetBarcode.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.CutIssuItem.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.CuttingItem.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.CuttingLedger.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.DayendHeader.datasource" />

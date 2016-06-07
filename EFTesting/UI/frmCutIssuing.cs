@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ITRACK.models;
+using EFTesting.Reports;
+using DevExpress.XtraReports.UI;
 
 namespace EFTesting.UI
 {
@@ -207,6 +209,7 @@ namespace EFTesting.UI
                 txtStyleNo.Text = selected.Last().CutIssueHeader.StyleNo;
                 cmbLineNo.Text = selected.Last().CutIssueHeader.LineNo;
                 txtInputRequestedBy.Text = selected.Last().CutIssueHeader.InputRequestedBy;
+                cmbType.Text = selected.Last().CutIssueHeader.Type;
 
                 var flist = (from i in selected
                              select new { i.CutNo, i.PONo, i.LotNo, i.Color, i.Size, i.From, i.To, i.NoOfItem }).ToList();
@@ -368,6 +371,9 @@ namespace EFTesting.UI
             _issuNoteNo = gridView3.GetFocusedRowCellValue("CutIssueHeaderID").ToString();
             GetIssueByItem(_issuNoteNo);
             grdCutIssue.Hide();
+            grdCutIssue.Hide();
+            txtSearchBox.Hide();
+            btnClose.Hide();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -776,7 +782,16 @@ namespace EFTesting.UI
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
+            ItrackContext _context = new ItrackContext();
+            var Itrack =( from item in _context.CutIssuItem
+                         where item.CutIssueHeaderID == txtIssuNoteNo.Text
+                         select item).ToList();
 
+            rptIssueNote report = new rptIssueNote();
+            report.DataSource = Itrack;
+           
+            ReportPrintTool tool = new ReportPrintTool(report);
+            tool.ShowPreview();
         }
     }
 }
