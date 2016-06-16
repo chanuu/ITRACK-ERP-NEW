@@ -110,7 +110,7 @@
             this.txtLog.Name = "txtLog";
             this.txtLog.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txtLog.Properties.Appearance.Options.UseForeColor = true;
-            this.txtLog.Size = new System.Drawing.Size(1064, 315);
+            this.txtLog.Size = new System.Drawing.Size(1064, 320);
             this.txtLog.TabIndex = 113;
             // 
             // txtLocation
@@ -237,6 +237,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAssetVerification";
             this.Text = "Asset Verification";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAssetVerification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Progress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVerificationID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
