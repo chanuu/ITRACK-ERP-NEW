@@ -148,6 +148,14 @@ namespace ITRACK.models
         public DbSet<DividingPlanTemp> DividingPlanTemp { get; set; }
 
         public DbSet<RunningNo> RunningNo { get; set; }
+
+        public DbSet<MachineType> MachineType { get; set; }
+
+        public DbSet<StyleLoading> StyleLoading { get; set; }
+
+        public DbSet<MachineRequirement> MachineRequirement { get; set; }
+
+        public DbSet<MachineRequirementItem> MachineRequirementItem { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
           modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();

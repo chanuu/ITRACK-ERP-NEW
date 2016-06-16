@@ -295,7 +295,24 @@ namespace ITRACK.models
 
        }
 
+        void GetStyleLoadingItem() {
+            try {
+                ItrackContext _context = new ItrackContext();
 
+                var items = (from item in _context.StyleLoading
+                             where item.Style.Status == "Pending"
+                             select new { item.LineNo, item.StyleID, item.StartDate, item.EndDate }).ToList();
+
+                
+
+                
+
+
+            }
+            catch (Exception ex) {
+            }
+
+        }
       
 
         public bool Add(TEntity entity)

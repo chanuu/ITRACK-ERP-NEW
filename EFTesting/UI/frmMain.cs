@@ -352,5 +352,45 @@ namespace EFTesting.UI
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();
         }
+
+        private void btnMachineType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmMachineType objfrmMChild = new frmMachineType();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
+
+        private void btnMachine_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            splashScreenManager1.ShowWaitForm();
+            frmMachineReqirement objfrmMChild = new frmMachineReqirement();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+
+        }
+
+        private void btnStyleLoading_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            splashScreenManager1.ShowWaitForm();
+            frmStyleLoading objfrmMChild = new frmStyleLoading();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+
+        }
+
+        private void btnAnalays_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmMachineRequirementAnlays objfrmMChild = new frmMachineRequirementAnlays();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
     }
 }

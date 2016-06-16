@@ -96,6 +96,9 @@
     <Compile Include="Items.cs" />
     <Compile Include="ItrackContextInitializer.cs" />
     <Compile Include="LayinDetails.cs" />
+    <Compile Include="MachineRequirement.cs" />
+    <Compile Include="MachineRequirementItem.cs" />
+    <Compile Include="MachineType.cs" />
     <Compile Include="MainStock.cs" />
     <Compile Include="Migrations\201605180643294_InitialCreate.cs" />
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
@@ -125,6 +128,18 @@
     <Compile Include="Migrations\201606030908051__CutNo_Op_Barcode.Designer.cs">
       <DependentUpon>201606030908051__CutNo_Op_Barcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606090431242__Init.cs" />
+    <Compile Include="Migrations\201606090431242__Init.Designer.cs">
+      <DependentUpon>201606090431242__Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606151009251__Add_Location_Code.cs" />
+    <Compile Include="Migrations\201606151009251__Add_Location_Code.Designer.cs">
+      <DependentUpon>201606151009251__Add_Location_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606151146093__remove_dates.cs" />
+    <Compile Include="Migrations\201606151146093__remove_dates.Designer.cs">
+      <DependentUpon>201606151146093__remove_dates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
     <Compile Include="OfflineAssetScan.cs" />
@@ -149,6 +164,7 @@
     <Compile Include="StockRequisition.cs" />
     <Compile Include="StockRequisitionDetails.cs" />
     <Compile Include="Style.cs" />
+    <Compile Include="StyleLoading.cs" />
     <Compile Include="StyleOperation.cs" />
     <Compile Include="SupplierMaster.cs" />
     <Compile Include="User Accounts\User.cs" />
@@ -231,6 +247,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606030908051__CutNo_Op_Barcode.resx">
       <DependentUpon>201606030908051__CutNo_Op_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606090431242__Init.resx">
+      <DependentUpon>201606090431242__Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606151009251__Add_Location_Code.resx">
+      <DependentUpon>201606151009251__Add_Location_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606151146093__remove_dates.resx">
+      <DependentUpon>201606151146093__remove_dates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

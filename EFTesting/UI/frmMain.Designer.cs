@@ -84,6 +84,10 @@
             this.btnSpecialEntry = new DevExpress.XtraBars.BarButtonItem();
             this.btnRequi = new DevExpress.XtraBars.BarButtonItem();
             this.btnAsset = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVerification = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMachineType = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMachine = new DevExpress.XtraBars.BarButtonItem();
+            this.btnStyleLoading = new DevExpress.XtraBars.BarButtonItem();
             this.masters = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -105,7 +109,7 @@
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnVerification = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAnalays = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -293,9 +297,13 @@
             this.btnSpecialEntry,
             this.btnRequi,
             this.btnAsset,
-            this.btnVerification});
+            this.btnVerification,
+            this.btnMachineType,
+            this.btnMachine,
+            this.btnStyleLoading,
+            this.btnAnalays});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 41;
+            this.ribbonControl1.MaxItemId = 45;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.masters,
@@ -624,6 +632,41 @@
             this.btnAsset.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnAsset.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAsset_ItemClick);
             // 
+            // btnVerification
+            // 
+            this.btnVerification.Caption = "Asset Verification";
+            this.btnVerification.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnVerification.Id = 40;
+            this.btnVerification.Name = "btnVerification";
+            this.btnVerification.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnVerification.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVerification_ItemClick);
+            // 
+            // btnMachineType
+            // 
+            this.btnMachineType.Caption = "Machine Type";
+            this.btnMachineType.Id = 41;
+            this.btnMachineType.LargeGlyph = global::EFTesting.Properties.Resources.Clipboard_Plan_icon;
+            this.btnMachineType.Name = "btnMachineType";
+            this.btnMachineType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMachineType_ItemClick);
+            // 
+            // btnMachine
+            // 
+            this.btnMachine.Caption = "Machine Requirement";
+            this.btnMachine.Glyph = global::EFTesting.Properties.Resources.share_folded_icon;
+            this.btnMachine.Id = 42;
+            this.btnMachine.Name = "btnMachine";
+            this.btnMachine.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnMachine.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMachine_ItemClick);
+            // 
+            // btnStyleLoading
+            // 
+            this.btnStyleLoading.Caption = "Style Loading";
+            this.btnStyleLoading.Id = 43;
+            this.btnStyleLoading.LargeGlyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnStyleLoading.Name = "btnStyleLoading";
+            this.btnStyleLoading.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnStyleLoading.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStyleLoading_ItemClick);
+            // 
             // masters
             // 
             this.masters.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -692,6 +735,10 @@
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btnAsset);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnVerification);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnMachineType);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnMachine);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnStyleLoading);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnAnalays);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // config
@@ -787,14 +834,14 @@
             this.barButtonItem33.Name = "barButtonItem33";
             this.barButtonItem33.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // btnVerification
+            // btnAnalays
             // 
-            this.btnVerification.Caption = "Asset Verification";
-            this.btnVerification.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
-            this.btnVerification.Id = 40;
-            this.btnVerification.Name = "btnVerification";
-            this.btnVerification.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnVerification.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVerification_ItemClick);
+            this.btnAnalays.Caption = "Analys Requirement";
+            this.btnAnalays.Id = 44;
+            this.btnAnalays.LargeGlyph = global::EFTesting.Properties.Resources.barcode_folded_icon;
+            this.btnAnalays.Name = "btnAnalays";
+            this.btnAnalays.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAnalays.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAnalays_ItemClick);
             // 
             // frmMain
             // 
@@ -897,5 +944,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btnVerification;
+        private DevExpress.XtraBars.BarButtonItem btnMachineType;
+        private DevExpress.XtraBars.BarButtonItem btnMachine;
+        private DevExpress.XtraBars.BarButtonItem btnStyleLoading;
+        private DevExpress.XtraBars.BarButtonItem btnAnalays;
     }
 }

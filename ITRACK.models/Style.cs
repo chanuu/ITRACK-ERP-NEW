@@ -57,5 +57,10 @@ namespace ITRACK.models
         public virtual Workflow Workflow { get; set; }
 
         public int WorkflowID { get; set; }
+
+        public virtual ICollection<MachineRequirement> MachineRequirement { get; set; }
+
+
+        public virtual ICollection<StyleLoading> StyleLoading { get; set; }
     }
 }

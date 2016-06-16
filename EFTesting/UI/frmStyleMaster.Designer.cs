@@ -238,10 +238,10 @@
             // grdSearchBuyer
             // 
             this.grdSearchBuyer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.grdSearchBuyer.Location = new System.Drawing.Point(334, 125);
+            this.grdSearchBuyer.Location = new System.Drawing.Point(168, 125);
             this.grdSearchBuyer.MainView = this.gridView1;
             this.grdSearchBuyer.Name = "grdSearchBuyer";
-            this.grdSearchBuyer.Size = new System.Drawing.Size(575, 143);
+            this.grdSearchBuyer.Size = new System.Drawing.Size(741, 143);
             this.grdSearchBuyer.TabIndex = 35;
             this.grdSearchBuyer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -737,7 +737,7 @@
             this.grdSearchStyle.Location = new System.Drawing.Point(12, 57);
             this.grdSearchStyle.MainView = this.gridView2;
             this.grdSearchStyle.Name = "grdSearchStyle";
-            this.grdSearchStyle.Size = new System.Drawing.Size(1165, 353);
+            this.grdSearchStyle.Size = new System.Drawing.Size(1165, 375);
             this.grdSearchStyle.TabIndex = 38;
             this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
