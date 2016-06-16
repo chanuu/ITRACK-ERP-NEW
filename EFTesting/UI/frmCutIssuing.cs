@@ -11,6 +11,9 @@ using DevExpress.XtraEditors;
 using ITRACK.models;
 using EFTesting.Reports;
 using DevExpress.XtraReports.UI;
+using EFTesting.ViewModel;
+using System.Diagnostics;
+using ITRACK.Validator;
 
 namespace EFTesting.UI
 {
@@ -101,6 +104,7 @@ namespace EFTesting.UI
                     else
                         flag= false;
 
+                    UpdateLineNo(item.CutNo,cmbLineNo.Text);
 
                 }
                 return flag;
@@ -111,6 +115,39 @@ namespace EFTesting.UI
 
             }
         }
+
+        Validator Validator = new Validator();
+
+        public bool isValidIssueNote()
+        {
+
+
+            if (!Validator.isPresent(txtIssuNoteNo, "IssueNote No"))
+            {
+                return false;
+            }
+
+            if (!Validator.isPresent(txtStyleNo, "Style No"))
+            {
+                return false;
+            }
+
+           
+
+            if (!Validator.isPresent(cmbType, "Type"))
+            {
+                return false;
+            }
+
+            if (!Validator.isPresent(cmbLineNo, "Line No"))
+            {
+                return false;
+            }
+          
+
+            return true;
+        }
+
 
         void SearchStyle(string _key)
         {
@@ -278,7 +315,7 @@ namespace EFTesting.UI
                 }
             }
             catch (Exception ex)
-            {
+            { 
                 return false;
             }
 
@@ -287,14 +324,19 @@ namespace EFTesting.UI
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
+            if (isValidIssueNote() == true)
+            {
+                if (AddIssueHeader() == true && AddIssueItem() == true)
+                {
 
-           if( AddIssueHeader()==true  && AddIssueItem() == true){
+                    FeedLedger();
 
-                FeedLedger();
+                    MessageBox.Show("Save Sucessfuly !", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                MessageBox.Show("Save Sucessfuly !", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
+
         }
 
 
@@ -318,6 +360,7 @@ namespace EFTesting.UI
             txtSearchBox.Hide();
             btnClose.Hide();
             _context.Database.Initialize(false);
+            GetNewCode();
         }
 
         private void txtStyleNo_KeyDown(object sender, KeyEventArgs e)
@@ -371,7 +414,7 @@ namespace EFTesting.UI
             _issuNoteNo = gridView3.GetFocusedRowCellValue("CutIssueHeaderID").ToString();
             GetIssueByItem(_issuNoteNo);
             grdCutIssue.Hide();
-            grdCutIssue.Hide();
+            grdSearchStyle.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
         }
@@ -780,6 +823,29 @@ namespace EFTesting.UI
             }
         }
 
+
+
+        private void UpdateLineNo(string _cutID,string _LineNo)
+        {
+            try
+            {
+                ItrackContext context = new ItrackContext();
+                string _Query = "Update OprationBarcodes set [LineNo] = '"+ _LineNo +"' where CutNo ='"+ _cutID +"'";
+                context.Database.ExecuteSqlCommand(_Query);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
+
+
+
+
+
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             ItrackContext _context = new ItrackContext();
@@ -793,5 +859,66 @@ namespace EFTesting.UI
             ReportPrintTool tool = new ReportPrintTool(report);
             tool.ShowPreview();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            txtCutNo.Text = "";
+            txtInputRequestedBy.Text = "";
+            txtIssuNoteNo.Text = "";
+            txtremark.Text = "";
+            cmbLineNo.Text = "";
+            txtStyleNo.Text = "";
+            txtIssuNoteNo.Focus();
+             GetNewCode();
+        }
+
+
+
+        void GetNewCode()
+        {
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "ISE"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    txtIssuNoteNo.Text = _Engine.GenarateNo(_No, getCount());
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
+
+
+        int getCount()
+        {
+            try
+            {
+                GenaricRepository<CutIssueHeader> _GRNRepo = new GenaricRepository<CutIssueHeader>(new ItrackContext());
+                return Convert.ToInt16( _GRNRepo.GetAll().ToList().Last().CutIssueHeaderID)+1;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+
     }
 }

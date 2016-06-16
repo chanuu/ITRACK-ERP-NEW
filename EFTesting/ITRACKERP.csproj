@@ -98,6 +98,7 @@
     <Compile Include="DTOs\AssetVerificationLocationdto.cs" />
     <Compile Include="DTOs\dtoCuttingLedgerSummary.cs" />
     <Compile Include="DTOs\dtoCuttingStatus.cs" />
+    <Compile Include="DTOs\MachineListdto.cs" />
     <Compile Include="DTOs\PrintWorkOrder.cs" />
     <Compile Include="DTOs\ProductionLines.cs" />
     <Compile Include="Reports\Asset\rtAssetByCondtion.cs">
@@ -134,6 +135,12 @@
       <DependentUpon>BarcodeLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\clsProductionSummary.cs" />
+    <Compile Include="Reports\Report\rptMachineRequirement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report\rptMachineRequirement.Designer.cs">
+      <DependentUpon>rptMachineRequirement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Report\XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -282,6 +289,30 @@
     </Compile>
     <Compile Include="UI\Asset\frmAssetVerification.Designer.cs">
       <DependentUpon>frmAssetVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\frmMachineReqirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\frmMachineReqirement.Designer.cs">
+      <DependentUpon>frmMachineReqirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\frmMachineRequirementAnlays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\frmMachineRequirementAnlays.Designer.cs">
+      <DependentUpon>frmMachineRequirementAnlays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\frmMachineType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\frmMachineType.Designer.cs">
+      <DependentUpon>frmMachineType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\frmStyleLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\frmStyleLoading.Designer.cs">
+      <DependentUpon>frmStyleLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\dailyProductionDialog.cs">
       <SubType>Form</SubType>
@@ -598,6 +629,9 @@
     <EmbeddedResource Include="Reports\BarcodeLabel.resx">
       <DependentUpon>BarcodeLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report\rptMachineRequirement.resx">
+      <DependentUpon>rptMachineRequirement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
@@ -660,6 +694,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmAssetVerification.resx">
       <DependentUpon>frmAssetVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\frmMachineReqirement.resx">
+      <DependentUpon>frmMachineReqirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\frmMachineRequirementAnlays.resx">
+      <DependentUpon>frmMachineRequirementAnlays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\frmMachineType.resx">
+      <DependentUpon>frmMachineType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\frmStyleLoading.resx">
+      <DependentUpon>frmStyleLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\dailyProductionDialog.resx">
       <DependentUpon>dailyProductionDialog.cs</DependentUpon>
@@ -823,6 +869,7 @@
     <None Include="Properties\DataSources\ITRACK.models.DividingPlanHeader.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.DividingPlanItem.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.LayinDetails.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.MachineRequirementItem.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.OprationBarcodes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -112,7 +112,7 @@ namespace EFTesting.UI
 
                 ItrackContext _context = new ItrackContext();
                 var selected = (from item in _context.Buyer
-                               where item.BuyerName == txtBuyerName.Text
+                               where item.BuyerName.Contains(txtBuyerName.Text)
                                select new { item.BuyerID, item.BuyerName, item.BuyerTeleNo, item.FaxNo, item.BuyerShippingAddress }).ToList();
               
                 //check is record exist in selected item
@@ -379,6 +379,14 @@ namespace EFTesting.UI
             grdSearchStyle.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
+            try {
+                ItrackContext _context = new ItrackContext();
+                _context.Database.Initialize(false);
+            }
+            catch (Exception ex) {
+                Debug.WriteLine(ex.Message);
+            }
+          
             
         }
 

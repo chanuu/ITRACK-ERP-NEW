@@ -19,9 +19,11 @@ namespace ITRACK.models
 
         public virtual ICollection<Company> Company { get; set; }
 
-       
+        public virtual ICollection<MachineType> MachineType { get; set; }
 
 
-    
+
+
+
     }
 }

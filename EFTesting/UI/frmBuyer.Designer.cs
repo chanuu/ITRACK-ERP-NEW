@@ -248,14 +248,14 @@
             // 
             this.xtraTabPage2.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(888, 424);
+            this.xtraTabPage2.Size = new System.Drawing.Size(888, 400);
             this.xtraTabPage2.Text = "Styles ";
             // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(888, 424);
+            this.xtraTabPage3.Size = new System.Drawing.Size(888, 400);
             this.xtraTabPage3.Text = "Other";
             // 
             // txtSearchBox
@@ -278,11 +278,12 @@
             this.grdSearch.Location = new System.Drawing.Point(12, 49);
             this.grdSearch.MainView = this.gridView1;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(960, 334);
+            this.grdSearch.Size = new System.Drawing.Size(960, 46);
             this.grdSearch.TabIndex = 14;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.grdSearch.Click += new System.EventHandler(this.grdSearch_Click);
+            this.grdSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearch_KeyDown);
             this.grdSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdSearch_KeyPress);
             // 
             // gridView1

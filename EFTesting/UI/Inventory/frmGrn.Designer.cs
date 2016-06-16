@@ -518,7 +518,7 @@
             this.xtraTabPage2.Controls.Add(this.grdGrnAdd);
             this.xtraTabPage2.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1030, 395);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1030, 516);
             this.xtraTabPage2.Text = "Details";
             // 
             // grdGrnAdd
@@ -554,7 +554,7 @@
             this.xtraTabPage3.Controls.Add(this.label9);
             this.xtraTabPage3.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1030, 395);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1030, 516);
             this.xtraTabPage3.Text = "Store Location";
             // 
             // btnItemDelete

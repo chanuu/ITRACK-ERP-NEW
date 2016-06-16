@@ -345,6 +345,9 @@ namespace EFTesting.UI
 
         }
 
+        private void grdSearch_KeyDown(object sender, KeyEventArgs e)
+        {
 
+        }
     }
 }
