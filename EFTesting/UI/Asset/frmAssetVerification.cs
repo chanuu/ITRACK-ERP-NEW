@@ -217,9 +217,10 @@ namespace EFTesting.UI.Asset
 
                 GenaricRepository<AssetVerification> _BarcodeRepos = new GenaricRepository<AssetVerification>(new ItrackContext());
 
+
                 asset.AssetVerificationID = txtVerificationID.Text;
                 asset.Date = DateTime.Now;
-                asset.CompanyID = 1;
+                asset.CompanyID = 5;
                 asset.ApprovedBy = "Admin";
                 asset.Remark = txtRemark.Text;
                 _BarcodeRepos.Insert(asset);
@@ -242,6 +243,7 @@ namespace EFTesting.UI.Asset
                 GenaricRepository<AssetBarcode> _EditBarcodeRepos = new GenaricRepository<AssetBarcode>(new ItrackContext());
                 foreach (var barcode in _BarcodeRepos.GetAll().Where(p => p.AssetBarcodeID == _barcode).ToList())
                 {
+                    
 
                     AssetBarcode _abarcode = new AssetBarcode();
                     _abarcode.AssetName = barcode.AssetName;
@@ -797,6 +799,11 @@ namespace EFTesting.UI.Asset
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             print();
+        }
+
+        private void frmAssetVerification_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
