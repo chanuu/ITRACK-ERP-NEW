@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using ITRACK.models;
 using EFTesting.Reports.Report;
 using DevExpress.XtraReports.UI;
+using EFTesting.Reports.Asset;
 
 namespace EFTesting.UI.Asset
 {
@@ -218,24 +219,6 @@ namespace EFTesting.UI.Asset
         }
 
 
-        void print(string _ID) {
-            try {
-
-                ItrackContext _cntx = new ItrackContext();
-                var report =( from item in _cntx.MachineRequirementItem
-                             where item.MachineRequirementID == _ID
-                             select item).ToList();
-                rptMachineRequirement s = new rptMachineRequirement();
-                s.DataSource = report;
-
-                DevExpress.XtraReports.UI.ReportPrintTool tool = new ReportPrintTool(s);
-                tool.ShowPreview();
-            }
-            catch (Exception ex) {
-
-            }
-
-        }
 
 
         private void frmMachineReqirement_Load(object sender, EventArgs e)
@@ -383,7 +366,7 @@ namespace EFTesting.UI.Asset
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            print(txtRequirementID.Text);
+           // print(txtRequirementID.Text);
         }
     }
 }

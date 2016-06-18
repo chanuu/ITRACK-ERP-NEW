@@ -3,7 +3,7 @@ namespace ITRACK.models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _Init : DbMigration
+    public partial class _init : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace ITRACK.models.Migrations
                         StyleNo = c.String(),
                         LineNo = c.String(),
                         Remark = c.String(),
+                        LocationCode = c.String(),
                         StyleID = c.String(maxLength: 128),
                         CreatedBy = c.String(),
                         CreatedTime = c.String(),
@@ -44,18 +45,12 @@ namespace ITRACK.models.Migrations
                 "dbo.StyleLoadings",
                 c => new
                     {
-                        StyleLoadingID = c.String(nullable: false, maxLength: 128),
-                        StyleNo = c.String(),
+                        StyleLoadingID = c.Int(nullable: false, identity: true),
                         LineNo = c.String(),
                         StartDate = c.DateTime(nullable: false),
                         EndDate = c.DateTime(nullable: false),
-                        Remark = c.String(),
                         StyleID = c.String(maxLength: 128),
-                        CreatedBy = c.String(),
-                        CreatedTime = c.String(),
-                        CreatedDate = c.DateTime(),
-                        LastModifiedBy = c.String(),
-                        LastModifiedAt = c.String(),
+                        LocationCode = c.String(),
                     })
                 .PrimaryKey(t => t.StyleLoadingID)
                 .ForeignKey("dbo.Styles", t => t.StyleID)

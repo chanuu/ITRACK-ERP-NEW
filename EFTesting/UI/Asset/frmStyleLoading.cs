@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ITRACK.models;
+using DevExpress.XtraScheduler;
+using EFTesting.DTOs;
 
 namespace EFTesting.UI.Asset
 {
@@ -96,6 +98,27 @@ namespace EFTesting.UI.Asset
 
         }
 
+        List<StyleLoadingDto> list = new List<StyleLoadingDto>();
+
+        void LoadAppoiment() {
+            try {
+
+                StyleLoadingDto loading = new StyleLoadingDto();
+                loading.StartDate = DateTime.Now;
+                loading.EndDate = DateTime.Now.AddDays(10);
+                loading.StyleNo = "3616";
+                loading.LineNo = "V-6";
+                
+                list.Add(loading);
+
+                bindingSource1.DataSource = list;
+            }
+            catch (Exception ex) {
+
+            }
+
+        }
+
         void GetStyleLoading() {
             try {
                 ItrackContext _context = new ItrackContext();
@@ -136,6 +159,7 @@ namespace EFTesting.UI.Asset
         private void frmStyleLoading_Load(object sender, EventArgs e)
         {
             GetStyleLoading();
+            LoadAppoiment();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -154,6 +178,22 @@ namespace EFTesting.UI.Asset
             }
             
             
+        }
+
+        private void schedulerControl1_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
+        {
+            DevExpress.XtraScheduler.SchedulerControl scheduler = ((DevExpress.XtraScheduler.SchedulerControl)(sender));
+            EFTesting.UI.Asset.CustomAppointmentForm form = new EFTesting.UI.Asset.CustomAppointmentForm(scheduler, e.Appointment, e.OpenRecurrenceForm);
+            try
+            {
+                e.DialogResult = form.ShowDialog();
+                e.Handled = true;
+            }
+            finally
+            {
+                form.Dispose();
+            }
+
         }
     }
 }

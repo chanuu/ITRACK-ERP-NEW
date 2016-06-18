@@ -104,41 +104,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605180738443_01.cs" />
-    <Compile Include="Migrations\201605180738443_01.Designer.cs">
-      <DependentUpon>201605180738443_01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605270521236__Cut_No.cs" />
-    <Compile Include="Migrations\201605270521236__Cut_No.Designer.cs">
-      <DependentUpon>201605270521236__Cut_No.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605280510570__cutNo_To_String.cs" />
-    <Compile Include="Migrations\201605280510570__cutNo_To_String.Designer.cs">
-      <DependentUpon>201605280510570__cutNo_To_String.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606010255463__merge_project.cs" />
-    <Compile Include="Migrations\201606010255463__merge_project.Designer.cs">
-      <DependentUpon>201606010255463__merge_project.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606011049271__RunningNo.cs" />
-    <Compile Include="Migrations\201606011049271__RunningNo.Designer.cs">
-      <DependentUpon>201606011049271__RunningNo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606030908051__CutNo_Op_Barcode.cs" />
-    <Compile Include="Migrations\201606030908051__CutNo_Op_Barcode.Designer.cs">
-      <DependentUpon>201606030908051__CutNo_Op_Barcode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606090431242__Init.cs" />
-    <Compile Include="Migrations\201606090431242__Init.Designer.cs">
-      <DependentUpon>201606090431242__Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606151009251__Add_Location_Code.cs" />
-    <Compile Include="Migrations\201606151009251__Add_Location_Code.Designer.cs">
-      <DependentUpon>201606151009251__Add_Location_Code.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606151146093__remove_dates.cs" />
-    <Compile Include="Migrations\201606151146093__remove_dates.Designer.cs">
-      <DependentUpon>201606151146093__remove_dates.cs</DependentUpon>
+    <Compile Include="Migrations\201606170928231__init.cs" />
+    <Compile Include="Migrations\201606170928231__init.Designer.cs">
+      <DependentUpon>201606170928231__init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -230,32 +198,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605180738443_01.resx">
-      <DependentUpon>201605180738443_01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605270521236__Cut_No.resx">
-      <DependentUpon>201605270521236__Cut_No.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605280510570__cutNo_To_String.resx">
-      <DependentUpon>201605280510570__cutNo_To_String.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606010255463__merge_project.resx">
-      <DependentUpon>201606010255463__merge_project.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606011049271__RunningNo.resx">
-      <DependentUpon>201606011049271__RunningNo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606030908051__CutNo_Op_Barcode.resx">
-      <DependentUpon>201606030908051__CutNo_Op_Barcode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606090431242__Init.resx">
-      <DependentUpon>201606090431242__Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606151009251__Add_Location_Code.resx">
-      <DependentUpon>201606151009251__Add_Location_Code.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606151146093__remove_dates.resx">
-      <DependentUpon>201606151146093__remove_dates.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606170928231__init.resx">
+      <DependentUpon>201606170928231__init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.btnD = new DevExpress.XtraEditors.SimpleButton();
@@ -46,6 +47,8 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -53,6 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExpected.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdStyleLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -65,7 +71,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 50);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1131, 406);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1131, 503);
             this.xtraTabControl1.TabIndex = 12;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -82,7 +88,7 @@
             this.xtraTabPage1.Controls.Add(this.grdStyleLoading);
             this.xtraTabPage1.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1040, 400);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1040, 497);
             this.xtraTabPage1.Text = "Header ";
             // 
             // btnD
@@ -133,10 +139,13 @@
             // 
             // grdStyleLoading
             // 
+            this.grdStyleLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdStyleLoading.Location = new System.Drawing.Point(34, 57);
             this.grdStyleLoading.MainView = this.gridView3;
             this.grdStyleLoading.Name = "grdStyleLoading";
-            this.grdStyleLoading.Size = new System.Drawing.Size(955, 340);
+            this.grdStyleLoading.Size = new System.Drawing.Size(955, 398);
             this.grdStyleLoading.TabIndex = 0;
             this.grdStyleLoading.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -149,26 +158,29 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.chartControl1);
             this.xtraTabPage2.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1040, 400);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1040, 497);
             this.xtraTabPage2.Text = "Machines";
             // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1040, 400);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1040, 497);
             this.xtraTabPage3.Text = "Report";
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.ForeColor = System.Drawing.Color.Lime;
-            this.lblStatus.Location = new System.Drawing.Point(109, 493);
+            this.lblStatus.Location = new System.Drawing.Point(100, 556);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.Size = new System.Drawing.Size(38, 13);
             this.lblStatus.TabIndex = 22;
+            this.lblStatus.Text = "Status";
             // 
             // backgroundWorker1
             // 
@@ -184,6 +196,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(85, 39);
             this.simpleButton4.TabIndex = 77;
             this.simpleButton4.Text = "Print";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btnDelete
             // 
@@ -221,6 +234,19 @@
             this.btnNew.TabIndex = 73;
             this.btnNew.Text = "New";
             // 
+            // chartControl1
+            // 
+            this.chartControl1.DataSource = this.bindingSource1;
+            this.chartControl1.Location = new System.Drawing.Point(97, 99);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl1.Size = new System.Drawing.Size(300, 200);
+            this.chartControl1.TabIndex = 0;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(ITRACK.models.StyleLoading);
+            // 
             // frmMachineRequirementAnlays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,7 +260,7 @@
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "frmMachineRequirementAnlays";
-            this.Text = "frmMachineRequirementAnlays";
+            this.Text = "Machine Requirement Analyze";
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -243,6 +269,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExpected.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdStyleLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +297,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

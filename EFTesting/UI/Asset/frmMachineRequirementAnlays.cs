@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ITRACK.models;
 using EFTesting.DTOs;
+using EFTesting.Reports.Asset;
+using DevExpress.XtraReports.UI;
 
 namespace EFTesting.UI.Asset
 {
@@ -41,11 +43,11 @@ namespace EFTesting.UI.Asset
         }
 
 
-        bool isAvaible(string _type) {
+        bool isAvaible(string _type,string _location) {
             try {
                 bool status = false;
                 var items = (from item in lstMachines
-                             where item.MachineType == _type
+                             where item.MachineType == _type && item.Location== _location
                              select item).ToList();
 
                 if (items.Count > 0)
@@ -71,7 +73,7 @@ namespace EFTesting.UI.Asset
                 backgroundWorker1.ReportProgress(0, "Looking For Styles between expected date range.Wait..");
                 var styles = (from item in _context.StyleLoading
 
-                             where item.EndDate>=_expected
+                             where item.EndDate>=_expected && item.StartDate<= _expected
 
                              select new { item.StyleID }).ToList();
 
@@ -95,7 +97,7 @@ namespace EFTesting.UI.Asset
                         dto.Variance = 0;
                         dto.No = lstMachines.Count + 1;
 
-                        if (isAvaible(dto.MachineType) == true)
+                        if (isAvaible(dto.MachineType,dto.Location) == true)
                         {
                             UpdateItems(dto.MachineType, dto.RequiredMachine);
                         }
@@ -155,6 +157,24 @@ namespace EFTesting.UI.Asset
             {
                 lblStatus.Text = e.UserState.ToString();
             }
+        }
+
+
+        void print() {
+            try {
+                rptMachineRequirementSummary s = new rptMachineRequirementSummary();
+                s.DataSource = lstMachines;
+
+                DevExpress.XtraReports.UI.ReportPrintTool tool = new ReportPrintTool(s);
+                tool.ShowPreview();
+            }
+            catch (Exception ex) {
+
+            }
+        }
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            print();
         }
     }
 }

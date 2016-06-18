@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.btnD = new DevExpress.XtraEditors.SimpleButton();
@@ -44,12 +49,17 @@
             this.grdStyleLoading = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
+            this.schedulerStorage2 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.resourcesCheckedListBoxControl1 = new DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -61,7 +71,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStyles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdStyleLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesCheckedListBoxControl1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(EFTesting.DTOs.StyleLoadingDto);
             // 
             // xtraTabControl1
             // 
@@ -223,10 +242,55 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.schedulerControl1);
             this.xtraTabPage2.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1040, 400);
             this.xtraTabPage2.Text = "Machines";
+            // 
+            // schedulerControl1
+            // 
+            this.schedulerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.schedulerControl1.Location = new System.Drawing.Point(0, 0);
+            this.schedulerControl1.Name = "schedulerControl1";
+            this.schedulerControl1.Size = new System.Drawing.Size(1040, 400);
+            this.schedulerControl1.Start = new System.DateTime(2016, 6, 17, 0, 0, 0, 0);
+            this.schedulerControl1.Storage = this.schedulerStorage2;
+            this.schedulerControl1.TabIndex = 0;
+            this.schedulerControl1.Text = "schedulerControl1";
+            this.schedulerControl1.Views.DayView.AllDayAreaScrollBarVisible = false;
+            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
+            this.schedulerControl1.Views.FullWeekView.AllDayAreaScrollBarVisible = false;
+            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
+            this.schedulerControl1.Views.MonthView.Enabled = false;
+            this.schedulerControl1.Views.TimelineView.TimelineScrollBarVisible = false;
+            this.schedulerControl1.Views.WeekView.Enabled = false;
+            this.schedulerControl1.Views.WorkWeekView.AllDayAreaScrollBarVisible = false;
+            this.schedulerControl1.Views.WorkWeekView.Enabled = false;
+            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing);
+            // 
+            // schedulerStorage2
+            // 
+            this.schedulerStorage2.Appointments.CommitIdToDataSource = true;
+            this.schedulerStorage2.Appointments.DataSource = this.bindingSource1;
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), "None", "&None");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(190))))), "V-1", "&Important");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(255))))), "V-2", "&Business");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(244)))), ((int)(((byte)(156))))), "V-3", "&Personal");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(228)))), ((int)(((byte)(199))))), "V-4", "&Vacation");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(206)))), ((int)(((byte)(147))))), "V-5", "Must &Attend");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(244)))), ((int)(((byte)(255))))), "V-6", "&Travel Required");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(219)))), ((int)(((byte)(152))))), "V-7", "&Needs Preparation");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(233))))), "V-8", "&Birthday");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(233)))), ((int)(((byte)(223))))), "V-9", "&Anniversary");
+            this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(165))))), "V-10", "Phone &Call");
+            this.schedulerStorage2.Appointments.Mappings.Description = "Description";
+            this.schedulerStorage2.Appointments.Mappings.End = "EndDate";
+            this.schedulerStorage2.Appointments.Mappings.Label = "Label";
+            this.schedulerStorage2.Appointments.Mappings.Location = "LineNo";
+            this.schedulerStorage2.Appointments.Mappings.Start = "StartDate";
+            this.schedulerStorage2.Appointments.Mappings.Subject = "StyleNo";
             // 
             // xtraTabPage3
             // 
@@ -234,6 +298,10 @@
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(1040, 400);
             this.xtraTabPage3.Text = "Report";
+            // 
+            // schedulerStorage1
+            // 
+            this.schedulerStorage1.Appointments.DataSource = this.bindingSource1;
             // 
             // simpleButton4
             // 
@@ -280,6 +348,13 @@
             this.btnNew.TabIndex = 65;
             this.btnNew.Text = "New";
             // 
+            // resourcesCheckedListBoxControl1
+            // 
+            this.resourcesCheckedListBoxControl1.Location = new System.Drawing.Point(982, 116);
+            this.resourcesCheckedListBoxControl1.Name = "resourcesCheckedListBoxControl1";
+            this.resourcesCheckedListBoxControl1.Size = new System.Drawing.Size(120, 95);
+            this.resourcesCheckedListBoxControl1.TabIndex = 2;
+            // 
             // frmStyleLoading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +369,7 @@
             this.Name = "frmStyleLoading";
             this.Text = "Style Loading";
             this.Load += new System.EventHandler(this.frmStyleLoading_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -306,6 +382,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStyles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdStyleLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesCheckedListBoxControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,7 +395,6 @@
 
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
@@ -334,5 +414,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.TextEdit txtStyles;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
+        private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+        private DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl resourcesCheckedListBoxControl1;
     }
 }
