@@ -486,6 +486,7 @@
             // 
             // txtlineNo
             // 
+            this.txtlineNo.EditValue = "N/A";
             this.txtlineNo.Location = new System.Drawing.Point(262, 44);
             this.txtlineNo.Name = "txtlineNo";
             this.txtlineNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -712,7 +713,7 @@
             this.grdItemList.Location = new System.Drawing.Point(7, 114);
             this.grdItemList.MainView = this.gridView1;
             this.grdItemList.Name = "grdItemList";
-            this.grdItemList.Size = new System.Drawing.Size(1246, 295);
+            this.grdItemList.Size = new System.Drawing.Size(1301, 278);
             this.grdItemList.TabIndex = 57;
             this.grdItemList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1124,7 +1125,7 @@
             this.grdSearch.Location = new System.Drawing.Point(14, 44);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1243, 446);
+            this.grdSearch.Size = new System.Drawing.Size(1243, 427);
             this.grdSearch.TabIndex = 62;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

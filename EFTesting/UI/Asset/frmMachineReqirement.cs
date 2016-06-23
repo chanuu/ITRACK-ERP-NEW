@@ -231,7 +231,8 @@ namespace EFTesting.UI.Asset
             btnClose.Hide();
             ItrackContext _context = new ItrackContext();
             _context.Database.Initialize(false);
-           
+            grdStyleSearch.Hide();
+
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -363,10 +364,59 @@ namespace EFTesting.UI.Asset
             btnClose.Hide();
 
         }
+        void serachStyle(string _key)
+        {
+            try
+            {
+                ItrackContext _context = new ItrackContext();
+                var items = (from item in _context.Style
+                             where item.StyleID.Contains(_key)
+                             select new { item.StyleID, item.Buyer.BuyerName, item.Remark }).ToList();
 
+                grdStyleSearch.Show();
+
+                if (items.Count > 0)
+                {
+                    grdStyleSearch.DataSource = items;
+                }
+                else
+                {
+                    grdStyleSearch.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
         private void simpleButton4_Click(object sender, EventArgs e)
         {
            // print(txtRequirementID.Text);
+        }
+
+        private void txtStyleNo_EditValueChanged(object sender, EventArgs e)
+        {
+            serachStyle(txtStyleNo.Text);
+        }
+
+        private void txtStyleNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up || e.KeyData == Keys.Down)
+            {
+                grdStyleSearch.Select();
+            }
+            else if (e.KeyData == Keys.Escape)
+            {
+                grdStyleSearch.Hide();
+
+            }
+        }
+
+        private void grdStyleSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtStyleNo.Text = gridView4.GetFocusedRowCellValue("StyleID").ToString();
+            grdStyleSearch.Hide();
         }
     }
 }

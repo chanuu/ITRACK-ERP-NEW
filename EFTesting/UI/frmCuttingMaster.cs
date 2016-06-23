@@ -711,10 +711,7 @@ namespace EFTesting.UI
 
         public bool isValidMarker()
         {
-            if (!validate.isPresent(txtlineNo, "Line Number"))
-            {
-                return false;
-            }
+           
 
             if (!validate.isPresent(txtMarkerNo, "Marker Number"))
             {

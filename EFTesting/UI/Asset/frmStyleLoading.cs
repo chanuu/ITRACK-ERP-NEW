@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using ITRACK.models;
 using DevExpress.XtraScheduler;
 using EFTesting.DTOs;
+using System.Diagnostics;
 
 namespace EFTesting.UI.Asset
 {
@@ -103,15 +104,51 @@ namespace EFTesting.UI.Asset
         void LoadAppoiment() {
             try {
 
-                StyleLoadingDto loading = new StyleLoadingDto();
-                loading.StartDate = DateTime.Now;
-                loading.EndDate = DateTime.Now.AddDays(10);
-                loading.StyleNo = "3616";
-                loading.LineNo = "V-6";
-                
-                list.Add(loading);
+
+
+                ItrackContext _context = new ItrackContext();
+
+                var styles =( from style in _context.StyleLoading
+                             where style.Style.Status == "Pending"
+                             select style).ToList();
+
+                foreach(var style in styles)
+                {
+
+                    StyleLoadingDto loading = new StyleLoadingDto();
+                    loading.StartDate =  style.StartDate;
+                    loading.EndDate = style.EndDate;
+                    loading.StyleNo = style.StyleID;
+                    loading.LineNo = style.LineNo;
+                    loading.Description =style.StyleID +" Loading";
+                    loading.Complete = 0;
+
+                    //   loading.Label = 
+                    int i = 0;
+                    foreach (var l in schedulerStorage2.Appointments.Labels)
+                    {
+                        if (l.DisplayName == loading.LineNo)
+                        {
+
+                            loading.ColorLabel = i;
+
+                        }
+                        i++;
+
+                    }
+
+                    
+                    list.Add(loading);
+
+                }
+
+               
 
                 bindingSource1.DataSource = list;
+                schedulerControl1.ActiveViewType = SchedulerViewType.Gantt;
+                schedulerControl1.GroupType = SchedulerGroupType.Resource;
+                schedulerControl1.GanttView.ShowResourceHeaders = true;
+                schedulerControl1.GanttView.CellsAutoHeightOptions.Enabled = true;
             }
             catch (Exception ex) {
 
@@ -160,6 +197,8 @@ namespace EFTesting.UI.Asset
         {
             GetStyleLoading();
             LoadAppoiment();
+
+            grdStyleSearch.Hide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -194,6 +233,58 @@ namespace EFTesting.UI.Asset
                 form.Dispose();
             }
 
+        }
+
+
+
+
+
+        void serachStyle(string _key) {
+            try {
+                ItrackContext _context = new ItrackContext();
+                var items = (from item in _context.Style
+                             where item.StyleID.Contains(_key)
+                             select new { item.StyleID, item.Buyer.BuyerName, item.Remark }).ToList();
+
+                grdStyleSearch.Show();
+
+                if (items.Count > 0)
+                {
+                    grdStyleSearch.DataSource = items;
+                }
+                else
+                {
+                    grdStyleSearch.DataSource = null;
+                }
+            }
+            catch (Exception ex) {
+
+            }
+
+        }
+
+        private void txtStyles_EditValueChanged(object sender, EventArgs e)
+        {
+            serachStyle(txtStyles.Text);
+        }
+
+        private void txtStyles_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up || e.KeyData == Keys.Down)
+            {
+                grdStyleSearch.Select();
+            }
+            else if (e.KeyData == Keys.Escape)
+            {
+                grdStyleSearch.Hide();
+
+            }
+        }
+
+        private void grdStyleSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+          txtStyles.Text = gridView1.GetFocusedRowCellValue("StyleID").ToString();
+          grdStyleSearch.Hide();
         }
     }
 }

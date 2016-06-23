@@ -35,6 +35,8 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.grdStyleSearch = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnD = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnFeed = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStyleSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).BeginInit();
@@ -101,6 +105,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.grdStyleSearch);
             this.xtraTabPage1.Controls.Add(this.btnD);
             this.xtraTabPage1.Controls.Add(this.btnUpdate);
             this.xtraTabPage1.Controls.Add(this.btnFeed);
@@ -117,6 +122,23 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1040, 400);
             this.xtraTabPage1.Text = "Header ";
+            // 
+            // grdStyleSearch
+            // 
+            this.grdStyleSearch.Location = new System.Drawing.Point(34, 57);
+            this.grdStyleSearch.MainView = this.gridView1;
+            this.grdStyleSearch.Name = "grdStyleSearch";
+            this.grdStyleSearch.Size = new System.Drawing.Size(955, 269);
+            this.grdStyleSearch.TabIndex = 28;
+            this.grdStyleSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            this.grdStyleSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdStyleSearch_KeyDown);
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grdStyleSearch;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // btnD
             // 
@@ -192,6 +214,17 @@
             this.cmbLine.Name = "cmbLine";
             this.cmbLine.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbLine.Properties.Items.AddRange(new object[] {
+            "V-1",
+            "V-2",
+            "V-3",
+            "V-4",
+            "V-5",
+            "V-6",
+            "V-7",
+            "V-8",
+            "V-9",
+            "V-10"});
             this.cmbLine.Size = new System.Drawing.Size(160, 20);
             this.cmbLine.TabIndex = 20;
             // 
@@ -223,6 +256,8 @@
             this.txtStyles.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtStyles.Size = new System.Drawing.Size(166, 20);
             this.txtStyles.TabIndex = 16;
+            this.txtStyles.EditValueChanged += new System.EventHandler(this.txtStyles_EditValueChanged);
+            this.txtStyles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStyles_KeyDown);
             // 
             // grdStyleLoading
             // 
@@ -263,6 +298,7 @@
             this.schedulerControl1.Views.FullWeekView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl1.Views.MonthView.Enabled = false;
+            this.schedulerControl1.Views.TimelineView.Enabled = false;
             this.schedulerControl1.Views.TimelineView.TimelineScrollBarVisible = false;
             this.schedulerControl1.Views.WeekView.Enabled = false;
             this.schedulerControl1.Views.WorkWeekView.AllDayAreaScrollBarVisible = false;
@@ -287,8 +323,9 @@
             this.schedulerStorage2.Appointments.Labels.Add(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(165))))), "V-10", "Phone &Call");
             this.schedulerStorage2.Appointments.Mappings.Description = "Description";
             this.schedulerStorage2.Appointments.Mappings.End = "EndDate";
-            this.schedulerStorage2.Appointments.Mappings.Label = "Label";
+            this.schedulerStorage2.Appointments.Mappings.Label = "ColorLabel";
             this.schedulerStorage2.Appointments.Mappings.Location = "LineNo";
+            this.schedulerStorage2.Appointments.Mappings.PercentComplete = "Complete";
             this.schedulerStorage2.Appointments.Mappings.Start = "StartDate";
             this.schedulerStorage2.Appointments.Mappings.Subject = "StyleNo";
             // 
@@ -374,6 +411,8 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStyleSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).EndInit();
@@ -420,5 +459,7 @@
         private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
         private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
         private DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl resourcesCheckedListBoxControl1;
+        private DevExpress.XtraGrid.GridControl grdStyleSearch;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
