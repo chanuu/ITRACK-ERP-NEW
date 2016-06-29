@@ -74,6 +74,7 @@
     <Compile Include="CuttingItem.cs" />
     <Compile Include="CuttingLedger.cs" />
     <Compile Include="CuttingLedgerHeader.cs" />
+    <Compile Include="CuttingRatio.cs" />
     <Compile Include="CuttingStock.cs" />
     <Compile Include="CuttingSummary.cs" />
     <Compile Include="DailyProduction.cs" />
@@ -108,6 +109,26 @@
     <Compile Include="Migrations\201606170928231__init.Designer.cs">
       <DependentUpon>201606170928231__init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606241141076__remove_order_price.cs" />
+    <Compile Include="Migrations\201606241141076__remove_order_price.Designer.cs">
+      <DependentUpon>201606241141076__remove_order_price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606250734392__add_lot.cs" />
+    <Compile Include="Migrations\201606250734392__add_lot.Designer.cs">
+      <DependentUpon>201606250734392__add_lot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606271018162__lot.cs" />
+    <Compile Include="Migrations\201606271018162__lot.Designer.cs">
+      <DependentUpon>201606271018162__lot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606290708479__location_code.cs" />
+    <Compile Include="Migrations\201606290708479__location_code.Designer.cs">
+      <DependentUpon>201606290708479__location_code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606290755235__po_location.cs" />
+    <Compile Include="Migrations\201606290755235__po_location.Designer.cs">
+      <DependentUpon>201606290755235__po_location.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
     <Compile Include="OfflineAssetScan.cs" />
@@ -122,6 +143,7 @@
     <Compile Include="PurchaseOrder.cs" />
     <Compile Include="PurchaseOrderItems.cs" />
     <Compile Include="Rack.cs" />
+    <Compile Include="RatioItem.cs" />
     <Compile Include="RunningNo.cs" />
     <Compile Include="ScaningTime.cs" />
     <Compile Include="SerialEntry.cs" />
@@ -200,6 +222,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606170928231__init.resx">
       <DependentUpon>201606170928231__init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606241141076__remove_order_price.resx">
+      <DependentUpon>201606241141076__remove_order_price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606250734392__add_lot.resx">
+      <DependentUpon>201606250734392__add_lot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606271018162__lot.resx">
+      <DependentUpon>201606271018162__lot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606290708479__location_code.resx">
+      <DependentUpon>201606290708479__location_code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606290755235__po_location.resx">
+      <DependentUpon>201606290755235__po_location.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

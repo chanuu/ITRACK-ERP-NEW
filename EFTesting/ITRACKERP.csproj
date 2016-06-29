@@ -330,6 +330,12 @@
     <Compile Include="UI\Asset\frmStyleLoading.Designer.cs">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Cutting report\frmCuttingDaliySelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cutting report\frmCuttingDaliySelection.Designer.cs">
+      <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\dailyProductionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,6 +516,12 @@
     <Compile Include="UI\frmPurchaseOrder.Designer.cs">
       <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmRatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmRatio.Designer.cs">
+      <DependentUpon>frmRatio.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmScaningTimeScadual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -599,6 +611,12 @@
     </Compile>
     <Compile Include="UI\User Accounts\frmLoging.Designer.cs">
       <DependentUpon>frmLoging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Accounts\frmUserAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\User Accounts\frmUserAccounts.Designer.cs">
+      <DependentUpon>frmUserAccounts.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -730,6 +748,9 @@
     <EmbeddedResource Include="UI\Asset\frmStyleLoading.resx">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutting report\frmCuttingDaliySelection.resx">
+      <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\dailyProductionDialog.resx">
       <DependentUpon>dailyProductionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -820,6 +841,9 @@
     <EmbeddedResource Include="UI\frmPurchaseOrder.resx">
       <DependentUpon>frmPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmRatio.resx">
+      <DependentUpon>frmRatio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmScaningTimeScadual.resx">
       <DependentUpon>frmScaningTimeScadual.cs</DependentUpon>
     </EmbeddedResource>
@@ -864,6 +888,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\User Accounts\frmLoging.resx">
       <DependentUpon>frmLoging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Accounts\frmUserAccounts.resx">
+      <DependentUpon>frmUserAccounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
@@ -985,7 +1012,9 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Loading.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

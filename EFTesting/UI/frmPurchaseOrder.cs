@@ -12,6 +12,8 @@ using ITRACK.models;
 using System.Diagnostics;
 using EFTesting.ViewModel;
 using ITRACK.Validator;
+using EFTesting.UI.User_Accounts;
+
 namespace EFTesting.UI
 {
     public partial class frmPurchaseOrder : DevExpress.XtraEditors.XtraForm
@@ -55,7 +57,8 @@ namespace EFTesting.UI
             marqueeProgressBarControl1.Show();
             lblProgress.Text = "looking For Defualt Company";
            _Company.CompanyID =   CVM.GetCompany();
-           if (_Company.CompanyID == 0) {
+            _Company.CompanyID = frmLoging._user.Employee.CompanyID;
+            if (_Company.CompanyID == 0) {
                btnAdd.Enabled = false;
                btnEdit.Enabled = false;
                MessageBox.Show("Please Add Defualt Company Before Get Started", "Defualt Company not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -70,12 +73,12 @@ namespace EFTesting.UI
         private PurchaseOrderHeader AssginPoHeader() {
             try {
 
-                PoHeader.PurchaseOrderHeaderID = txtPoNo.Text;
+                PoHeader.PurchaseOrderHeaderID = txtID.Text;
+                PoHeader.PoNo = txtPoNo.Text;
                 PoHeader.StyleID = txtStyleNo.Text;
-                PoHeader.Article = txtArticle.Text;
-                PoHeader.Season = txtSeason.Text;
+             
                 PoHeader.DeliveryTerms = cmbDterms.Text;
-                PoHeader.OrderPrice =Convert.ToDouble( txtOrderPrice.Text);
+              
                 PoHeader.StartDate = Convert.ToDateTime(txtStartDate.Text);
                 PoHeader.EndDate = Convert.ToDateTime(txtEndDate.Text);
                 PoHeader.Remark = txtRemark.Text;
@@ -165,12 +168,12 @@ namespace EFTesting.UI
 
                 foreach (var po in GetPoByID(ID))
                 {
-               txtPoNo.Text =  po.PurchaseOrderHeaderID;
+               txtID.Text =  po.PurchaseOrderHeaderID;
+                    txtPoNo.Text = po.PoNo;
                txtStyleNo.Text = po.StyleID;
-               txtArticle.Text =  po.Article  ;
-               txtSeason.Text = po.Season ;
+             
                cmbDterms.Text = po.DeliveryTerms;
-               txtOrderPrice.Text = Convert.ToString(po.OrderPrice) ;
+            
                txtStartDate.Text = Convert.ToString(po.StartDate);
                txtEndDate.Text = Convert.ToString(po.EndDate);
                txtRemark.Text = po.Remark;
@@ -198,10 +201,9 @@ namespace EFTesting.UI
             try {
                 txtPoNo.Text = "";
                 txtStyleNo.Text = "";
-                txtArticle.Text = "";
-                txtSeason.Text = "";
+             
                 cmbDterms.Text = "";
-                txtOrderPrice.Text = "";
+               
                 txtStartDate.Text = "";
                 txtEndDate.Text = "";
                 txtRemark.Text = "";
@@ -355,25 +357,14 @@ namespace EFTesting.UI
               return false;
           }
 
-          if (!validate.isPresent(txtArticle, "Article"))
-          {
-              return false;
-          }
+         
 
-          if (!validate.isPresent(txtSeason, "Season"))
-          {
-              return false;
-          }
 
           if (!validate.isPresent(cmbDterms, "Delivery Terms"))
           {
               return false;
           }
 
-          if (!validate.isPresent(txtOrderPrice, "Order Price"))
-          {
-              return false;
-          }
 
           if (!validate.isPresent(txtStartDate, "Start Date"))
           {
@@ -399,13 +390,61 @@ namespace EFTesting.UI
 
         }
 
+        int getPoCount()
+        {
+            try
+            {
+                GenaricRepository<PurchaseOrderHeader> _GRNRepo = new GenaricRepository<PurchaseOrderHeader>(new ItrackContext());
+                return _GRNRepo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+
+
+        void GetNewCode()
+        {
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "Po"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    txtID.Text = _Engine.GenarateNo(_No, getPoCount());
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
         private void frmPurchaseOrder_Load(object sender, EventArgs e)
         {
             marqueeProgressBarControl1.Hide();
             grdSearchStyle.Hide();
+            GetNewCode();
             grdSearchPo.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
+            ItrackContext _context = new ItrackContext();
+            _context.Database.Initialize(false);
             GetDefualtCompany();
         }
 
@@ -454,9 +493,42 @@ namespace EFTesting.UI
             editPo();
         }
 
+
+
+
+
+
+        void SearchPOrder(string _key)
+        {
+            try {
+             ItrackContext _context = new ItrackContext();
+
+                var items = (from item in _context.PurchaseOrderHeader
+                             where  item.Style.Company.CompanyID == _Company.CompanyID && (item.PoNo.Contains( _key) || item.StyleID.Contains(_key))
+                             select new { item.PurchaseOrderHeaderID, item.PoNo, item.StyleID, item.Style.Buyer.BuyerName }).ToList();
+
+                if (items.Count > 0)
+                {
+                    grdSearchPo.DataSource = items;
+                    grdSearchPo.Show();
+                }
+                else
+                {
+                    grdSearchPo.DataSource = null;
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         private void txtSearchBox_EditValueChanged(object sender, EventArgs e)
         {
-            SearchPo();
+            //  SearchPo();
+            SearchPOrder(txtSearchBox.Text);
         }
 
         private void txtSearchBox_KeyDown(object sender, KeyEventArgs e)
@@ -497,6 +569,7 @@ namespace EFTesting.UI
         private void btnNew_Click(object sender, EventArgs e)
         {
             Clear();
+            GetNewCode();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)

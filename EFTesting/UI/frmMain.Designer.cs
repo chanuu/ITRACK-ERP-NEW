@@ -93,6 +93,9 @@
             this.btncutPO = new DevExpress.XtraBars.BarButtonItem();
             this.btnStatus = new DevExpress.XtraBars.BarButtonItem();
             this.btnFab = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVeri = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRatio = new DevExpress.XtraBars.BarButtonItem();
             this.masters = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -102,6 +105,7 @@
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.config = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.reports = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -116,8 +120,6 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnVeri = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -314,9 +316,11 @@
             this.btncutPO,
             this.btnStatus,
             this.btnFab,
-            this.btnVeri});
+            this.btnVeri,
+            this.barButtonItem35,
+            this.btnRatio});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 50;
+            this.ribbonControl1.MaxItemId = 52;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.masters,
@@ -696,6 +700,7 @@
             this.btnCut.Id = 45;
             this.btnCut.Name = "btnCut";
             this.btnCut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCut_ItemClick);
             // 
             // btncutPO
             // 
@@ -720,6 +725,30 @@
             this.btnFab.LargeGlyph = global::EFTesting.Properties.Resources.barcode_folded_icon;
             this.btnFab.Name = "btnFab";
             this.btnFab.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnVeri
+            // 
+            this.btnVeri.Caption = "Asset Verification";
+            this.btnVeri.Glyph = global::EFTesting.Properties.Resources.barcode_folded_icon;
+            this.btnVeri.Id = 49;
+            this.btnVeri.Name = "btnVeri";
+            this.btnVeri.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem35
+            // 
+            this.barButtonItem35.Caption = "barButtonItem35";
+            this.barButtonItem35.Id = 50;
+            this.barButtonItem35.Name = "barButtonItem35";
+            this.barButtonItem35.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem35_ItemClick);
+            // 
+            // btnRatio
+            // 
+            this.btnRatio.Caption = "Ratio";
+            this.btnRatio.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnRatio.Id = 51;
+            this.btnRatio.Name = "btnRatio";
+            this.btnRatio.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRatio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRatio_ItemClick);
             // 
             // masters
             // 
@@ -759,6 +788,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnIssue);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBundle);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCuttingLedger);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnRatio);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Mater Files";
             // 
@@ -809,6 +839,12 @@
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Master Files";
             // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnVeri);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Asset Report";
+            // 
             // config
             // 
             this.config.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -822,6 +858,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem28);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem35);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // reports
@@ -909,20 +946,6 @@
             this.barButtonItem34.Id = 45;
             this.barButtonItem34.Name = "barButtonItem34";
             this.barButtonItem34.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnVeri);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Asset Report";
-            // 
-            // btnVeri
-            // 
-            this.btnVeri.Caption = "Asset Verification";
-            this.btnVeri.Glyph = global::EFTesting.Properties.Resources.barcode_folded_icon;
-            this.btnVeri.Id = 49;
-            this.btnVeri.Name = "btnVeri";
-            this.btnVeri.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // frmMain
             // 
@@ -1037,5 +1060,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem34;
         private DevExpress.XtraBars.BarButtonItem btnVeri;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem35;
+        private DevExpress.XtraBars.BarButtonItem btnRatio;
     }
 }

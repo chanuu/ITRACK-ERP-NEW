@@ -12,6 +12,8 @@ using ITRACK.models;
 using System.Linq.Expressions;
 using ITRACK.Validator;
 using System.Diagnostics;
+using EFTesting.ViewModel;
+using EFTesting.UI.User_Accounts;
 
 namespace EFTesting.UI
 {
@@ -46,7 +48,7 @@ namespace EFTesting.UI
                     txtRemark.Text = "";
                     txtBuyerName.Text = "";
                     cmbGarmentType.Text = "";
-                    cmbStatus.Text = "";
+                   
                     txtStyleNo.Focus();
                     grdSearchBuyer.Hide();
                     btnClose.Hide();
@@ -64,12 +66,13 @@ namespace EFTesting.UI
                     _Company.CompanyID = item.CompanyID;
 
                 }
-                _Style.StyleID = txtStyleNo.Text;
+                _Style.StyleID = txtID.Text;
+                _Style.StyleNo = txtStyleNo.Text;
                 _Style.Article = txtArticle.Text;
                 _Style.Season = txtSeason.Text;
                 _Style.CompanyID = _Company.CompanyID;
                 _Style.Remark = txtRemark.Text;
-                _Style.Status = cmbStatus.Text; 
+                _Style.Status = "Pending"; 
                 _Style.BuyerID = _Buyer.BuyerID;
                 _Style.GarmantType = cmbGarmentType.Text;
                 _Style.FeedingRule = cmbFeedingRule.Text;
@@ -109,6 +112,8 @@ namespace EFTesting.UI
 
                 //// get expresttion to labda objet 
                 //var lambda1 = Expression.Lambda<Func<Buyer, bool>>(andExp, argParam);
+
+               
 
                 ItrackContext _context = new ItrackContext();
                 var selected = (from item in _context.Buyer
@@ -150,6 +155,33 @@ namespace EFTesting.UI
                 MessageBox.Show(ex.Message, "Error - B-0002", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
+        }
+
+
+
+        void StyleSearch(string _key) {
+            try {
+                ItrackContext _context = new ItrackContext();
+                var styles = (from item in _context.Style
+                              where item.CompanyID == _Company.CompanyID && (item.StyleNo.Contains( _key) || item.Buyer.BuyerName.Contains( _key))
+                              select new { item.StyleID, item.StyleNo, item.BuyerID, item.Remark }).ToList();
+
+                if(styles.Count > 0)
+                {
+                    grdSearchStyle.DataSource = styles;
+                    grdSearchStyle.Show();
+                }
+                else
+                {
+                    grdSearchStyle.DataSource = null;
+                }
+
+
+            }
+            catch (Exception ex) {
+
+            }
+
         }
 
         private void AddStyle()
@@ -197,10 +229,11 @@ namespace EFTesting.UI
 
                 foreach (var style in GetStyleByID(ID))
                 {
-                    txtStyleNo.Text = style.StyleID;
+                    txtStyleNo.Text = style.StyleNo;
+                    txtID.Text = style.StyleID;
                     txtBuyerName.Text = style.Buyer.BuyerName;
                     txtArticle.Text = style.Article;
-                    cmbStatus.Text = style.Status;
+                    
                     cmbGarmentType.Text = style.GarmantType;
                     txtRemark.Text = style.Remark;
                     _Company.CompanyID = style.CompanyID;
@@ -252,7 +285,7 @@ namespace EFTesting.UI
                 fDetails.Color = txtFabricColor.Text;
                 fDetails.PlanedConsumtion =Convert.ToDouble( txtPlanedConsumtion.Text);
                 fDetails.Remark = txtfRemark.Text;
-                fDetails.StyleID = txtStyleNo.Text;
+                fDetails.StyleID = txtID.Text;
                 fDetails.FabricDetailsID = this.fDetailsID;
                 return fDetails;
             }
@@ -373,11 +406,32 @@ namespace EFTesting.UI
 
         }
 
+        CompanyVM CVM = new CompanyVM();
+
+        private void GetDefualtCompany()
+        {
+            
+            
+            _Company.CompanyID = CVM.GetCompany();
+
+            _Company.CompanyID = frmLoging._user.Employee.CompanyID;
+            if (_Company.CompanyID == 0)
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                MessageBox.Show("Please Add Defualt Company Before Get Started", "Defualt Company not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
+
+        }
+
+
         private void frmStyleMaster_Load(object sender, EventArgs e)
         {
             grdSearchBuyer.Hide();
             grdSearchStyle.Hide();
             txtSearchBox.Hide();
+            GetDefualtCompany();
             btnClose.Hide();
             try {
                 ItrackContext _context = new ItrackContext();
@@ -395,7 +449,8 @@ namespace EFTesting.UI
 
         private void txtSearchBox_EditValueChanged(object sender, EventArgs e)
         {
-            SearchStyle();
+            // SearchStyle();
+            StyleSearch(txtSearchBox.Text);
         }
 
         private void txtSearchBox_KeyDown(object sender, KeyEventArgs e)
@@ -446,7 +501,53 @@ namespace EFTesting.UI
         private void btnNew_Click(object sender, EventArgs e)
         {
             Clear();
+            GetNewCode();
+
         }
+
+        int getPoCount()
+        {
+            try
+            {
+                GenaricRepository<Style> _GRNRepo = new GenaricRepository<Style>(new ItrackContext());
+                return _GRNRepo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+        void GetNewCode()
+        {
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "Style"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    txtID.Text = _Engine.GenarateNo(_No, getPoCount());
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -484,10 +585,7 @@ namespace EFTesting.UI
                 return false;
             }
 
-            if (!Validator.isPresent(cmbStatus, "Status"))
-            {
-                return false;
-            }
+           
             if (!Validator.isPresent(cmbFeedingRule, "Feeding Rule"))
             {
                 return false;
@@ -535,7 +633,7 @@ namespace EFTesting.UI
             if (isValidFabricDetails() == true)
             {
                 AddFabricDetails();
-                GetFabricList(txtStyleNo.Text);
+                GetFabricList(txtID.Text);
             }
             
             

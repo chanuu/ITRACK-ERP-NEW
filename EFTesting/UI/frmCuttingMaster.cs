@@ -21,7 +21,7 @@ using DevExpress.XtraReports.UI;
 using DevExpress.XtraReports.UI.PivotGrid;
 using DevExpress.XtraPivotGrid;
 using EFTesting.ViewModel;
-
+using EFTesting.UI.User_Accounts;
 
 namespace EFTesting.UI
 {
@@ -190,7 +190,7 @@ namespace EFTesting.UI
 
                 GenaricRepository<CuttingItem> _CuttingItemRepository = new GenaricRepository<CuttingItem>(new ItrackContext());
 
-                var result = from item in _CuttingItemRepository.GetAll() where (item.MarkerNo == item.MarkerNo  && item.Size == _item.Size && item.Color == _item.Color && item.Length   == _item.Length && _item.Date == item.Date && _item.MarkerNo == item.MarkerNo) select item;
+                var result = from item in _CuttingItemRepository.GetAll() where (item.MarkerNo == item.MarkerNo  && item.Size == _item.Size && item.Color == _item.Color && item.LotNo   == _item.LotNo && _item.Date == item.Date && _item.MarkerNo == item.MarkerNo) select item;
                 if (result.Count() <= 0)
                 {
                     return true;
@@ -281,6 +281,33 @@ namespace EFTesting.UI
             }
             catch(Exception ex){
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+
+
+
+        void SearchCutting(string _key)
+        {
+            try {
+                ItrackContext _context = new ItrackContext();
+                var items = (from item in _context.CuttingHeader
+                             where item.Style.CompanyID == _Company.CompanyID && item.StyleID.Contains(_key)
+                             select new { item.CuttingHeaderID, item.StyleID, item.Remark }).ToList();
+
+                if (items.Count >0)
+                {
+                    grdSearch.DataSource = items;
+                    grdSearch.Show();
+                }
+                else
+                {
+                    grdSearch.DataSource = null;
+                   
+                }
+
+            }
+            catch (Exception ex) {
             }
         }
 
@@ -428,7 +455,7 @@ namespace EFTesting.UI
 
                 var selectedColumn = from item in GetCuttingItemByID(_headerId)
                                      select
-                                     new {item.CuttingItemID,item.Date, item.PoNo,item.MarkerNo,item.LineNo,item.FabricType,item.Color,item.Size,item.Length,item.NoOfLayer,item.NoOfItem };
+                                     new {item.CuttingItemID,item.Date, item.PoNo,item.MarkerNo,item.LineNo,item.FabricType,item.Color,item.Size,item.Length,item.LotNo,item.NoOfLayer,item.NoOfItem };
                 grdItemList.DataSource = selectedColumn;
                 gridView1.Columns["CuttingHeader"].Visible = false;
                 gridView1.Columns["CuttingHeaderID"].Visible = false;
@@ -646,7 +673,8 @@ namespace EFTesting.UI
         private void txtSearchBox_EditValueChanged(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
-            SearchCuttingHeader();
+            // SearchCuttingHeader();
+            SearchCutting(txtSearchBox.Text);
             splashScreenManager1.CloseWaitForm();
         }
 
@@ -884,12 +912,36 @@ namespace EFTesting.UI
 
         }
 
+
+
+        CompanyVM CVM = new CompanyVM();
+        Company _Company = new Company();
+
+        private void GetDefualtCompany()
+        {
+
+           
+            _Company.CompanyID = CVM.GetCompany();
+            _Company.CompanyID = frmLoging._user.Employee.CompanyID;
+            if (_Company.CompanyID == 0)
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                MessageBox.Show("Please Add Defualt Company Before Get Started", "Defualt Company not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+
         private void frmCuttingMaster_Load(object sender, EventArgs e)
         {
             grdSearch.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
             grdSearchStyle.Hide();
+            grdRatio.Hide();
+            GetDefualtCompany();
         
         }
 
@@ -1064,6 +1116,7 @@ namespace EFTesting.UI
           List<CutReport> lst = new List<CutReport>();
 
           foreach (var item in _CuttingItemRepo.GetAll().ToList().Where(x=>x.CuttingHeader.StyleID==txtStyleNo.Text)) {
+
               lst.Add(new CutReport {StyleNo=item.CuttingHeader.StyleID, Date= item.Date,PoNo = item.PoNo,Color=item.Color,Size=item.Size,Pcs=item.NoOfItem});
           }
           return lst;
@@ -1215,6 +1268,250 @@ namespace EFTesting.UI
             grdSearch.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
+        }
+
+        private void txtRatioNo_EditValueChanged(object sender, EventArgs e)
+        {
+            Search(txtRatioNo.Text);
+        }
+
+
+
+
+
+        void Search(string _key)
+        {
+            try
+            {
+                ItrackContext _context = new ItrackContext();
+                var items = (from item in _context.CuttingRatio
+                             where item.StyleID.Contains(_key)
+                             select new { item.CuttingRatioID, item.StyleID, item.Remark }).ToList();
+
+                if (items.Count > 0)
+                {
+                    grdRatio.Show();
+                    grdRatio.DataSource = items;
+                }
+                else
+                {
+                    grdSearch.DataSource = null;
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void txtRatioNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up || e.KeyData == Keys.Down)
+            {
+                grdRatio.Select();
+            }
+            else if (e.KeyData == Keys.Escape)
+            {
+                grdRatio.Hide();
+             
+
+            }
+        }
+
+        List<RatioItem> lstRatio = new List<RatioItem>();
+
+        int _itemPerRatio = 0;
+        void SetItem(string _id)
+        {
+            try
+            {
+                ItrackContext _context = new ItrackContext();
+                var items = (from item in _context.RatioItem
+
+                             where item.CuttingRatioID == _id
+
+                             select item).ToList();
+                lstRatio.Clear();
+                foreach (var ratio in items)
+                {
+                    ratio.RatioItemID = lstRatio.Count + 1;
+                    lstRatio.Add(ratio);
+                    _itemPerRatio = _itemPerRatio + ratio.Lot;
+                }
+
+                var selected = (from r in lstRatio
+                                select new { r.RatioItemID, r.Size, r.Lot }).ToList();
+
+                grdRaio.DataSource = selected;
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+
+
+
+        double _length = 0;
+        void GetHeader(string _ID)
+        {
+            try
+            {
+                ItrackContext _context = new ItrackContext();
+                var result = (from item in _context.CuttingRatio
+                              where item.CuttingRatioID == _ID
+                              select item).ToList().Last();
+
+                txtLen.Text = result.Length;
+
+                txtColor.Text = result.Color;
+
+                _length = result.MarkerLength;
+           
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+        private void grdRatio_KeyDown(object sender, KeyEventArgs e)
+        {
+            string No = gridView6.GetFocusedRowCellValue("CuttingRatioID").ToString();
+            txtRatioNo.Text = No;
+            SetItem(No);
+            GetHeader(No);
+            grdRatio.Hide();
+            grdRaio.Show();
+
+
+
+
+
+
+
+
+
+        
+        }
+
+        private void xtraTabPage4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtNoOfFlys_Leave(object sender, EventArgs e)
+        {
+            lblStat.Text ="Estimated Fabric Consumption is " + Convert.ToString(_length * Convert.ToDouble(txtNoOfFlys.Text))+"m for Maker No:"+txtMarkerNo.Text+"  ,Single Pcs Consumption is:"+ _length/_itemPerRatio +" m and its produce  " + _itemPerRatio*Convert.ToInt16( txtNoOfFlys.Text)+" Pcs";
+        }
+
+
+
+
+        void insertCutItem()
+        {
+            try {
+
+                foreach(var item in lstRatio)
+                {
+                    CuttingItem _cuttingItem = new CuttingItem();
+                    _cuttingItem.PrinteTime = "None";
+                    _cuttingItem.CreatedDate = DateTime.Now;
+                    _cuttingItem.CreatedBy = "Admin";
+                    _cuttingItem.CreatedTime = DateTime.Now.ToString();
+                    int i = 0;
+
+                   for(i = 0; i < item.Lot; i++)
+                    {
+
+
+                        int lastCut = 0;
+                        try
+                        {
+                            lastCut = Convert.ToInt16(GetLCutNoByLine(txtStyleNo.Text, txtlineNo.Text));
+                        }
+                        catch (Exception ex)
+                        {
+                            lastCut = 0;
+                        }
+
+
+
+                        _cuttingItem.CutNo = Convert.ToString(lastCut + 1);
+
+                        _cuttingItem.LotNo = i + 1;
+
+                        _cuttingItem.PoNo = txtPo.Text;
+                        _cuttingItem.CuttingHeaderID = txtCuttingTicketNo.Text;
+                        _cuttingItem.MarkerNo = txtMkrNo.Text;
+                        _cuttingItem.Color = txtColor.Text;
+                        _cuttingItem.Size = item.Size;
+                        _cuttingItem.Length = txtLen.Text;
+                        _cuttingItem.NoOfItem = Convert.ToInt16(txtNoOfFlys.Text);
+                        _cuttingItem.NoOfLayer = Convert.ToInt16(txtNoOfFlys.Text);
+
+                        _cuttingItem.FabricType = txtfabricType.Text;
+                        _cuttingItem.CutNo = GetLCutNoByStyle(txtStyleNo.Text);
+                        _cuttingItem.LineNo = "N/A";
+                        _cuttingItem.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                        _cuttingItem.isGenaratedTags = false;
+                        _cuttingItem.GenaratedTime = "None";
+                        _cuttingItem.isPrinted = false;
+
+
+                        GenaricRepository<CuttingItem> _CuttingItemRepo = new GenaricRepository<CuttingItem>(new ItrackContext());
+
+                        if (isEligbleCuttingItem(_cuttingItem) == true)
+                        {
+
+
+
+                            _CuttingItemRepo.Insert(_cuttingItem);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Already Exist", "Error - B-0003", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+
+                        MessageBox.Show("Save Sucessfully !", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FeedCuttingItem(txtCuttingTicketNo.Text);
+
+                    }
+
+
+                   
+
+
+
+                }
+            }
+            catch (Exception ex) {
+            }
+        }
+
+
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            insertCutItem();
+        }
+
+        private void grdSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

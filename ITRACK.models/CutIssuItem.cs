@@ -17,6 +17,8 @@ namespace ITRACK.models
 
         public int LotNo { get; set; }
 
+        public string Length { get; set; }
+
         public string Color { get; set; }
 
         public string Size { get; set; }

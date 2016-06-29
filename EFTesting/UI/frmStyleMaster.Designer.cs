@@ -38,6 +38,7 @@
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.grdSearchBuyer = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmbForecastingRule = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -45,7 +46,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmbStatus = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cmbGarmentType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,10 +91,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSearchBuyer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbForecastingRule.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGarmentType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeason.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticle.Properties)).BeginInit();
@@ -209,13 +209,13 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.txtID);
             this.xtraTabPage1.Controls.Add(this.grdSearchBuyer);
             this.xtraTabPage1.Controls.Add(this.cmbForecastingRule);
             this.xtraTabPage1.Controls.Add(this.label14);
             this.xtraTabPage1.Controls.Add(this.label13);
             this.xtraTabPage1.Controls.Add(this.label12);
             this.xtraTabPage1.Controls.Add(this.label11);
-            this.xtraTabPage1.Controls.Add(this.cmbStatus);
             this.xtraTabPage1.Controls.Add(this.cmbGarmentType);
             this.xtraTabPage1.Controls.Add(this.label10);
             this.xtraTabPage1.Controls.Add(this.label6);
@@ -235,13 +235,24 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(1134, 401);
             this.xtraTabPage1.Text = "Header";
             // 
+            // txtID
+            // 
+            this.txtID.EditValue = "";
+            this.txtID.Location = new System.Drawing.Point(168, 66);
+            this.txtID.Name = "txtID";
+            this.txtID.Properties.AccessibleDescription = "";
+            this.txtID.Properties.NullValuePrompt = "Please Enter Buyer Name";
+            this.txtID.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtID.Size = new System.Drawing.Size(251, 20);
+            this.txtID.TabIndex = 0;
+            // 
             // grdSearchBuyer
             // 
             this.grdSearchBuyer.Cursor = System.Windows.Forms.Cursors.Default;
             this.grdSearchBuyer.Location = new System.Drawing.Point(168, 125);
             this.grdSearchBuyer.MainView = this.gridView1;
             this.grdSearchBuyer.Name = "grdSearchBuyer";
-            this.grdSearchBuyer.Size = new System.Drawing.Size(741, 143);
+            this.grdSearchBuyer.Size = new System.Drawing.Size(741, 213);
             this.grdSearchBuyer.TabIndex = 35;
             this.grdSearchBuyer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -251,6 +262,7 @@
             // 
             this.gridView1.GridControl = this.grdSearchBuyer;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // cmbForecastingRule
             // 
@@ -302,20 +314,6 @@
             this.label11.TabIndex = 36;
             this.label11.Text = "General Style Infromation / Header Information";
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Location = new System.Drawing.Point(620, 66);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbStatus.Properties.Items.AddRange(new object[] {
-            "Pending ",
-            "Complted"});
-            this.cmbStatus.Properties.NullValuePrompt = "Select Status";
-            this.cmbStatus.Properties.NullValuePromptShowForEmptyValue = true;
-            this.cmbStatus.Size = new System.Drawing.Size(199, 20);
-            this.cmbStatus.TabIndex = 6;
-            // 
             // cmbGarmentType
             // 
             this.cmbGarmentType.Location = new System.Drawing.Point(168, 231);
@@ -326,8 +324,10 @@
             "Shirt",
             "Pant ",
             "Blouse",
-            "Trowser",
-            "Jacket"});
+            "Trouser",
+            "Jacket",
+            "Skirt",
+            "Dress"});
             this.cmbGarmentType.Properties.NullValuePrompt = "Please Select Garment Type";
             this.cmbGarmentType.Properties.NullValuePromptShowForEmptyValue = true;
             this.cmbGarmentType.Size = new System.Drawing.Size(199, 20);
@@ -338,9 +338,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(502, 69);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 32;
-            this.label10.Text = "Status ";
+            this.label10.Text = "Style No";
             // 
             // label6
             // 
@@ -437,14 +437,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Style No";
+            this.label1.Text = "Style ID";
             // 
             // txtStyleNo
             // 
             this.txtStyleNo.EditValue = "";
-            this.txtStyleNo.Location = new System.Drawing.Point(168, 66);
+            this.txtStyleNo.Location = new System.Drawing.Point(620, 66);
             this.txtStyleNo.Name = "txtStyleNo";
             this.txtStyleNo.Properties.AccessibleDescription = "";
             this.txtStyleNo.Properties.NullValuePrompt = "Please Enter Style No";
@@ -737,7 +737,7 @@
             this.grdSearchStyle.Location = new System.Drawing.Point(12, 57);
             this.grdSearchStyle.MainView = this.gridView2;
             this.grdSearchStyle.Name = "grdSearchStyle";
-            this.grdSearchStyle.Size = new System.Drawing.Size(1165, 375);
+            this.grdSearchStyle.Size = new System.Drawing.Size(1165, 351);
             this.grdSearchStyle.TabIndex = 38;
             this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -747,6 +747,7 @@
             // 
             this.gridView2.GridControl = this.grdSearchStyle;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // frmStyleMaster
             // 
@@ -777,10 +778,10 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSearchBuyer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbForecastingRule.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGarmentType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeason.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticle.Properties)).EndInit();
@@ -831,7 +832,6 @@
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.TextEdit txtSeason;
         private System.Windows.Forms.Label label6;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbStatus;
         private DevExpress.XtraEditors.ComboBoxEdit cmbGarmentType;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
@@ -868,5 +868,6 @@
         private DevExpress.XtraGrid.GridControl grdFabricList;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraEditors.TextEdit txtID;
     }
 }
