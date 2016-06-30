@@ -1,5 +1,6 @@
 ﻿using DevExpress.Office.Utils;
 using EFTesting.UI;
+using EFTesting.UI.User_Accounts;
 using ITRACK.DBConfiguration;
 using ITRACK.models;
 using System;
@@ -20,6 +21,8 @@ namespace EFTesting
         [STAThread]
         static void Main()
         {
+
+            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(SplashScreen1));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ConnectionDetails Con = new ConnectionDetails();
@@ -48,7 +51,7 @@ namespace EFTesting
             Application.SetCompatibleTextRenderingDefault(false);
             //Enable title bar skinning 
             DevExpress.Skins.SkinManager.EnableFormSkins();
-            Application.Run(new UI.frmMain());
+            Application.Run(new frmLoging());
 
                     
                   //  new ItrackContextInitializer().InitializeDatabase(ctx);

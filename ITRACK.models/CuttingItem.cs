@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +10,12 @@ namespace ITRACK.models
 {
    public class CuttingItem:BaseEntity
     {
+
+        [Key]
+        [Column(Order = 1)]
         public int CuttingItemID { get; set; }
+
+       
 
         public string CutNo { get; set; }
 
@@ -32,6 +39,8 @@ namespace ITRACK.models
         public string Size { get; set; }
                 
         public string Length { get; set; }
+
+        public int LotNo { get; set; }
 
         public int NoOfItem { get; set; }
 

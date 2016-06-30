@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,11 @@ namespace ITRACK.models
    public class Style:BaseEntity
     {
 
-        [Key] 
+        [Key]
+        [Column(Order = 1)]
         public string StyleID { get; set; }
+
+        public string StyleNo { get; set; }
 
         public string Article { get; set; }
 
@@ -62,5 +66,8 @@ namespace ITRACK.models
 
 
         public virtual ICollection<StyleLoading> StyleLoading { get; set; }
+
+        public virtual ICollection<CuttingRatio> CuttingRatio { get; set; }
+
     }
 }

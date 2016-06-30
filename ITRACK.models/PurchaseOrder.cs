@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +10,17 @@ namespace ITRACK.models
 {
   public  class PurchaseOrderHeader:BaseEntity
     {
-        public string PurchaseOrderHeaderID { get; set; }
-        public string Article { get; set; }
 
-        public string Season { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        public string PurchaseOrderHeaderID { get; set; }
+
+
+        public string PoNo { get; set; }
 
         public string DeliveryTerms { get; set; }
 
         public bool PlaceWashingFactory { get; set; }
-
-        public double OrderPrice { get; set; }
-
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }

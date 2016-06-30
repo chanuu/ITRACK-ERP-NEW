@@ -12,6 +12,10 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Helpers;
 using EFTesting.UI.Inventory;
 using EFTesting.UI.Asset;
+using DevExpress.LookAndFeel;
+using EFTesting.UI.User_Accounts;
+using EFTesting.UI.Cutting_report;
+using System.Diagnostics;
 
 namespace EFTesting.UI
 {
@@ -27,9 +31,12 @@ namespace EFTesting.UI
            // DevExpress.UserSkins.TouchSkins.Register();
             DevExpress.UserSkins.BonusSkins.Register();
             
-            ribbonControl1.Minimized = true;
-
             
+            ribbonControl1.Minimized = true;
+            UserLookAndFeel.Default.SkinName = "Metropolis";
+            Debug.WriteLine(frmLoging._user.Employee.Company.CompanyName);
+
+
         }
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
@@ -396,16 +403,25 @@ namespace EFTesting.UI
         private void barButtonItem35_ItemClick(object sender, ItemClickEventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
-            frmAssetRequisition objfrmMChild = new frmAssetRequisition();
+            frmUserAccounts objfrmMChild = new frmUserAccounts();
             objfrmMChild.MdiParent = this;
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();
         }
 
-        private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnRatio_ItemClick(object sender, ItemClickEventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
-            frmRunningNo objfrmMChild = new frmRunningNo();
+            frmRatio objfrmMChild = new frmRatio();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
+
+        private void btnCut_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmCuttingDaliySelection objfrmMChild = new frmCuttingDaliySelection();
             objfrmMChild.MdiParent = this;
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();

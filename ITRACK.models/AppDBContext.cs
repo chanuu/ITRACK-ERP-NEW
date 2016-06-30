@@ -158,6 +158,12 @@ namespace ITRACK.models
         public DbSet<AssetRequisition> AssetRequisition { get; set; }
 
         public DbSet<MachineRequirementItem> MachineRequirementItem { get; set; }
+
+
+        public DbSet<CuttingRatio> CuttingRatio { get; set; }
+
+        public DbSet<RatioItem> RatioItem { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
           modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();

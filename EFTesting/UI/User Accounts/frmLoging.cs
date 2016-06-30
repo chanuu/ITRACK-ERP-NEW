@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.LookAndFeel;
+using ITRACK.models;
 
 namespace EFTesting.UI.User_Accounts
 {
@@ -16,6 +18,55 @@ namespace EFTesting.UI.User_Accounts
         public frmLoging()
         {
             InitializeComponent();
+        }
+
+        private void frmLoging_Load(object sender, EventArgs e)
+        {
+            DevExpress.UserSkins.BonusSkins.Register();
+            UserLookAndFeel.Default.SkinName = "Metropolis";
+
+        }
+
+        public static User _user { get; set; }
+
+        bool Verrify(string _userName,string _pword) {
+
+            try {
+
+                ItrackContext _context = new ItrackContext();
+                var users =( from item in _context.User
+                            where item.Password == _pword && item.UserName == _userName
+
+                            select item).ToList();
+
+                if(users.Count > 0)
+                {
+                    _user = users.Last();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex) {
+                return false;
+            }
+
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if(Verrify(txtUserName.Text,txtPWord.Text) == true)
+            {
+                frmMain main = new frmMain();
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Login Failed !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

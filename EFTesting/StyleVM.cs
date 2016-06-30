@@ -26,8 +26,8 @@ namespace EFTesting
 
                 //create expression 
                 ParameterExpression argParam = Expression.Parameter(typeof(Style), "s");
-                Expression nameProperty = Expression.Property(argParam, "StyleID");
-                Expression nameProperty2 = Expression.Property(argParam, "StyleID");
+                Expression nameProperty = Expression.Property(argParam, "StyleNo");
+                Expression nameProperty2 = Expression.Property(argParam, "StyleNo");
 
 
               
@@ -44,7 +44,7 @@ namespace EFTesting
                 // get expresttion to labda objet 
                 var lambda1 = Expression.Lambda<Func<Style, bool>>(andExp, argParam);
                 // pass object to query 
-                var selected = from item in _StyleRepository.SearchFor(lambda1).ToList() select new { item.StyleID, item.Buyer.BuyerName, item.GarmantType, item.Article };
+                var selected = from item in _StyleRepository.SearchFor(lambda1).ToList() select new {item.StyleID, item.StyleNo, item.Buyer.BuyerName, item.GarmantType, item.Article };
 
                 //check is record exist in selected item
                 if (selected.Count() > 0)

@@ -54,6 +54,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCuttingTicketNo = new DevExpress.XtraEditors.TextEdit();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.grdRatio = new DevExpress.XtraGrid.GridControl();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.lblStat = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtLen = new DevExpress.XtraEditors.TextEdit();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtColor = new DevExpress.XtraEditors.TextEdit();
+            this.grdRaio = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtMkrNo = new DevExpress.XtraEditors.TextEdit();
+            this.btnInsert = new DevExpress.XtraEditors.SimpleButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtNoOfFlys = new DevExpress.XtraEditors.TextEdit();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtPo = new DevExpress.XtraEditors.TextEdit();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtRatioNo = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.txtlineNo = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label19 = new System.Windows.Forms.Label();
@@ -103,14 +123,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.btnAddFabric = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
-            this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.dsetCutReport1 = new EFTesting.Reports.Dataset.dsetCutReport();
-            this.fieldDate1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldLineNo1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldColor1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldSize1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldNoOfItem1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.label12 = new System.Windows.Forms.Label();
             this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.label13 = new System.Windows.Forms.Label();
@@ -134,6 +147,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbItemType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCuttingTicketNo.Properties)).BeginInit();
+            this.xtraTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRatio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRaio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMkrNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNoOfFlys.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRatioNo.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtlineNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPoNo.Properties)).BeginInit();
@@ -157,8 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRollHegiht.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollWidth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoleNo.Properties)).BeginInit();
-            this.xtraTabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsetCutReport1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
@@ -252,9 +274,9 @@
             this.xtraTabControl1.TabIndex = 41;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
+            this.xtraTabPage4,
             this.xtraTabPage2,
-            this.xtraTabPage3,
-            this.xtraTabPage4});
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
@@ -451,6 +473,211 @@
             this.txtCuttingTicketNo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtCuttingTicketNo.Size = new System.Drawing.Size(251, 20);
             this.txtCuttingTicketNo.TabIndex = 1;
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.grdRatio);
+            this.xtraTabPage4.Controls.Add(this.btnCancel);
+            this.xtraTabPage4.Controls.Add(this.lblStat);
+            this.xtraTabPage4.Controls.Add(this.label36);
+            this.xtraTabPage4.Controls.Add(this.txtLen);
+            this.xtraTabPage4.Controls.Add(this.label35);
+            this.xtraTabPage4.Controls.Add(this.txtColor);
+            this.xtraTabPage4.Controls.Add(this.grdRaio);
+            this.xtraTabPage4.Controls.Add(this.label34);
+            this.xtraTabPage4.Controls.Add(this.txtMkrNo);
+            this.xtraTabPage4.Controls.Add(this.btnInsert);
+            this.xtraTabPage4.Controls.Add(this.label21);
+            this.xtraTabPage4.Controls.Add(this.txtNoOfFlys);
+            this.xtraTabPage4.Controls.Add(this.label20);
+            this.xtraTabPage4.Controls.Add(this.txtPo);
+            this.xtraTabPage4.Controls.Add(this.label8);
+            this.xtraTabPage4.Controls.Add(this.txtRatioNo);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(1236, 446);
+            this.xtraTabPage4.Text = "Marker/Ratio";
+            this.xtraTabPage4.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage4_Paint);
+            // 
+            // grdRatio
+            // 
+            this.grdRatio.Location = new System.Drawing.Point(46, 46);
+            this.grdRatio.MainView = this.gridView6;
+            this.grdRatio.Name = "grdRatio";
+            this.grdRatio.Size = new System.Drawing.Size(618, 225);
+            this.grdRatio.TabIndex = 97;
+            this.grdRatio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView6});
+            this.grdRatio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdRatio_KeyDown);
+            // 
+            // gridView6
+            // 
+            this.gridView6.GridControl = this.grdRatio;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(207, 179);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 106;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // lblStat
+            // 
+            this.lblStat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblStat.Location = new System.Drawing.Point(43, 246);
+            this.lblStat.Name = "lblStat";
+            this.lblStat.Size = new System.Drawing.Size(383, 79);
+            this.lblStat.TabIndex = 105;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(232, 49);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 13);
+            this.label36.TabIndex = 104;
+            this.label36.Text = "Length";
+            // 
+            // txtLen
+            // 
+            this.txtLen.EditValue = "";
+            this.txtLen.Location = new System.Drawing.Point(278, 46);
+            this.txtLen.Name = "txtLen";
+            this.txtLen.Properties.AccessibleDescription = "";
+            this.txtLen.Properties.NullValuePrompt = "Please Enter Line Number";
+            this.txtLen.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtLen.Size = new System.Drawing.Size(99, 20);
+            this.txtLen.TabIndex = 103;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(46, 49);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(32, 13);
+            this.label35.TabIndex = 102;
+            this.label35.Text = "Color";
+            // 
+            // txtColor
+            // 
+            this.txtColor.EditValue = "";
+            this.txtColor.Location = new System.Drawing.Point(126, 46);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Properties.AccessibleDescription = "";
+            this.txtColor.Properties.NullValuePrompt = "Please Enter Line Number";
+            this.txtColor.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtColor.Size = new System.Drawing.Size(100, 20);
+            this.txtColor.TabIndex = 101;
+            // 
+            // grdRaio
+            // 
+            this.grdRaio.Location = new System.Drawing.Point(455, 20);
+            this.grdRaio.MainView = this.gridView5;
+            this.grdRaio.Name = "grdRaio";
+            this.grdRaio.Size = new System.Drawing.Size(537, 251);
+            this.grdRaio.TabIndex = 100;
+            this.grdRaio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            // 
+            // gridView5
+            // 
+            this.gridView5.GridControl = this.grdRaio;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(46, 84);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(56, 13);
+            this.label34.TabIndex = 99;
+            this.label34.Text = "Marker No";
+            // 
+            // txtMkrNo
+            // 
+            this.txtMkrNo.EditValue = "";
+            this.txtMkrNo.Location = new System.Drawing.Point(126, 81);
+            this.txtMkrNo.Name = "txtMkrNo";
+            this.txtMkrNo.Properties.AccessibleDescription = "";
+            this.txtMkrNo.Properties.NullValuePrompt = "Please Enter Line Number";
+            this.txtMkrNo.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtMkrNo.Size = new System.Drawing.Size(251, 20);
+            this.txtMkrNo.TabIndex = 98;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Location = new System.Drawing.Point(126, 179);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.TabIndex = 94;
+            this.btnInsert.Text = "Add";
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(46, 146);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(42, 13);
+            this.label21.TabIndex = 93;
+            this.label21.Text = "No Flys";
+            // 
+            // txtNoOfFlys
+            // 
+            this.txtNoOfFlys.EditValue = "";
+            this.txtNoOfFlys.Location = new System.Drawing.Point(126, 143);
+            this.txtNoOfFlys.Name = "txtNoOfFlys";
+            this.txtNoOfFlys.Properties.AccessibleDescription = "";
+            this.txtNoOfFlys.Properties.NullValuePrompt = "Please Enter Line Number";
+            this.txtNoOfFlys.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtNoOfFlys.Size = new System.Drawing.Size(251, 20);
+            this.txtNoOfFlys.TabIndex = 92;
+            this.txtNoOfFlys.Leave += new System.EventHandler(this.txtNoOfFlys_Leave);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(46, 113);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 13);
+            this.label20.TabIndex = 91;
+            this.label20.Text = "Po No";
+            // 
+            // txtPo
+            // 
+            this.txtPo.EditValue = "";
+            this.txtPo.Location = new System.Drawing.Point(126, 110);
+            this.txtPo.Name = "txtPo";
+            this.txtPo.Properties.AccessibleDescription = "";
+            this.txtPo.Properties.NullValuePrompt = "Please Enter Line Number";
+            this.txtPo.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtPo.Size = new System.Drawing.Size(251, 20);
+            this.txtPo.TabIndex = 90;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(47, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 89;
+            this.label8.Text = "Ratio No";
+            // 
+            // txtRatioNo
+            // 
+            this.txtRatioNo.EditValue = "";
+            this.txtRatioNo.Location = new System.Drawing.Point(126, 20);
+            this.txtRatioNo.Name = "txtRatioNo";
+            this.txtRatioNo.Properties.AccessibleDescription = "";
+            this.txtRatioNo.Properties.NullValuePrompt = "Please Enter Line Number";
+            this.txtRatioNo.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtRatioNo.Size = new System.Drawing.Size(251, 20);
+            this.txtRatioNo.TabIndex = 88;
+            this.txtRatioNo.EditValueChanged += new System.EventHandler(this.txtRatioNo_EditValueChanged);
+            this.txtRatioNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRatioNo_KeyDown);
             // 
             // xtraTabPage2
             // 
@@ -710,10 +937,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdItemList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.grdItemList.Location = new System.Drawing.Point(7, 114);
+            this.grdItemList.Location = new System.Drawing.Point(4, 114);
             this.grdItemList.MainView = this.gridView1;
             this.grdItemList.Name = "grdItemList";
-            this.grdItemList.Size = new System.Drawing.Size(1301, 278);
+            this.grdItemList.Size = new System.Drawing.Size(1271, 304);
             this.grdItemList.TabIndex = 57;
             this.grdItemList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -986,69 +1213,10 @@
             this.btnAddFabric.Text = "Add";
             this.btnAddFabric.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
-            // xtraTabPage4
-            // 
-            this.xtraTabPage4.Controls.Add(this.pivotGridControl1);
-            this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1236, 446);
-            this.xtraTabPage4.Text = "xtraTabPage4";
-            // 
-            // pivotGridControl1
-            // 
-            this.pivotGridControl1.DataMember = "cutItem";
-            this.pivotGridControl1.DataSource = this.dsetCutReport1;
-            this.pivotGridControl1.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
-            this.fieldDate1,
-            this.fieldLineNo1,
-            this.fieldColor1,
-            this.fieldSize1,
-            this.fieldNoOfItem1});
-            this.pivotGridControl1.Location = new System.Drawing.Point(49, 33);
-            this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(988, 331);
-            this.pivotGridControl1.TabIndex = 0;
-            // 
             // dsetCutReport1
             // 
             this.dsetCutReport1.DataSetName = "dsetCutReport";
             this.dsetCutReport1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fieldDate1
-            // 
-            this.fieldDate1.AreaIndex = 2;
-            this.fieldDate1.Caption = "Date";
-            this.fieldDate1.FieldName = "Date";
-            this.fieldDate1.Name = "fieldDate1";
-            // 
-            // fieldLineNo1
-            // 
-            this.fieldLineNo1.AreaIndex = 0;
-            this.fieldLineNo1.Caption = "[Line No]";
-            this.fieldLineNo1.FieldName = "[LineNo]";
-            this.fieldLineNo1.Name = "fieldLineNo1";
-            // 
-            // fieldColor1
-            // 
-            this.fieldColor1.AreaIndex = 1;
-            this.fieldColor1.Caption = "Color";
-            this.fieldColor1.FieldName = "Color";
-            this.fieldColor1.Name = "fieldColor1";
-            // 
-            // fieldSize1
-            // 
-            this.fieldSize1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldSize1.AreaIndex = 0;
-            this.fieldSize1.Caption = "Size";
-            this.fieldSize1.FieldName = "Size";
-            this.fieldSize1.Name = "fieldSize1";
-            // 
-            // fieldNoOfItem1
-            // 
-            this.fieldNoOfItem1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldNoOfItem1.AreaIndex = 0;
-            this.fieldNoOfItem1.Caption = "No Of Item";
-            this.fieldNoOfItem1.FieldName = "NoOfItem";
-            this.fieldNoOfItem1.Name = "fieldNoOfItem1";
             // 
             // label12
             // 
@@ -1125,10 +1293,11 @@
             this.grdSearch.Location = new System.Drawing.Point(14, 44);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1243, 427);
+            this.grdSearch.Size = new System.Drawing.Size(1243, 388);
             this.grdSearch.TabIndex = 62;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.grdSearch.Click += new System.EventHandler(this.grdSearch_Click);
             this.grdSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearch_KeyDown);
             // 
             // gridView3
@@ -1185,6 +1354,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbItemType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCuttingTicketNo.Properties)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            this.xtraTabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRatio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRaio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMkrNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNoOfFlys.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRatioNo.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtlineNo.Properties)).EndInit();
@@ -1210,8 +1391,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRollHegiht.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollWidth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoleNo.Properties)).EndInit();
-            this.xtraTabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsetCutReport1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
@@ -1307,16 +1486,29 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
-        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
         private Reports.Dataset.dsetCutReport dsetCutReport1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldDate1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldLineNo1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldColor1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldSize1;
-        private DevExpress.XtraPivotGrid.PivotGridField fieldNoOfItem1;
         private System.Windows.Forms.Label label19;
         private DevExpress.XtraEditors.TextEdit txtPoNo;
         private DevExpress.XtraEditors.ComboBoxEdit txtlineNo;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraEditors.SimpleButton btnInsert;
+        private System.Windows.Forms.Label label21;
+        private DevExpress.XtraEditors.TextEdit txtNoOfFlys;
+        private System.Windows.Forms.Label label20;
+        private DevExpress.XtraEditors.TextEdit txtPo;
+        private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.TextEdit txtRatioNo;
+        private DevExpress.XtraGrid.GridControl grdRatio;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.GridControl grdRaio;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private System.Windows.Forms.Label label34;
+        private DevExpress.XtraEditors.TextEdit txtMkrNo;
+        private System.Windows.Forms.Label label35;
+        private DevExpress.XtraEditors.TextEdit txtColor;
+        private System.Windows.Forms.Label label36;
+        private DevExpress.XtraEditors.TextEdit txtLen;
+        private System.Windows.Forms.Label lblStat;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
     }
 }
