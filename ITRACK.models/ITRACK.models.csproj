@@ -56,6 +56,8 @@
     <Compile Include="AppDBContext.cs" />
     <Compile Include="AssetBarcode.cs" />
     <Compile Include="AssetLedger.cs" />
+    <Compile Include="AssetRequisition.cs" />
+    <Compile Include="AssetRequisitionDetails.cs" />
     <Compile Include="AssetVerification.cs" />
     <Compile Include="AssetVerificationDetails.cs" />
     <Compile Include="Award.cs" />
@@ -104,9 +106,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606170928231__init.cs" />
-    <Compile Include="Migrations\201606170928231__init.Designer.cs">
-      <DependentUpon>201606170928231__init.cs</DependentUpon>
+    <Compile Include="Migrations\201606281019573_New.cs" />
+    <Compile Include="Migrations\201606281019573_New.Designer.cs">
+      <DependentUpon>201606281019573_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -198,8 +200,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606170928231__init.resx">
-      <DependentUpon>201606170928231__init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606281019573_New.resx">
+      <DependentUpon>201606281019573_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -155,6 +155,8 @@ namespace ITRACK.models
 
         public DbSet<MachineRequirement> MachineRequirement { get; set; }
 
+        public DbSet<AssetRequisition> AssetRequisition { get; set; }
+
         public DbSet<MachineRequirementItem> MachineRequirementItem { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

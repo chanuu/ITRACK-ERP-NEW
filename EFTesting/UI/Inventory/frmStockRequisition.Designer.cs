@@ -300,10 +300,11 @@
             this.grdSearchRequisition.Location = new System.Drawing.Point(38, 67);
             this.grdSearchRequisition.MainView = this.gridView3;
             this.grdSearchRequisition.Name = "grdSearchRequisition";
-            this.grdSearchRequisition.Size = new System.Drawing.Size(814, 292);
+            this.grdSearchRequisition.Size = new System.Drawing.Size(814, 327);
             this.grdSearchRequisition.TabIndex = 75;
             this.grdSearchRequisition.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.grdSearchRequisition.Click += new System.EventHandler(this.grdSearchRequisition_Click);
             this.grdSearchRequisition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearchRequisition_KeyDown);
             // 
             // gridView3
@@ -561,10 +562,11 @@
             this.grdSearchReq.Location = new System.Drawing.Point(22, 46);
             this.grdSearchReq.MainView = this.gridView2;
             this.grdSearchReq.Name = "grdSearchReq";
-            this.grdSearchReq.Size = new System.Drawing.Size(1089, 426);
+            this.grdSearchReq.Size = new System.Drawing.Size(1089, 352);
             this.grdSearchReq.TabIndex = 106;
             this.grdSearchReq.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.grdSearchReq.Click += new System.EventHandler(this.grdSearchReq_Click);
             this.grdSearchReq.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearchReq_KeyDown);
             // 
             // gridView2

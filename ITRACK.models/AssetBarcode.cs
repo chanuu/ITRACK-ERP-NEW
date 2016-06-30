@@ -70,6 +70,7 @@ namespace ITRACK.models
 
         public virtual ICollection<AssetVerificationDetails> AssetVerificationDetails { get; set; }
 
+        public virtual ICollection<AssetRequisitionDetails> AssetRequisitionDetails { get; set; }
 
     }
 }
