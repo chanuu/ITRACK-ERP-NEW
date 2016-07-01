@@ -80,6 +80,7 @@
     <Compile Include="DailyProduction.cs" />
     <Compile Include="Dayend.cs" />
     <Compile Include="DayendHeader.cs" />
+    <Compile Include="Department.cs" />
     <Compile Include="DividingPlan.cs" />
     <Compile Include="DividingPlanItem.cs" />
     <Compile Include="DividingPlanTemp.cs" />
@@ -128,6 +129,10 @@
     <Compile Include="Migrations\201606290755235__po_location.cs" />
     <Compile Include="Migrations\201606290755235__po_location.Designer.cs">
       <DependentUpon>201606290755235__po_location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606301110369__departments.cs" />
+    <Compile Include="Migrations\201606301110369__departments.Designer.cs">
+      <DependentUpon>201606301110369__departments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -237,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606290755235__po_location.resx">
       <DependentUpon>201606290755235__po_location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301110369__departments.resx">
+      <DependentUpon>201606301110369__departments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

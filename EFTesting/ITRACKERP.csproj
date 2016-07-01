@@ -102,6 +102,7 @@
     <Compile Include="DTOs\dtoCuttingLedgerSummary.cs" />
     <Compile Include="DTOs\dtoCuttingStatus.cs" />
     <Compile Include="DTOs\MachineListdto.cs" />
+    <Compile Include="DTOs\MachineRequirementReportDto.cs" />
     <Compile Include="DTOs\PrintWorkOrder.cs" />
     <Compile Include="DTOs\ProductionLines.cs" />
     <Compile Include="DTOs\StyleLoadingDto.cs" />
@@ -110,6 +111,12 @@
     </Compile>
     <Compile Include="Reports\Asset\rptMachineRequirementSummary.Designer.cs">
       <DependentUpon>rptMachineRequirementSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Asset\rptMachineRequrementByLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Asset\rptMachineRequrementByLine.Designer.cs">
+      <DependentUpon>rptMachineRequrementByLine.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Asset\rtAssetByCondtion.cs">
       <SubType>Component</SubType>
@@ -145,6 +152,12 @@
       <DependentUpon>BarcodeLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\clsProductionSummary.cs" />
+    <Compile Include="Reports\Cutting Report\rptRatio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cutting Report\rptRatio.Designer.cs">
+      <DependentUpon>rptRatio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Report\rptMachineRequirement.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -329,6 +342,12 @@
     </Compile>
     <Compile Include="UI\Asset\frmStyleLoading.Designer.cs">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\Report\frmMachineRequirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\Report\frmMachineRequirement.Designer.cs">
+      <DependentUpon>frmMachineRequirement.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Cutting report\frmCuttingDaliySelection.cs">
       <SubType>Form</SubType>
@@ -654,6 +673,9 @@
     <EmbeddedResource Include="Reports\Asset\rptMachineRequirementSummary.resx">
       <DependentUpon>rptMachineRequirementSummary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Asset\rptMachineRequrementByLine.resx">
+      <DependentUpon>rptMachineRequrementByLine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Asset\rtAssetByCondtion.resx">
       <DependentUpon>rtAssetByCondtion.cs</DependentUpon>
     </EmbeddedResource>
@@ -665,6 +687,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BarcodeLabel.resx">
       <DependentUpon>BarcodeLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cutting Report\rptRatio.resx">
+      <DependentUpon>rptRatio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report\rptMachineRequirement.resx">
       <DependentUpon>rptMachineRequirement.cs</DependentUpon>
@@ -747,6 +772,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmStyleLoading.resx">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\Report\frmMachineRequirement.resx">
+      <DependentUpon>frmMachineRequirement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Cutting report\frmCuttingDaliySelection.resx">
       <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
@@ -899,6 +927,7 @@
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoCuttingLedgerSummary.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoCuttingStatusSummary.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineListdto.datasource" />
+    <None Include="Properties\DataSources\EFTesting.DTOs.MachineRequirementReportDto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.StyleLoadingDto.datasource" />
     <None Include="Properties\DataSources\EFTesting.Reports.dailyProductionByHour.datasource" />
     <None Include="Properties\DataSources\EFTesting.Reports.HourlyIndividualProduction.datasource" />
@@ -1015,6 +1044,7 @@
   <ItemGroup>
     <None Include="Resources\Loading.gif" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

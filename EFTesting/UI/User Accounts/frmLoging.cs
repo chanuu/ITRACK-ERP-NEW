@@ -22,8 +22,14 @@ namespace EFTesting.UI.User_Accounts
 
         private void frmLoging_Load(object sender, EventArgs e)
         {
+
+            
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SkinName = "Metropolis";
+            ItrackContext _context = new ItrackContext();
+            _context.Database.Initialize(false);
+            DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
+
 
         }
 
@@ -57,15 +63,19 @@ namespace EFTesting.UI.User_Accounts
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(Verrify(txtUserName.Text,txtPWord.Text) == true)
+
+            splashScreenManager1.ShowWaitForm();
+            if (Verrify(txtUserName.Text,txtPWord.Text) == true)
             {
                 frmMain main = new frmMain();
                 main.Show();
+                splashScreenManager1.CloseWaitForm();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Login Failed !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblError.Text = "Your password Or User Name Does not valid.please Contact System Administrator";
+                splashScreenManager1.CloseWaitForm();
             }
         }
     }

@@ -96,6 +96,8 @@
             this.btnVeri = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRatio = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem36 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRequirement = new DevExpress.XtraBars.BarButtonItem();
             this.masters = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -111,7 +113,7 @@
             this.reports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::EFTesting.UI.WaitForm1), true, true);
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::EFTesting.UI.WaitForm1), true, true, true);
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
@@ -318,10 +320,13 @@
             this.btnFab,
             this.btnVeri,
             this.barButtonItem35,
-            this.btnRatio});
+            this.btnRatio,
+            this.barButtonItem36,
+            this.btnRequirement});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 52;
+            this.ribbonControl1.MaxItemId = 54;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem36);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.masters,
             this.ribbonPage1,
@@ -750,6 +755,24 @@
             this.btnRatio.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnRatio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRatio_ItemClick);
             // 
+            // barButtonItem36
+            // 
+            this.barButtonItem36.Caption = "Logout";
+            this.barButtonItem36.Glyph = global::EFTesting.Properties.Resources.add_contact_folded_icon;
+            this.barButtonItem36.Id = 52;
+            this.barButtonItem36.Name = "barButtonItem36";
+            this.barButtonItem36.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem36.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem36_ItemClick);
+            // 
+            // btnRequirement
+            // 
+            this.btnRequirement.Caption = "Machine Requirement";
+            this.btnRequirement.Id = 53;
+            this.btnRequirement.LargeGlyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnRequirement.Name = "btnRequirement";
+            this.btnRequirement.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRequirement.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequirement_ItemClick);
+            // 
             // masters
             // 
             this.masters.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -842,6 +865,7 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnVeri);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnRequirement);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Asset Report";
             // 
@@ -1062,5 +1086,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem35;
         private DevExpress.XtraBars.BarButtonItem btnRatio;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem36;
+        private DevExpress.XtraBars.BarButtonItem btnRequirement;
     }
 }

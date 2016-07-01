@@ -162,6 +162,9 @@ namespace ITRACK.models
 
         public DbSet<RatioItem> RatioItem { get; set; }
 
+
+        public DbSet<Department> Department { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
           modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();

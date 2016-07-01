@@ -16,6 +16,7 @@ using DevExpress.LookAndFeel;
 using EFTesting.UI.User_Accounts;
 using EFTesting.UI.Cutting_report;
 using System.Diagnostics;
+using EFTesting.UI.Asset.Report;
 
 namespace EFTesting.UI
 {
@@ -34,7 +35,9 @@ namespace EFTesting.UI
             
             ribbonControl1.Minimized = true;
             UserLookAndFeel.Default.SkinName = "Metropolis";
-            Debug.WriteLine(frmLoging._user.Employee.Company.CompanyName);
+            this.ShowMdiChildCaptionInParentTitle = true;
+
+          
 
 
         }
@@ -135,6 +138,7 @@ namespace EFTesting.UI
             objfrmMChild.MdiParent = this;
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();
+           
         }
 
         private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
@@ -425,6 +429,23 @@ namespace EFTesting.UI
             objfrmMChild.MdiParent = this;
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();
+        }
+
+        private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmLoging _log = new frmLoging();
+            _log.Show();
+            this.Hide();
+        }
+
+        private void btnRequirement_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmMachineRequirement objfrmMChild = new frmMachineRequirement();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+
         }
     }
 }

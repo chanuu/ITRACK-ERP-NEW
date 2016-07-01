@@ -175,6 +175,7 @@
             this.Controls.Add(this.chkDayCut);
             this.Name = "frmCuttingDaliySelection";
             this.Text = "Day Cut";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkByPo.Properties)).EndInit();

@@ -13,6 +13,7 @@ using DevExpress.XtraReports.UI;
 using EFTesting.ViewModel;
 using ITRACK.models;
 using System.Diagnostics;
+using EFTesting.UI.User_Accounts;
 
 namespace EFTesting.UI.Cutting_report
 {
@@ -67,7 +68,7 @@ namespace EFTesting.UI.Cutting_report
                 DateTime _to = Convert.ToDateTime(txtTo.Text);
 
                 var items =( from item in con.CuttingItem
-                            where  item.Date >= _from && item.Date <= _to
+                            where item.CuttingHeader.Style.CompanyID == frmLoging._user.Employee.CompanyID && item.Date >= _from && item.Date <= _to
                             select item).ToList();
                 lst.Clear();
                 foreach (var item in items)

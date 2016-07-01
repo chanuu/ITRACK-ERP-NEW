@@ -34,6 +34,7 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.xrPivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.fieldDate1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldPoNo1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldColor1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
@@ -45,7 +46,6 @@
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -89,6 +89,10 @@
             this.xrPivotGrid1.OptionsPrint.FilterSeparatorBarPadding = 3;
             this.xrPivotGrid1.SizeF = new System.Drawing.SizeF(1076.5F, 118.125F);
             this.xrPivotGrid1.AfterPrint += new System.EventHandler(this.xrPivotGrid1_AfterPrint);
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataSource = typeof(EFTesting.ViewModel.CutReport);
             // 
             // fieldDate1
             // 
@@ -314,10 +318,6 @@
             this.xrLabel1.SizeF = new System.Drawing.SizeF(540.625F, 34.45834F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.Text = "CUTTING SUMMARY REPORT ";
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataSource = typeof(EFTesting.ViewModel.CutReport);
             // 
             // rptCutS
             // 

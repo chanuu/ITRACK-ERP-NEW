@@ -25,6 +25,10 @@ namespace ITRACK.models
         public virtual Group Group { get; set; }
         public virtual ICollection<Buyer> Buyer { get; set; }
 
+        public virtual ICollection<Department> Department { get; set; }
+
+        
+
         public virtual ICollection<Style> Style { get; set; }
 
         public virtual ICollection<Werehouse> Werehouse { get; set; }
