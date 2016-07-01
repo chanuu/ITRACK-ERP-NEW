@@ -555,5 +555,15 @@ namespace EFTesting.UI.Inventory
         {
             initlizedRequisitonItem();
         }
+
+        private void grdSearchReq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdSearchRequisition_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
