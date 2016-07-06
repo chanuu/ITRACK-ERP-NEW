@@ -13,6 +13,7 @@ using DevExpress.XtraEditors.Controls;
 using EFTesting.ViewModel;
 using System.Diagnostics;
 using ITRACK.Validator;
+using EFTesting.UI.User_Accounts;
 
 namespace EFTesting.UI
 {
@@ -160,6 +161,7 @@ namespace EFTesting.UI
         {
             try {
                 _ratio.CuttingRatioID = txtRatioNo.Text;
+                _ratio.FabricType = cmbType.Text;
                 _ratio.Color = txtColor.Text;
                 _ratio.Length = txtLength.Text;
                 _ratio.MarkerWidth = Convert.ToDouble(txtMWidth.Text);
@@ -216,6 +218,27 @@ namespace EFTesting.UI
             }
            
         }
+
+        CompanyVM CVM = new CompanyVM();
+        Company _Company = new Company();
+
+        private void GetDefualtCompany()
+        {
+
+
+            _Company.CompanyID = CVM.GetCompany();
+
+            _Company.CompanyID = frmLoging._user.Employee.CompanyID;
+            if (_Company.CompanyID == 0)
+            {
+                btnAdd.Enabled = false;
+               
+                MessageBox.Show("Please Add Defualt Company Before Get Started", "Defualt Company not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
         private void frmRatio_Load(object sender, EventArgs e)
         {
 
@@ -319,6 +342,8 @@ namespace EFTesting.UI
                 txtRemark.Text = result.Remark;
 
                 txtStyleNo.Text = result.StyleID;
+
+                cmbType.Text = result.FabricType;
 
                 LoadSizes(result.StyleID);
 

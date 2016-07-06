@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.chkByStyle = new DevExpress.XtraEditors.CheckEdit();
-            this.chkDayCut = new DevExpress.XtraEditors.CheckEdit();
+            this.chkAllLine = new DevExpress.XtraEditors.CheckEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.txtStyleNo = new DevExpress.XtraEditors.TextEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -38,8 +38,9 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.txtFrom = new DevExpress.XtraEditors.DateEdit();
             this.txtTo = new DevExpress.XtraEditors.DateEdit();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.chkByStyle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDayCut.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAllLine.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).BeginInit();
@@ -55,13 +56,13 @@
             this.chkByStyle.Size = new System.Drawing.Size(75, 19);
             this.chkByStyle.TabIndex = 81;
             // 
-            // chkDayCut
+            // chkAllLine
             // 
-            this.chkDayCut.Location = new System.Drawing.Point(29, 36);
-            this.chkDayCut.Name = "chkDayCut";
-            this.chkDayCut.Properties.Caption = "All Lines";
-            this.chkDayCut.Size = new System.Drawing.Size(75, 19);
-            this.chkDayCut.TabIndex = 80;
+            this.chkAllLine.Location = new System.Drawing.Point(29, 36);
+            this.chkAllLine.Name = "chkAllLine";
+            this.chkAllLine.Properties.Caption = "All Lines";
+            this.chkAllLine.Size = new System.Drawing.Size(75, 19);
+            this.chkAllLine.TabIndex = 80;
             // 
             // label2
             // 
@@ -138,6 +139,10 @@
             this.txtTo.Size = new System.Drawing.Size(200, 20);
             this.txtTo.TabIndex = 89;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmMachineRequirement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,11 +157,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtStyleNo);
             this.Controls.Add(this.chkByStyle);
-            this.Controls.Add(this.chkDayCut);
+            this.Controls.Add(this.chkAllLine);
             this.Name = "frmMachineRequirement";
             this.Text = "Machine Requirement Options";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMachineRequirement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chkByStyle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDayCut.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAllLine.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).EndInit();
@@ -170,7 +177,7 @@
         #endregion
 
         private DevExpress.XtraEditors.CheckEdit chkByStyle;
-        private DevExpress.XtraEditors.CheckEdit chkDayCut;
+        private DevExpress.XtraEditors.CheckEdit chkAllLine;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.TextEdit txtStyleNo;
         private DevExpress.XtraEditors.SimpleButton btnClose;
@@ -179,5 +186,6 @@
         private System.Windows.Forms.Label lbl1;
         private DevExpress.XtraEditors.DateEdit txtFrom;
         private DevExpress.XtraEditors.DateEdit txtTo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

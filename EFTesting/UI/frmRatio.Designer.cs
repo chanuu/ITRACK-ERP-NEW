@@ -73,6 +73,8 @@
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchBox = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -98,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -118,6 +121,8 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.cmbType);
+            this.xtraTabPage1.Controls.Add(this.label12);
             this.xtraTabPage1.Controls.Add(this.cmbSize);
             this.xtraTabPage1.Controls.Add(this.btnremove);
             this.xtraTabPage1.Controls.Add(this.btnUpdate);
@@ -241,9 +246,9 @@
             this.txtRemark.Location = new System.Drawing.Point(367, 109);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Properties.AccessibleDescription = "";
-            this.txtRemark.Properties.NullValuePrompt = "Table Cut";
+            this.txtRemark.Properties.NullValuePrompt = "Remark";
             this.txtRemark.Properties.NullValuePromptShowForEmptyValue = true;
-            this.txtRemark.Size = new System.Drawing.Size(303, 20);
+            this.txtRemark.Size = new System.Drawing.Size(460, 20);
             this.txtRemark.TabIndex = 87;
             // 
             // label8
@@ -261,7 +266,7 @@
             this.txtMLength.Location = new System.Drawing.Point(212, 109);
             this.txtMLength.Name = "txtMLength";
             this.txtMLength.Properties.AccessibleDescription = "";
-            this.txtMLength.Properties.NullValuePrompt = "Table Cut";
+            this.txtMLength.Properties.NullValuePrompt = "Marker Length";
             this.txtMLength.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtMLength.Size = new System.Drawing.Size(149, 20);
             this.txtMLength.TabIndex = 85;
@@ -281,7 +286,7 @@
             this.txtMWidth.Location = new System.Drawing.Point(57, 109);
             this.txtMWidth.Name = "txtMWidth";
             this.txtMWidth.Properties.AccessibleDescription = "";
-            this.txtMWidth.Properties.NullValuePrompt = "Table Cut";
+            this.txtMWidth.Properties.NullValuePrompt = "Marker Width";
             this.txtMWidth.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtMWidth.Size = new System.Drawing.Size(149, 20);
             this.txtMWidth.TabIndex = 83;
@@ -301,7 +306,7 @@
             this.txtLength.Location = new System.Drawing.Point(521, 62);
             this.txtLength.Name = "txtLength";
             this.txtLength.Properties.AccessibleDescription = "";
-            this.txtLength.Properties.NullValuePrompt = "Table Cut";
+            this.txtLength.Properties.NullValuePrompt = "Length";
             this.txtLength.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtLength.Size = new System.Drawing.Size(149, 20);
             this.txtLength.TabIndex = 81;
@@ -321,7 +326,7 @@
             this.txtColor.Location = new System.Drawing.Point(366, 62);
             this.txtColor.Name = "txtColor";
             this.txtColor.Properties.AccessibleDescription = "";
-            this.txtColor.Properties.NullValuePrompt = "Table Cut";
+            this.txtColor.Properties.NullValuePrompt = "Color";
             this.txtColor.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtColor.Size = new System.Drawing.Size(149, 20);
             this.txtColor.TabIndex = 79;
@@ -341,7 +346,7 @@
             this.txtRatioNo.Location = new System.Drawing.Point(57, 62);
             this.txtRatioNo.Name = "txtRatioNo";
             this.txtRatioNo.Properties.AccessibleDescription = "";
-            this.txtRatioNo.Properties.NullValuePrompt = "Table Cut";
+            this.txtRatioNo.Properties.NullValuePrompt = "Ratio No";
             this.txtRatioNo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtRatioNo.Size = new System.Drawing.Size(149, 20);
             this.txtRatioNo.TabIndex = 77;
@@ -361,7 +366,7 @@
             this.txtStyleNo.Location = new System.Drawing.Point(211, 62);
             this.txtStyleNo.Name = "txtStyleNo";
             this.txtStyleNo.Properties.AccessibleDescription = "";
-            this.txtStyleNo.Properties.NullValuePrompt = "Table Cut";
+            this.txtStyleNo.Properties.NullValuePrompt = "Style No";
             this.txtStyleNo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtStyleNo.Size = new System.Drawing.Size(149, 20);
             this.txtStyleNo.TabIndex = 75;
@@ -519,7 +524,7 @@
             this.grdSearch.Location = new System.Drawing.Point(12, 57);
             this.grdSearch.MainView = this.gridView2;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(951, 319);
+            this.grdSearch.Size = new System.Drawing.Size(951, 343);
             this.grdSearch.TabIndex = 82;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -561,6 +566,28 @@
             this.simpleButton1.TabIndex = 83;
             this.simpleButton1.Text = "Search";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(671, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 13);
+            this.label12.TabIndex = 98;
+            this.label12.Text = "Type";
+            // 
+            // cmbType
+            // 
+            this.cmbType.Location = new System.Drawing.Point(674, 62);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbType.Properties.Items.AddRange(new object[] {
+            "Body Fabric",
+            "Lining",
+            "Fusing"});
+            this.cmbType.Size = new System.Drawing.Size(153, 20);
+            this.cmbType.TabIndex = 99;
             // 
             // frmRatio
             // 
@@ -606,6 +633,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -657,5 +685,7 @@
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.TextEdit txtSearchBox;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbType;
+        private System.Windows.Forms.Label label12;
     }
 }

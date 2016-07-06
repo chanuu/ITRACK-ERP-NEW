@@ -47,7 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtPlanQty = new DevExpress.XtraEditors.TextEdit();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtOrderQty = new DevExpress.XtraEditors.TextEdit();
+            this.txtStyleID = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCuttingTicketNo = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -80,7 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtBundleSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlanQty.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOrderQty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStyleID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCuttingTicketNo.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdBundleTicket)).BeginInit();
@@ -127,7 +127,7 @@
             this.xtraTabPage1.Controls.Add(this.label7);
             this.xtraTabPage1.Controls.Add(this.txtPlanQty);
             this.xtraTabPage1.Controls.Add(this.label10);
-            this.xtraTabPage1.Controls.Add(this.txtOrderQty);
+            this.xtraTabPage1.Controls.Add(this.txtStyleID);
             this.xtraTabPage1.Controls.Add(this.label2);
             this.xtraTabPage1.Controls.Add(this.txtCuttingTicketNo);
             this.xtraTabPage1.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
@@ -256,9 +256,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(218, 33);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.Size = new System.Drawing.Size(45, 13);
             this.label11.TabIndex = 48;
-            this.label11.Text = "Style No";
+            this.label11.Text = "Style ID";
             // 
             // txtStyleNo
             // 
@@ -296,20 +296,20 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(441, 33);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 40;
-            this.label10.Text = "Order Qty";
+            this.label10.Text = "Style No";
             // 
-            // txtOrderQty
+            // txtStyleID
             // 
-            this.txtOrderQty.EditValue = "";
-            this.txtOrderQty.Location = new System.Drawing.Point(437, 49);
-            this.txtOrderQty.Name = "txtOrderQty";
-            this.txtOrderQty.Properties.AccessibleDescription = "";
-            this.txtOrderQty.Properties.NullValuePrompt = "Order Qty";
-            this.txtOrderQty.Properties.NullValuePromptShowForEmptyValue = true;
-            this.txtOrderQty.Size = new System.Drawing.Size(185, 20);
-            this.txtOrderQty.TabIndex = 3;
+            this.txtStyleID.EditValue = "";
+            this.txtStyleID.Location = new System.Drawing.Point(437, 49);
+            this.txtStyleID.Name = "txtStyleID";
+            this.txtStyleID.Properties.AccessibleDescription = "";
+            this.txtStyleID.Properties.NullValuePrompt = "Order Qty";
+            this.txtStyleID.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtStyleID.Size = new System.Drawing.Size(185, 20);
+            this.txtStyleID.TabIndex = 3;
             // 
             // label2
             // 
@@ -541,7 +541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtBundleSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlanQty.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOrderQty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStyleID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCuttingTicketNo.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
@@ -567,7 +567,7 @@
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.TextEdit txtPlanQty;
         private System.Windows.Forms.Label label10;
-        private DevExpress.XtraEditors.TextEdit txtOrderQty;
+        private DevExpress.XtraEditors.TextEdit txtStyleID;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.TextEdit txtCuttingTicketNo;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;

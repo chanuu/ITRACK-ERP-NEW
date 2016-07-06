@@ -213,7 +213,7 @@ namespace EFTesting.ViewModel
        /// <param name="_bundleDetails"></param>
        /// <param name="_ditem"></param>
        /// <returns></returns>
-       public bool OprationTags(BundleDetails _bundleDetails,string _style,List<OprationBarcodes> barList,string _cutNo) {
+       public bool OprationTags(BundleDetails _bundleDetails,string _style,List<OprationBarcodes> barList,string _cutNo,string _stID) {
            try {
 
                if (barList.Count > 0)
@@ -286,8 +286,9 @@ namespace EFTesting.ViewModel
                            _barcode.WorkstationNo = item.WorkstationNo;
                            _barcode.OpNo = item.OpNo;
                            _barcode.CutNo = _cutNo;
+                           _barcode.StyleID = _stID;
 
-                           barList.Add( new OprationBarcodes(_barcode.OprationBarcodesID,_barcode.LineNo,_barcode.StyleNo, _barcode.OprationNO, _barcode.OparationName, _barcode.OprationGrade, _barcode.OprationRole, _barcode.PartName, _barcode.isOparationComplete, _barcode.OprationComplteAt, _barcode.EmployeeID, _barcode.BundleDetailsID,_barcode.OperationPoolID,"0", item.WorkstationNo,item.OpNo,_barcode.CutNo));
+                           barList.Add( new OprationBarcodes(_barcode.OprationBarcodesID,_barcode.LineNo,_barcode.StyleNo, _barcode.OprationNO, _barcode.OparationName, _barcode.OprationGrade, _barcode.OprationRole, _barcode.PartName, _barcode.isOparationComplete, _barcode.OprationComplteAt, _barcode.EmployeeID, _barcode.BundleDetailsID,_barcode.OperationPoolID,"0", item.WorkstationNo,item.OpNo,_barcode.CutNo,_barcode.StyleID));
                         //   barList.Add(_barcode);
 
 
@@ -397,7 +398,7 @@ namespace EFTesting.ViewModel
        /// <param name="_bundleSize"></param>
        /// <param name="_bandleHeader"></param>
        /// <returns></returns>
-       public bool GenrateBundleTags(int _noOfLayer, int _noOfItem, int _bundleSize,Int64 _bandleHeader,string _styneNo,List<OprationBarcodes> list,string _styleNo,string _cutNo)
+       public bool GenrateBundleTags(int _noOfLayer, int _noOfItem, int _bundleSize,Int64 _bandleHeader,string _styneNo,List<OprationBarcodes> list,string _styleNo,string _cutNo,string _stID)
        {
            try {
 
@@ -454,7 +455,7 @@ namespace EFTesting.ViewModel
                        
 
                        //genarate opration Barcode tags 
-                       OprationTags(_bandleDetails,_styneNo,list,_cutNo);
+                       OprationTags(_bandleDetails,_styneNo,list,_cutNo,_stID);
 
 
 
@@ -473,7 +474,7 @@ namespace EFTesting.ViewModel
                        addBundleDetails(_bandleDetails, _bandleHeader);
 
                        // add opration tag barcode of small bundle 
-                       OprationTags(_bandleDetails, _styneNo, list,_cutNo);
+                       OprationTags(_bandleDetails, _styneNo, list,_cutNo, _stID);
                    
                    }
 

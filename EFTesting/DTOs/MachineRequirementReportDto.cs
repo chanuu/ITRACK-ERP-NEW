@@ -14,9 +14,11 @@ namespace EFTesting.DTOs
 
         public string StyleNo { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public string StyleID { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+
+        public Nullable<System.DateTime> EndDate { get; set; }
 
         public string Type { get; set; }
 

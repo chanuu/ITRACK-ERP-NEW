@@ -46,6 +46,10 @@ namespace ITRACK.models
         public virtual ICollection<CuttingStock> CuttingStock { get; set; }
 
         public virtual ICollection<CuttingLedgerHeader> CuttingLedgerHeader { get; set; }
+
+        public virtual ICollection<FabricLedger> FabricLedger { get; set; }
+
+        public virtual ICollection<FabricConsumption> FabricConsumption { get; set; }
         public string GroupID { get; set; }
 
         

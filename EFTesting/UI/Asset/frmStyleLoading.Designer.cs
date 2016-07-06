@@ -281,7 +281,7 @@
             this.xtraTabPage2.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1040, 400);
-            this.xtraTabPage2.Text = "Machines";
+            this.xtraTabPage2.Text = "Time Line";
             // 
             // schedulerControl1
             // 
@@ -405,6 +405,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "frmStyleLoading";
             this.Text = "Style Loading";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmStyleLoading_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();

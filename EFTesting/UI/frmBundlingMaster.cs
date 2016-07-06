@@ -134,7 +134,7 @@ namespace EFTesting.UI
                     txtCuttingTicketNo.Text = header.CuttingHeaderID;
                     txtStyleNo.Text = header.StyleID;
                     txtPlanQty.Text = Convert.ToString(header.PlanQuantity);
-                    txtOrderQty.Text = Convert.ToString(header.OrderQuantity);
+                    txtStyleID.Text = header.Style.StyleNo;
                 
 
 
@@ -530,10 +530,11 @@ namespace EFTesting.UI
                     int _cutID = Convert.ToInt16(gridView2.GetFocusedRowCellValue("CuttingItemID").ToString());
                     string _CutNo = gridView2.GetFocusedRowCellValue("CutNo").ToString();
                     int _bundleSize = Convert.ToInt16(txtBundleSize.Text);
+                    string StyleID = txtStyleID.Text;
 
                     List<OprationBarcodes> lst = new List<OprationBarcodes>();
                     //genarate opration tags 
-                    gen.GenrateBundleTags(_noofLayer, _noofItem/_noofLayer, _bundleSize, bundlehader, _StyleNo, lst,txtStyleNo.Text,_CutNo);
+                    gen.GenrateBundleTags(_noofLayer, _noofItem/_noofLayer, _bundleSize, bundlehader, _StyleNo, lst,txtStyleNo.Text,_CutNo, StyleID);
 
                    //update cutting item genarated tgs status
                   //  UpdateBundleStatus();
@@ -640,7 +641,7 @@ namespace EFTesting.UI
                 return false;
             }
 
-            if (!validator.isPresent(txtOrderQty, "Order Qty"))
+            if (!validator.isPresent(txtStyleID, "Order Qty"))
             {
                 return false;
             }
@@ -854,7 +855,7 @@ namespace EFTesting.UI
 
                     wo.BundleHeaderId= GetBundleHeaderID();
                     //genarate opration tags 
-                    gen.GenrateBundleTags(wo.NoOfLayers, wo.NoofItem / wo.NoOfLayers, wo.BundleSize, wo.BundleHeaderId, wo.StyleNo, lst, txtStyleNo.Text,wo.CutNo);
+                    gen.GenrateBundleTags(wo.NoOfLayers, wo.NoofItem / wo.NoOfLayers, wo.BundleSize, wo.BundleHeaderId, wo.StyleNo, lst, txtStyleNo.Text,wo.CutNo, txtStyleID.Text);
 
                     //update cutting item genarated tgs status
                     UpdateBundleStatus(wo.CuttingItemID);

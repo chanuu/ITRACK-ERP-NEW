@@ -13,5 +13,9 @@ namespace EFTesting.Reports.Asset
             InitializeComponent();
         }
 
+        private void xrPivotGrid1_PrintHeader(object sender, DevExpress.XtraReports.UI.PivotGrid.CustomExportHeaderEventArgs e)
+        {
+           
+        }
     }
 }

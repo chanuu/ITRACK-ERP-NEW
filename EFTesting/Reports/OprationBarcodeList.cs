@@ -294,7 +294,7 @@ namespace EFTesting.Reports
                            
                            select new{
                                sticker.BundleDetails.BundleHeader.CuttingItem.CuttingHeaderID,
-                               sticker.BundleDetails.BundleHeader.CuttingItem.CuttingHeader.StyleID,
+                               sticker.BundleDetails.BundleHeader.CuttingItem.CuttingHeader.Style.StyleNo,
                                sticker.BundleDetails.BundleHeader.CuttingItem.Color,
                                sticker.BundleDetails.BundleHeader.CuttingItem.Size,
                                sticker.BundleDetails.BundleNo,
@@ -314,8 +314,8 @@ namespace EFTesting.Reports
                   {
 
                       oList.CutTicketNo = barcode.CuttingHeaderID;
-                      oList.StyleNo = barcode.StyleID;
-                      oList.StyleNo = barcode.StyleID;
+                      oList.StyleNo = barcode.StyleNo;
+                      oList.StyleNo = barcode.StyleNo;
                       oList.Color = barcode.Color;
                       oList.Size = barcode.Size;
                       oList.BundleNo = Convert.ToString(barcode.BundleNo);
@@ -366,7 +366,7 @@ namespace EFTesting.Reports
                            select new
                            {
                                sticker.BundleDetails.BundleHeader.CuttingItem.CuttingHeaderID,
-                               sticker.BundleDetails.BundleHeader.CuttingItem.CuttingHeader.StyleID,
+                               sticker.BundleDetails.BundleHeader.CuttingItem.CuttingHeader.Style.StyleNo,
                                sticker.BundleDetails.BundleHeader.CuttingItem.Color,
                                sticker.BundleDetails.BundleHeader.CuttingItem.Size,
                                sticker.BundleDetails.BundleNo,
@@ -387,8 +387,8 @@ namespace EFTesting.Reports
                   {
 
                       oList.CutTicketNo = barcode.CuttingHeaderID;
-                      oList.StyleNo = barcode.StyleID;
-                      oList.StyleNo = barcode.StyleID;
+                      oList.StyleNo = barcode.StyleNo;
+                      oList.StyleNo = barcode.StyleNo;
                       oList.Color = barcode.Color;
                       oList.Size = barcode.Size;
                       oList.BundleNo = Convert.ToString(barcode.BundleNo);
