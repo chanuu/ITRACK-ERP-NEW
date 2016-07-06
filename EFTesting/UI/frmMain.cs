@@ -447,5 +447,16 @@ namespace EFTesting.UI
             splashScreenManager1.CloseWaitForm();
 
         }
+
+        private void btnConsumtion_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            splashScreenManager1.ShowWaitForm();
+            frmFabricConsumption objfrmMChild = new frmFabricConsumption();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+
+        }
     }
 }

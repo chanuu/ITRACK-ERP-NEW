@@ -25,6 +25,8 @@ namespace ITRACK.models
 
         public string Remark { get; set; }
 
+        public string FabricType { get; set; }
+
         public virtual Style Style { get; set; }
 
         public string StyleID { get; set; }

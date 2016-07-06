@@ -322,7 +322,6 @@
             this.txtRemark.Properties.NullValuePrompt = "Remark";
             this.txtRemark.Size = new System.Drawing.Size(289, 96);
             this.txtRemark.TabIndex = 7;
-            this.txtRemark.UseOptimizedRendering = true;
             // 
             // label4
             // 

@@ -293,7 +293,7 @@ namespace EFTesting.UI
                 ItrackContext _context = new ItrackContext();
                 var items = (from item in _context.CuttingHeader
                              where item.Style.CompanyID == _Company.CompanyID && item.StyleID.Contains(_key)
-                             select new { item.CuttingHeaderID, item.StyleID, item.Remark }).ToList();
+                             select new { item.CuttingHeaderID, item.StyleID,item.Style.StyleNo, item.Remark }).ToList();
 
                 if (items.Count >0)
                 {
@@ -376,6 +376,7 @@ namespace EFTesting.UI
                     _cuttingHeader.CuttingHeaderID = header.CuttingHeaderID;
                     txtCuttingTicketNo.Text = header.CuttingHeaderID;
                     txtStyleNo.Text = header.StyleID;
+                    stNo.Text = header.Style.StyleNo;
                     txtPlanQty.Text = Convert.ToString(header.PlanQuantity);
                     txtOrderQty.Text = Convert.ToString(header.OrderQuantity);
                     cmbItemType.Text = Convert.ToString(header.ItemType);
@@ -564,21 +565,35 @@ namespace EFTesting.UI
         }
 
         LayinDetails fDetails = new LayinDetails();
-        private LayinDetails AssignFabricDetails() {
+        FabricLedger _ledger = new FabricLedger();
+
+        private FabricLedger AssignFabricDetails() {
 
             try {
                 fDetails.StyleID = txtStyleNo.Text;
-                fDetails.MarkerNo = txtMNo.Text;
-                fDetails.Date =Convert.ToDateTime(DateTime.Now.ToShortDateString());
-                fDetails.FabricRollID = txtRoleNo.Text;
-                fDetails.LayerLenth =Convert.ToDouble( txtRollWidth.Text);
-                fDetails.FabricRollLenth =Convert.ToDouble( txtRollHegiht.Text);
-                fDetails.NoofPlys =Convert.ToInt16( txtNoOfPlys.Text);
-                fDetails.Rest =Convert.ToDouble( txtRest.Text);
-                fDetails.FabricUsed =Convert.ToDouble( txtFabused.Text);
-                fDetails.TotalPcs =Convert.ToInt16( txtTotalPcs.Text);
 
-                return fDetails;
+                _ledger.StyleNo = txtStyleNo.Text;
+                _ledger.MarkerNo = txtMkrNo.Text;
+                _ledger.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                _ledger.RollNo = txtRoleNo.Text;
+                _ledger.MarkerLength = Convert.ToDouble(txtRollHegiht.Text);
+                _ledger.Type = "";
+                _ledger.NoOfFlys = Convert.ToInt16(txtNoOfPlys.Text);
+                _ledger.FabricUsed = _ledger.NoOfFlys * _ledger.MarkerLength;
+
+                if(txtActualBalance.Text != "")
+                {
+                    txtNotedBalance.Text =Convert.ToString( _ledger.NotedLength - _ledger.FabricUsed);
+                }
+                else
+                {
+                    _ledger.NotedBalance = Convert.ToDouble(txtNotedBalance.Text);
+                }
+
+
+
+
+                return _ledger;
             }
             catch(Exception ex)
             {
@@ -594,7 +609,7 @@ namespace EFTesting.UI
 
         private void AddLayerDetails() {
             try {
-                GenaricRepository<LayinDetails> _LayinDetailsRepo = new GenaricRepository<LayinDetails>(new ItrackContext());
+                GenaricRepository<FabricLedger> _LayinDetailsRepo = new GenaricRepository<FabricLedger>(new ItrackContext());
                 _LayinDetailsRepo.Add(AssignFabricDetails());
             }
             catch(Exception ex){
@@ -637,7 +652,7 @@ namespace EFTesting.UI
         {
             try
             {
-                GenaricRepository<LayinDetails> _LayinDetailsRepo = new GenaricRepository<LayinDetails>(new ItrackContext());
+                GenaricRepository<FabricLedger> _LayinDetailsRepo = new GenaricRepository<FabricLedger>(new ItrackContext());
                 _LayinDetailsRepo.Add(AssignFabricDetails());
             }
             catch (Exception ex)
@@ -737,6 +752,49 @@ namespace EFTesting.UI
             return true;
         }
 
+
+        public bool isValidRatio()
+        {
+            if (!validate.isPresent(txtStyleNo, "Style No"))
+            {
+                return false;
+            }
+            if (!validate.isPresent(txtRatioNo, "Ratio No"))
+            {
+                return false;
+            }
+
+
+            if (!validate.isPresent(txtColor, "Color"))
+            {
+                return false;
+            }
+
+            if (!validate.isPresent(txtLen, "Length"))
+            {
+                return false;
+            }
+
+            if (!validate.isPresent(txtLen, "Length"))
+            {
+                return false;
+            }
+            if (!validate.isPresent(txtMkrNo, "Marker No"))
+            {
+                return false;
+            }
+            if (!validate.isPresent(txtPo, "Po No"))
+            {
+                return false;
+            }
+            if (!validate.isPresent(txtNoOfFlys, "No Of Flys"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public bool isValidMarker()
         {
            
@@ -804,7 +862,7 @@ namespace EFTesting.UI
                 return false;
             }
 
-            if (!validate.isPresent(txtRest, "Rest"))
+            if (!validate.isPresent(txtNotedBalance, "Rest"))
             {
                 return false;
             }
@@ -814,10 +872,7 @@ namespace EFTesting.UI
                 return false;
             }
 
-            if (!validate.isPresent(txtTotalPcs, "Total PCS"))
-            {
-                return false;
-            }
+           
             return true;
         }
 
@@ -891,7 +946,7 @@ namespace EFTesting.UI
                 if (isExistingItem(txtMNo.Text) == true)
                 {
                     AddLayerDetails();
-                    FeedLayinDetails(txtStyleNo.Text);
+                   // FeedLayinDetails(txtStyleNo.Text);
                 }
                 else
                 {
@@ -932,6 +987,8 @@ namespace EFTesting.UI
 
 
         }
+
+
 
 
         private void frmCuttingMaster_Load(object sender, EventArgs e)
@@ -1283,9 +1340,9 @@ namespace EFTesting.UI
         {
             try
             {
-                ItrackContext _context = new ItrackContext();
+               ItrackContext _context = new ItrackContext();
                 var items = (from item in _context.CuttingRatio
-                             where item.StyleID.Contains(_key)
+                             where item.Style.CompanyID == _Company.CompanyID && item.StyleID.Contains(_key)
                              select new { item.CuttingRatioID, item.StyleID, item.Remark }).ToList();
 
                 if (items.Count > 0)
@@ -1506,12 +1563,59 @@ namespace EFTesting.UI
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            insertCutItem();
+          if(isValidRatio() == true)
+            {
+                insertCutItem();
+            }
+            
+        }
+
+
+
+        double GetBalance(string _id)
+        {
+            try
+            {
+                ItrackContext _context = new ItrackContext();
+                return (from r in _context.SerialEntry
+                            where r.SerialEntryID == _id
+                            select new { r.TotalMeters }).ToList().Last().TotalMeters;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+
+        double GetAvailBal(string _rollNo)
+        {
+            try {
+                ItrackContext _context = new ItrackContext();
+
+                return (from item in _context.FabricLedger
+                             where item.RollNo == _rollNo
+                             select item.FabricUsed).ToList().Sum();
+            }
+            catch (Exception ex) {
+                return 0;
+            }
         }
 
         private void grdSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtRoleNo_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRoleNo_Leave(object sender, EventArgs e)
+        {
+          txtRollHegiht.Text = Convert.ToString(GetBalance(txtRoleNo.Text));
+          txtAvailBal.Text   =Convert.ToString( GetBalance(txtRoleNo.Text)- GetAvailBal(txtRoleNo.Text));
         }
     }
 }

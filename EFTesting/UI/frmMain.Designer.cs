@@ -122,6 +122,7 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConsumtion = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -322,9 +323,10 @@
             this.barButtonItem35,
             this.btnRatio,
             this.barButtonItem36,
-            this.btnRequirement});
+            this.btnRequirement,
+            this.btnConsumtion});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 54;
+            this.ribbonControl1.MaxItemId = 55;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem36);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -812,6 +814,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBundle);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCuttingLedger);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRatio);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnConsumtion);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Mater Files";
             // 
@@ -971,6 +974,15 @@
             this.barButtonItem34.Name = "barButtonItem34";
             this.barButtonItem34.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // btnConsumtion
+            // 
+            this.btnConsumtion.Caption = "Fabric Consumption";
+            this.btnConsumtion.Glyph = global::EFTesting.Properties.Resources.Clipboard_Plan_icon;
+            this.btnConsumtion.Id = 54;
+            this.btnConsumtion.Name = "btnConsumtion";
+            this.btnConsumtion.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnConsumtion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConsumtion_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1088,5 +1100,6 @@
         private DevExpress.XtraBars.BarButtonItem btnRatio;
         private DevExpress.XtraBars.BarButtonItem barButtonItem36;
         private DevExpress.XtraBars.BarButtonItem btnRequirement;
+        private DevExpress.XtraBars.BarButtonItem btnConsumtion;
     }
 }

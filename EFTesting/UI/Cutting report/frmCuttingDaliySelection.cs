@@ -75,7 +75,7 @@ namespace EFTesting.UI.Cutting_report
                 {
 
                    
-                    lst.Add(new CutReport { StyleNo = item.CuttingHeader.StyleID, Date = item.Date, PoNo = item.PoNo, Color = item.Color, Size = item.Size, Pcs = item.NoOfItem });
+                    lst.Add(new CutReport { StyleNo = item.CuttingHeader.Style.StyleNo, Date = item.Date, PoNo = item.PoNo, Color = item.Color, Size = item.Size, Pcs = item.NoOfItem });
 
                 }
 
@@ -96,7 +96,7 @@ namespace EFTesting.UI.Cutting_report
                 foreach (var item in items)
                 {
 
-                    lst.Add(new CutReport { StyleNo = item.CuttingHeader.StyleID, Date = item.Date, PoNo = item.PoNo, Color = item.Color, Size = item.Size, Pcs = item.NoOfItem });
+                    lst.Add(new CutReport { StyleNo = item.CuttingHeader.Style.StyleNo, Date = item.Date, PoNo = item.PoNo, Color = item.Color, Size = item.Size, Pcs = item.NoOfItem });
 
                 }
             }
@@ -111,7 +111,7 @@ namespace EFTesting.UI.Cutting_report
                 foreach (var item in items)
                 {
 
-                    lst.Add(new CutReport { StyleNo = item.CuttingHeader.StyleID, Date = item.Date, PoNo = item.PoNo, Color = item.Color, Size = item.Size, Pcs = item.NoOfItem });
+                    lst.Add(new CutReport { StyleNo = item.CuttingHeader.Style.StyleNo, Date = item.Date, PoNo = item.PoNo, Color = item.Color, Size = item.Size, Pcs = item.NoOfItem });
 
                 }
             }

@@ -246,6 +246,12 @@
     <Compile Include="Reports\rptDividingPlan.Designer.cs">
       <DependentUpon>rptDividingPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptFabric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptFabric.Designer.cs">
+      <DependentUpon>rptFabric.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\rptHProduction.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -462,6 +468,12 @@
     </Compile>
     <Compile Include="UI\frmDividingPlanItem.Designer.cs">
       <DependentUpon>frmDividingPlanItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmFabricConsumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmFabricConsumption.Designer.cs">
+      <DependentUpon>frmFabricConsumption.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmHourlyProductionDialog.cs">
       <SubType>Form</SubType>
@@ -730,6 +742,9 @@
     <EmbeddedResource Include="Reports\rptDividingPlan.resx">
       <DependentUpon>rptDividingPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptFabric.resx">
+      <DependentUpon>rptFabric.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptHProduction.resx">
       <DependentUpon>rptHProduction.cs</DependentUpon>
     </EmbeddedResource>
@@ -832,6 +847,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDividingPlanItem.resx">
       <DependentUpon>frmDividingPlanItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmFabricConsumption.resx">
+      <DependentUpon>frmFabricConsumption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmHourlyProductionDialog.resx">
       <DependentUpon>frmHourlyProductionDialog.cs</DependentUpon>
@@ -949,6 +967,7 @@
     <None Include="Properties\DataSources\ITRACK.models.DayendHeader.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.DividingPlanHeader.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.DividingPlanItem.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.FabricLedger.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.LayinDetails.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.MachineRequirementItem.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.OprationBarcodes.datasource" />

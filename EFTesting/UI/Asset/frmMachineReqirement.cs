@@ -12,6 +12,8 @@ using ITRACK.models;
 using EFTesting.Reports.Report;
 using DevExpress.XtraReports.UI;
 using EFTesting.Reports.Asset;
+using EFTesting.ViewModel;
+using System.Diagnostics;
 
 namespace EFTesting.UI.Asset
 {
@@ -232,6 +234,7 @@ namespace EFTesting.UI.Asset
             ItrackContext _context = new ItrackContext();
             _context.Database.Initialize(false);
             grdStyleSearch.Hide();
+            GetNewCode();
 
         }
 
@@ -320,6 +323,7 @@ namespace EFTesting.UI.Asset
             GetByID(ID);
             GetItems(ID);
             grdSearch.Hide();
+            grdStyleSearch.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
 
@@ -345,6 +349,51 @@ namespace EFTesting.UI.Asset
             txtSearchBox.Show();
             btnClose.Show();
         }
+
+        int getPoCount()
+        {
+            try
+            {
+                GenaricRepository<MachineRequirement> _GRNRepo = new GenaricRepository<MachineRequirement>(new ItrackContext());
+                return _GRNRepo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+
+        void GetNewCode()
+        {
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "MR"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    txtRequirementID.Text = _Engine.GenarateNo(_No, getPoCount());
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
 
         private void btnNew_Click(object sender, EventArgs e)
         {

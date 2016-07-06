@@ -167,6 +167,10 @@ namespace ITRACK.models
 
         public DbSet<Department> Department { get; set; }
 
+        public DbSet<FabricLedger> FabricLedger { get; set; }
+
+        public DbSet<FabricConsumption> FabricConsumption { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
           modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
