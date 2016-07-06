@@ -118,6 +118,12 @@
     <Compile Include="Reports\Asset\rptMachineRequrementByLine.Designer.cs">
       <DependentUpon>rptMachineRequrementByLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Asset\rtAssetBarcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Asset\rtAssetBarcode.Designer.cs">
+      <DependentUpon>rtAssetBarcode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Asset\rtAssetByCondtion.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -676,6 +682,9 @@
     <EmbeddedResource Include="Reports\Asset\rptMachineRequrementByLine.resx">
       <DependentUpon>rptMachineRequrementByLine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Asset\rtAssetBarcode.resx">
+      <DependentUpon>rtAssetBarcode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Asset\rtAssetByCondtion.resx">
       <DependentUpon>rtAssetByCondtion.cs</DependentUpon>
     </EmbeddedResource>
@@ -933,6 +942,7 @@
     <None Include="Properties\DataSources\EFTesting.Reports.HourlyIndividualProduction.datasource" />
     <None Include="Properties\DataSources\EFTesting.Reports.HourlyProductionByOperation.datasource" />
     <None Include="Properties\DataSources\EFTesting.Reports.OprationBarcodeList.datasource" />
+    <None Include="Properties\DataSources\EFTesting.UI.Asset.frmAsset.datasource" />
     <None Include="Properties\DataSources\EFTesting.UI.DTO.Assetlistdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.UI.DTO.AssetVerificationdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.UI.DTO.AssetVerificationLocationdto.datasource" />

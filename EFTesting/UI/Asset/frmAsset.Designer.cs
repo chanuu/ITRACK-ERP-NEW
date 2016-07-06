@@ -750,6 +750,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(85, 39);
             this.simpleButton2.TabIndex = 98;
             this.simpleButton2.Text = "Print";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btnClose
             // 
@@ -817,7 +818,7 @@
             this.grdSearch.Location = new System.Drawing.Point(24, 57);
             this.grdSearch.MainView = this.gridView1;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1069, 402);
+            this.grdSearch.Size = new System.Drawing.Size(1069, 405);
             this.grdSearch.TabIndex = 99;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

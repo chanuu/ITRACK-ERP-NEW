@@ -108,33 +108,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606281019573_New.cs" />
-    <Compile Include="Migrations\201606281019573_New.Designer.cs">
-      <DependentUpon>201606281019573_New.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606241141076__remove_order_price.cs" />
-    <Compile Include="Migrations\201606241141076__remove_order_price.Designer.cs">
-      <DependentUpon>201606241141076__remove_order_price.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606250734392__add_lot.cs" />
-    <Compile Include="Migrations\201606250734392__add_lot.Designer.cs">
-      <DependentUpon>201606250734392__add_lot.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606271018162__lot.cs" />
-    <Compile Include="Migrations\201606271018162__lot.Designer.cs">
-      <DependentUpon>201606271018162__lot.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606290708479__location_code.cs" />
-    <Compile Include="Migrations\201606290708479__location_code.Designer.cs">
-      <DependentUpon>201606290708479__location_code.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606290755235__po_location.cs" />
-    <Compile Include="Migrations\201606290755235__po_location.Designer.cs">
-      <DependentUpon>201606290755235__po_location.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606301110369__departments.cs" />
-    <Compile Include="Migrations\201606301110369__departments.Designer.cs">
-      <DependentUpon>201606301110369__departments.cs</DependentUpon>
+    <Compile Include="Migrations\201607010759066_New.cs" />
+    <Compile Include="Migrations\201607010759066_New.Designer.cs">
+      <DependentUpon>201607010759066_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -227,26 +203,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606281019573_New.resx">
-      <DependentUpon>201606281019573_New.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606241141076__remove_order_price.resx">
-      <DependentUpon>201606241141076__remove_order_price.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606250734392__add_lot.resx">
-      <DependentUpon>201606250734392__add_lot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606271018162__lot.resx">
-      <DependentUpon>201606271018162__lot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606290708479__location_code.resx">
-      <DependentUpon>201606290708479__location_code.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606290755235__po_location.resx">
-      <DependentUpon>201606290755235__po_location.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606301110369__departments.resx">
-      <DependentUpon>201606301110369__departments.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607010759066_New.resx">
+      <DependentUpon>201607010759066_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
