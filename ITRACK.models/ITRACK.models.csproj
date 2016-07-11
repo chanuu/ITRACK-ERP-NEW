@@ -88,7 +88,9 @@
     <Compile Include="DividingPlanTemp.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="ExpressionBuilder.cs" />
+    <Compile Include="FabricConsumption.cs" />
     <Compile Include="FabricDetails.cs" />
+    <Compile Include="FabricLedger.cs" />
     <Compile Include="GenaricRepository.cs" />
     <Compile Include="GRN.cs" />
     <Compile Include="GrnItems.cs" />
@@ -107,10 +109,6 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.cs" />
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607010759066_New.cs" />
-    <Compile Include="Migrations\201607010759066_New.Designer.cs">
-      <DependentUpon>201607010759066_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -202,9 +200,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607010759066_New.resx">
-      <DependentUpon>201607010759066_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
