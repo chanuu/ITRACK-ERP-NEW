@@ -13,6 +13,8 @@ using EFTesting.ViewModel;
 using System.Diagnostics;
 using System.Linq.Expressions;
 using ITRACK.Validator;
+using EFTesting.Reports.Asset;
+using DevExpress.XtraReports.UI;
 
 namespace EFTesting.UI.Asset
 {
@@ -184,20 +186,20 @@ namespace EFTesting.UI.Asset
             try
             {
 
-                //rtAssetBarcode report = new rtAssetBarcode();
+                rtAssetBarcode report = new rtAssetBarcode();
 
 
-                //GenaricRepository<AssetBarcode> _BarcodeRepo = new GenaricRepository<AssetBarcode>(new ItrackContext());
-                //var dataSource = from item in _BarcodeRepo.GetAll().ToList()
+                GenaricRepository<AssetBarcode> _BarcodeRepo = new GenaricRepository<AssetBarcode>(new ItrackContext());
+                var dataSource = from item in _BarcodeRepo.GetAll().ToList()
                 //                 where item.Company.CompanyID == 1
                 //                 //where item.AssetBarcodeID.CompareTo("000003564")>=0 && item.AssetBarcodeID.CompareTo("000003583") <=0
-                //                 select item;
+                                 select item;
 
-                //report.DataSource = dataSource;
+                report.DataSource = dataSource;
 
-                //ReportPrintTool preview = new ReportPrintTool(report);
+                ReportPrintTool preview = new ReportPrintTool(report);
 
-                //preview.ShowPreview();
+                preview.ShowPreview();
             }
             catch (Exception ex)
             {
@@ -571,6 +573,11 @@ namespace EFTesting.UI.Asset
         private void txtSearchBox_EditValueChanged(object sender, EventArgs e)
         {
             SearchItem();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            PrintReport();
         }
     }
 }

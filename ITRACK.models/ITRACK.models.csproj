@@ -88,9 +88,7 @@
     <Compile Include="DividingPlanTemp.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="ExpressionBuilder.cs" />
-    <Compile Include="FabricConsumption.cs" />
     <Compile Include="FabricDetails.cs" />
-    <Compile Include="FabricLedger.cs" />
     <Compile Include="GenaricRepository.cs" />
     <Compile Include="GRN.cs" />
     <Compile Include="GrnItems.cs" />
@@ -110,33 +108,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607010511103__req.cs" />
-    <Compile Include="Migrations\201607010511103__req.Designer.cs">
-      <DependentUpon>201607010511103__req.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607050538095__stId.cs" />
-    <Compile Include="Migrations\201607050538095__stId.Designer.cs">
-      <DependentUpon>201607050538095__stId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607050741259__fabric_Consumption.cs" />
-    <Compile Include="Migrations\201607050741259__fabric_Consumption.Designer.cs">
-      <DependentUpon>201607050741259__fabric_Consumption.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607050749343__fabricType.cs" />
-    <Compile Include="Migrations\201607050749343__fabricType.Designer.cs">
-      <DependentUpon>201607050749343__fabricType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607051023341__st.cs" />
-    <Compile Include="Migrations\201607051023341__st.Designer.cs">
-      <DependentUpon>201607051023341__st.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607051032364__tt.cs" />
-    <Compile Include="Migrations\201607051032364__tt.Designer.cs">
-      <DependentUpon>201607051032364__tt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607060703139__Styleref.cs" />
-    <Compile Include="Migrations\201607060703139__Styleref.Designer.cs">
-      <DependentUpon>201607060703139__Styleref.cs</DependentUpon>
+    <Compile Include="Migrations\201607010759066_New.cs" />
+    <Compile Include="Migrations\201607010759066_New.Designer.cs">
+      <DependentUpon>201607010759066_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -229,26 +203,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607010511103__req.resx">
-      <DependentUpon>201607010511103__req.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607050538095__stId.resx">
-      <DependentUpon>201607050538095__stId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607050741259__fabric_Consumption.resx">
-      <DependentUpon>201607050741259__fabric_Consumption.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607050749343__fabricType.resx">
-      <DependentUpon>201607050749343__fabricType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607051023341__st.resx">
-      <DependentUpon>201607051023341__st.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607051032364__tt.resx">
-      <DependentUpon>201607051032364__tt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607060703139__Styleref.resx">
-      <DependentUpon>201607060703139__Styleref.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607010759066_New.resx">
+      <DependentUpon>201607010759066_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
