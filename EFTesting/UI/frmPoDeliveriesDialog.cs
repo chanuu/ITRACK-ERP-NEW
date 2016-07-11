@@ -26,7 +26,7 @@ namespace EFTesting.UI
 
 
         List<PoDeliveries> lstPo = new List<PoDeliveries>();
-        private List<PoDeliveries> GetReportData(DateTime _fromDate,DateTime _toDate,string _styleNo,int option)
+        private List<PoDeliveries> GetReportData(string _styleNo,int option)
         {
 
             try {
@@ -144,12 +144,12 @@ namespace EFTesting.UI
                 if (chkByStyle.Checked == true)
                 {
                     option = 1;
-                    report.DataSource = GetReportData(Convert.ToDateTime(txtFromDate.Text), Convert.ToDateTime(txttoDate.Text), txtStyleNo.Text, option);
+                    report.DataSource = GetReportData( txtStyleNo.Text, option);
                 }
                 else
                 {
                     option = 2;
-                    report.DataSource = GetReportData(Convert.ToDateTime(txtFromDate.Text), Convert.ToDateTime(txttoDate.Text), txtStyleNo.Text, option);
+                    report.DataSource = GetReportData( txtStyleNo.Text, option);
                 }
                
                 report.Landscape = true;

@@ -214,17 +214,6 @@
             this.cmbLine.Name = "cmbLine";
             this.cmbLine.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbLine.Properties.Items.AddRange(new object[] {
-            "V-1",
-            "V-2",
-            "V-3",
-            "V-4",
-            "V-5",
-            "V-6",
-            "V-7",
-            "V-8",
-            "V-9",
-            "V-10"});
             this.cmbLine.Size = new System.Drawing.Size(160, 20);
             this.cmbLine.TabIndex = 20;
             // 
@@ -375,6 +364,7 @@
             this.btnAdd.Size = new System.Drawing.Size(85, 39);
             this.btnAdd.TabIndex = 66;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnNew
             // 

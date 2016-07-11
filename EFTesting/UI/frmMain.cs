@@ -458,5 +458,33 @@ namespace EFTesting.UI
             splashScreenManager1.CloseWaitForm();
 
         }
+
+        private void btnOperation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmOperation objfrmMChild = new frmOperation();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
+
+        private void btncutPO_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+            splashScreenManager1.ShowWaitForm();
+            frmPoDeliveriesDialog objfrmMChild = new frmPoDeliveriesDialog();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
+
+        private void btnFab_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmFabricreport objfrmMChild = new frmFabricreport();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
     }
 }

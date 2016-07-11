@@ -52,7 +52,7 @@ namespace EFTesting.UI.Asset.Report
                
                 var styles = (from st in con.StyleLoading
                               where st.EndDate > today && st.LineNo == _department.Name
-                              orderby st.EndDate
+                              orderby st.StartDate
                               select new { st.Style.StyleNo,st.StyleID, st.LineNo, st.StartDate, st.EndDate }).ToList();
                 int i = 0;
                 foreach( var selectedStyle in styles)

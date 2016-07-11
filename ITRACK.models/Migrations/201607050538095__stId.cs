@@ -3,16 +3,16 @@ namespace ITRACK.models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _po_location : DbMigration
+    public partial class _stId : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.PurchaseOrderHeaders", "PoNo", c => c.String());
+            AddColumn("dbo.OprationBarcodes", "StyleID", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.PurchaseOrderHeaders", "PoNo");
+            DropColumn("dbo.OprationBarcodes", "StyleID");
         }
     }
 }

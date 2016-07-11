@@ -98,6 +98,8 @@
             this.btnRatio = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem36 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRequirement = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConsumtion = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOperation = new DevExpress.XtraBars.BarButtonItem();
             this.masters = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -108,6 +110,10 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.config = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.reports = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -122,7 +128,6 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnConsumtion = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -324,9 +329,10 @@
             this.btnRatio,
             this.barButtonItem36,
             this.btnRequirement,
-            this.btnConsumtion});
+            this.btnConsumtion,
+            this.btnOperation});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 55;
+            this.ribbonControl1.MaxItemId = 56;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem36);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -334,6 +340,8 @@
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3,
+            this.ribbonPage4,
+            this.ribbonPage5,
             this.config,
             this.reports});
             this.ribbonControl1.Size = new System.Drawing.Size(1073, 141);
@@ -716,6 +724,7 @@
             this.btncutPO.Id = 46;
             this.btncutPO.Name = "btncutPO";
             this.btncutPO.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btncutPO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btncutPO_ItemClick);
             // 
             // btnStatus
             // 
@@ -732,6 +741,7 @@
             this.btnFab.LargeGlyph = global::EFTesting.Properties.Resources.barcode_folded_icon;
             this.btnFab.Name = "btnFab";
             this.btnFab.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnFab.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFab_ItemClick);
             // 
             // btnVeri
             // 
@@ -775,6 +785,24 @@
             this.btnRequirement.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnRequirement.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequirement_ItemClick);
             // 
+            // btnConsumtion
+            // 
+            this.btnConsumtion.Caption = "Fabric Consumption";
+            this.btnConsumtion.Glyph = global::EFTesting.Properties.Resources.Clipboard_Plan_icon;
+            this.btnConsumtion.Id = 54;
+            this.btnConsumtion.Name = "btnConsumtion";
+            this.btnConsumtion.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnConsumtion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConsumtion_ItemClick);
+            // 
+            // btnOperation
+            // 
+            this.btnOperation.Caption = "Operations";
+            this.btnOperation.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnOperation.Id = 55;
+            this.btnOperation.Name = "btnOperation";
+            this.btnOperation.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnOperation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOperation_ItemClick);
+            // 
             // masters
             // 
             this.masters.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -788,11 +816,8 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnCuttingStatus);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem14);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem15);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem16);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem18);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem30);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem19);
@@ -859,7 +884,6 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.btnAsset);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnVerification);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnMachineType);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnMachine);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnStyleLoading);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnAnalays);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
@@ -871,6 +895,34 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.btnRequirement);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Asset Report";
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup11});
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "T/W";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnOperation);
+            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem16);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnMachine);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Master Files";
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup12});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "HR";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Master Files";
             // 
             // config
             // 
@@ -973,15 +1025,6 @@
             this.barButtonItem34.Id = 45;
             this.barButtonItem34.Name = "barButtonItem34";
             this.barButtonItem34.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // btnConsumtion
-            // 
-            this.btnConsumtion.Caption = "Fabric Consumption";
-            this.btnConsumtion.Glyph = global::EFTesting.Properties.Resources.Clipboard_Plan_icon;
-            this.btnConsumtion.Id = 54;
-            this.btnConsumtion.Name = "btnConsumtion";
-            this.btnConsumtion.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnConsumtion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConsumtion_ItemClick);
             // 
             // frmMain
             // 
@@ -1101,5 +1144,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem36;
         private DevExpress.XtraBars.BarButtonItem btnRequirement;
         private DevExpress.XtraBars.BarButtonItem btnConsumtion;
+        private DevExpress.XtraBars.BarButtonItem btnOperation;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
     }
 }

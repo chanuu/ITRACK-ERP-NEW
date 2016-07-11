@@ -83,7 +83,7 @@ namespace EFTesting.ViewModel
 
                 //create expression 
                 ParameterExpression argParam = Expression.Parameter(typeof(PurchaseOrderHeader), "s");
-                Expression nameProperty = Expression.Property(argParam, "PurchaseOrderHeaderID");
+                Expression nameProperty = Expression.Property(argParam, "PoNo");
                 Expression nameProperty2 = Expression.Property(argParam, "StyleID");
 
 

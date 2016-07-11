@@ -12,6 +12,8 @@ using ITRACK.models;
 using DevExpress.XtraScheduler;
 using EFTesting.DTOs;
 using System.Diagnostics;
+using DevExpress.XtraEditors.Controls;
+using EFTesting.UI.User_Accounts;
 
 namespace EFTesting.UI.Asset
 {
@@ -193,12 +195,63 @@ namespace EFTesting.UI.Asset
             GetStyleLoading();
         }
 
+        CompanyVM CVM = new CompanyVM();
+        Company _Company = new Company();
+
+        private void GetDefualtCompany()
+        {
+
+
+            _Company.CompanyID = CVM.GetCompany();
+            _Company.CompanyID = frmLoging._user.Employee.CompanyID;
+            if (_Company.CompanyID == 0)
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                MessageBox.Show("Please Add Defualt Company Before Get Started", "Defualt Company not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+
+        void FeedConmbo()
+        {
+            try
+            {
+
+                ComboBoxItemCollection coll = cmbLine.Properties.Items;
+
+                ItrackContext _context = new ItrackContext();
+                GenaricRepository<Department> _PoRepo = new GenaricRepository<Department>(new ItrackContext());
+
+                var items = (from item in _context.Department
+                             where item.CompanyID == _Company.CompanyID
+                             select item).ToList();
+                foreach (var item in items.Distinct())
+                {
+                    coll.Add(item.Name);
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
         private void frmStyleLoading_Load(object sender, EventArgs e)
         {
             GetStyleLoading();
             LoadAppoiment();
 
             grdStyleSearch.Hide();
+            GetDefualtCompany();
+            FeedConmbo();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -285,6 +338,11 @@ namespace EFTesting.UI.Asset
         {
           txtStyles.Text = gridView1.GetFocusedRowCellValue("StyleID").ToString();
           grdStyleSearch.Hide();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

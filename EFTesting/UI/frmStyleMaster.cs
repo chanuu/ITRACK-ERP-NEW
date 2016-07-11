@@ -202,6 +202,32 @@ namespace EFTesting.UI
             }
         }
 
+
+        private void AddCutheader()
+        {
+            try
+            {
+                GenaricRepository<CuttingHeader> _CuttingHeaderRepo = new GenaricRepository<CuttingHeader>(new ItrackContext());
+                CuttingHeader _cuttingHeader = new CuttingHeader();
+                _cuttingHeader.CuttingHeaderID = "C-" + txtStyleNo.Text;
+                _cuttingHeader.StyleID = txtID.Text;
+                _cuttingHeader.OrderQuantity = 0;
+                _cuttingHeader.PlanQuantity = 0;
+                _cuttingHeader.ItemType = cmbGarmentType.Text;
+                _cuttingHeader.status = "Pending";
+                _cuttingHeader.Remark = txtRemark.Text;
+                _cuttingHeader.Date = DateTime.Now;
+                _cuttingHeader.CreatedDate = DateTime.Now;
+                _cuttingHeader.CreatedBy = "Admin";
+                _CuttingHeaderRepo.Insert(_cuttingHeader);
+            
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
         async void editStyle()
         {
 
@@ -372,6 +398,7 @@ namespace EFTesting.UI
 
                 
             AddStyle();
+            AddCutheader();
         }
 
         private void txtBuyerName_EditValueChanged(object sender, EventArgs e)

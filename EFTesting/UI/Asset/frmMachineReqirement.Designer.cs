@@ -37,9 +37,9 @@
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbLineNo = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStyleNo = new DevExpress.XtraEditors.TextEdit();
+            this.cmbLineNo = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -66,8 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequirementID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbLineNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLineNo.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMachines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -103,9 +103,9 @@
             this.xtraTabPage1.Controls.Add(this.txtRemark);
             this.xtraTabPage1.Controls.Add(this.label4);
             this.xtraTabPage1.Controls.Add(this.label2);
-            this.xtraTabPage1.Controls.Add(this.cmbLineNo);
             this.xtraTabPage1.Controls.Add(this.label1);
             this.xtraTabPage1.Controls.Add(this.txtStyleNo);
+            this.xtraTabPage1.Controls.Add(this.cmbLineNo);
             this.xtraTabPage1.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1040, 400);
@@ -116,7 +116,7 @@
             this.grdStyleSearch.Location = new System.Drawing.Point(63, 119);
             this.grdStyleSearch.MainView = this.gridView4;
             this.grdStyleSearch.Name = "grdStyleSearch";
-            this.grdStyleSearch.Size = new System.Drawing.Size(911, 202);
+            this.grdStyleSearch.Size = new System.Drawing.Size(911, 259);
             this.grdStyleSearch.TabIndex = 29;
             this.grdStyleSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -175,17 +175,6 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Line No";
             // 
-            // cmbLineNo
-            // 
-            this.cmbLineNo.EditValue = "";
-            this.cmbLineNo.Location = new System.Drawing.Point(178, 131);
-            this.cmbLineNo.Name = "cmbLineNo";
-            this.cmbLineNo.Properties.AccessibleDescription = "";
-            this.cmbLineNo.Properties.NullValuePrompt = "Please Enter Tele No";
-            this.cmbLineNo.Properties.NullValuePromptShowForEmptyValue = true;
-            this.cmbLineNo.Size = new System.Drawing.Size(251, 20);
-            this.cmbLineNo.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -207,6 +196,15 @@
             this.txtStyleNo.TabIndex = 1;
             this.txtStyleNo.EditValueChanged += new System.EventHandler(this.txtStyleNo_EditValueChanged);
             this.txtStyleNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStyleNo_KeyDown);
+            // 
+            // cmbLineNo
+            // 
+            this.cmbLineNo.Location = new System.Drawing.Point(178, 137);
+            this.cmbLineNo.Name = "cmbLineNo";
+            this.cmbLineNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbLineNo.Size = new System.Drawing.Size(251, 20);
+            this.cmbLineNo.TabIndex = 2;
             // 
             // xtraTabPage2
             // 
@@ -357,7 +355,7 @@
             this.grdSearch.Location = new System.Drawing.Point(21, 53);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1126, 315);
+            this.grdSearch.Size = new System.Drawing.Size(1126, 410);
             this.grdSearch.TabIndex = 35;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -409,8 +407,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequirementID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbLineNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLineNo.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMachines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -430,7 +428,6 @@
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.TextEdit cmbLineNo;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit txtStyleNo;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
@@ -456,5 +453,6 @@
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraGrid.GridControl grdStyleSearch;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbLineNo;
     }
 }

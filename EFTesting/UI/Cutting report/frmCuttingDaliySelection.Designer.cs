@@ -30,10 +30,6 @@
         {
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.txtTo = new DevExpress.XtraEditors.TextEdit();
-            this.txtFrom = new DevExpress.XtraEditors.TextEdit();
             this.chkByPo = new DevExpress.XtraEditors.CheckEdit();
             this.chkDayCut = new DevExpress.XtraEditors.CheckEdit();
             this.txtPoNo = new DevExpress.XtraEditors.TextEdit();
@@ -41,13 +37,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtStyleNo = new DevExpress.XtraEditors.TextEdit();
             this.chkByStyle = new DevExpress.XtraEditors.CheckEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).BeginInit();
+            this.txtTo = new DevExpress.XtraEditors.DateEdit();
+            this.txtFrom = new DevExpress.XtraEditors.DateEdit();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chkByPo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDayCut.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPoNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkByStyle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -66,38 +68,6 @@
             this.simpleButton3.TabIndex = 73;
             this.simpleButton3.Text = "Print";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(245, 120);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(19, 13);
-            this.lbl2.TabIndex = 72;
-            this.lbl2.Text = "To";
-            // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(28, 116);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(31, 13);
-            this.lbl1.TabIndex = 71;
-            this.lbl1.Text = "From";
-            // 
-            // txtTo
-            // 
-            this.txtTo.Location = new System.Drawing.Point(240, 144);
-            this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(203, 20);
-            this.txtTo.TabIndex = 70;
-            // 
-            // txtFrom
-            // 
-            this.txtFrom.Location = new System.Drawing.Point(28, 144);
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(203, 20);
-            this.txtFrom.TabIndex = 69;
             // 
             // chkByPo
             // 
@@ -155,11 +125,57 @@
             this.chkByStyle.Size = new System.Drawing.Size(75, 19);
             this.chkByStyle.TabIndex = 79;
             // 
+            // txtTo
+            // 
+            this.txtTo.EditValue = null;
+            this.txtTo.Location = new System.Drawing.Point(234, 141);
+            this.txtTo.Name = "txtTo";
+            this.txtTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTo.Size = new System.Drawing.Size(200, 20);
+            this.txtTo.TabIndex = 105;
+            // 
+            // txtFrom
+            // 
+            this.txtFrom.EditValue = null;
+            this.txtFrom.Location = new System.Drawing.Point(28, 141);
+            this.txtFrom.Name = "txtFrom";
+            this.txtFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtFrom.Size = new System.Drawing.Size(200, 20);
+            this.txtFrom.TabIndex = 104;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(242, 117);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(19, 13);
+            this.lbl2.TabIndex = 103;
+            this.lbl2.Text = "To";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(25, 113);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(31, 13);
+            this.lbl1.TabIndex = 102;
+            this.lbl1.Text = "From";
+            // 
             // frmCuttingDaliySelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 485);
+            this.Controls.Add(this.txtTo);
+            this.Controls.Add(this.txtFrom);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.chkByStyle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtStyleNo);
@@ -167,22 +183,20 @@
             this.Controls.Add(this.txtPoNo);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.lbl2);
-            this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.txtTo);
-            this.Controls.Add(this.txtFrom);
             this.Controls.Add(this.chkByPo);
             this.Controls.Add(this.chkDayCut);
             this.Name = "frmCuttingDaliySelection";
             this.Text = "Day Cut";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkByPo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDayCut.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPoNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkByStyle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,10 +206,6 @@
 
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label lbl1;
-        private DevExpress.XtraEditors.TextEdit txtTo;
-        private DevExpress.XtraEditors.TextEdit txtFrom;
         private DevExpress.XtraEditors.CheckEdit chkByPo;
         private DevExpress.XtraEditors.CheckEdit chkDayCut;
         private DevExpress.XtraEditors.TextEdit txtPoNo;
@@ -203,5 +213,9 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.TextEdit txtStyleNo;
         private DevExpress.XtraEditors.CheckEdit chkByStyle;
+        private DevExpress.XtraEditors.DateEdit txtTo;
+        private DevExpress.XtraEditors.DateEdit txtFrom;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl1;
     }
 }

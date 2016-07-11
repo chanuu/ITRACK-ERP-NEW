@@ -168,7 +168,7 @@
             this.grdSearchStyle.Location = new System.Drawing.Point(38, 121);
             this.grdSearchStyle.MainView = this.gridView1;
             this.grdSearchStyle.Name = "grdSearchStyle";
-            this.grdSearchStyle.Size = new System.Drawing.Size(688, 173);
+            this.grdSearchStyle.Size = new System.Drawing.Size(861, 325);
             this.grdSearchStyle.TabIndex = 44;
             this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 306);
+            this.ClientSize = new System.Drawing.Size(902, 477);
             this.Controls.Add(this.grdSearchStyle);
             this.Controls.Add(this.chkFitToPage);
             this.Controls.Add(this.chkByStyle);
@@ -198,6 +198,7 @@
             this.Controls.Add(this.checkBox1);
             this.Name = "frmPoDeliveriesDialog";
             this.Text = "Cutting Production By FBO Date";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPoDeliveriesDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtFromDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFromDate.Properties)).EndInit();

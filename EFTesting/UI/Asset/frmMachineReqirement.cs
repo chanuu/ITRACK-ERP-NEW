@@ -14,6 +14,8 @@ using DevExpress.XtraReports.UI;
 using EFTesting.Reports.Asset;
 using EFTesting.ViewModel;
 using System.Diagnostics;
+using DevExpress.XtraEditors.Controls;
+using EFTesting.UI.User_Accounts;
 
 namespace EFTesting.UI.Asset
 {
@@ -83,7 +85,7 @@ namespace EFTesting.UI.Asset
             try {
 
                 ItrackContext _context = new ItrackContext();
-
+                lstItems.Clear();
                 foreach(var item in _context.MachineType)
                 {
                     MachineRequirementItem ritem = new MachineRequirementItem();
@@ -105,6 +107,8 @@ namespace EFTesting.UI.Asset
                 }
                 grdMachines.DataSource = null;
                 grdMachines.DataSource = lstItems;
+                gridView1.Columns["MachineRequirement"].Visible = false;
+                gridView1.Columns["MachineRequirementID"].Visible = false;
             }
             catch (Exception ex) {
 
@@ -163,7 +167,7 @@ namespace EFTesting.UI.Asset
             try
             {
                 GenaricRepository<MachineRequirement> _MachineReq = new GenaricRepository<MachineRequirement>(new ItrackContext());
-                _MachineReq.Add(AssignMachine());
+                _MachineReq.Insert(AssignMachine());
             }
             catch (Exception ex)
             {
@@ -174,12 +178,22 @@ namespace EFTesting.UI.Asset
         private void AddMachineItems() {
             try
             {
+                int i = 0;
                foreach(var items in lstRItems)
                 {
                     GenaricRepository<MachineRequirementItem> _MachineReq = new GenaricRepository<MachineRequirementItem>(new ItrackContext());
                     items.MachineRequirementID = txtRequirementID.Text;
-                    _MachineReq.Insert(items);
+                  if(_MachineReq.Insert(items) == true)
+                    {
+                        i = i + 1;
+                    }
+                   
 
+                }
+                if (i > 0)
+                {
+                    MessageBox.Show("Save Sucessfully", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    i = 0;
                 }
             }
             catch (Exception ex)
@@ -221,6 +235,24 @@ namespace EFTesting.UI.Asset
         }
 
 
+        CompanyVM CVM = new CompanyVM();
+        Company _Company = new Company();
+
+        private void GetDefualtCompany()
+        {
+
+
+            _Company.CompanyID = CVM.GetCompany();
+            _Company.CompanyID = frmLoging._user.Employee.CompanyID;
+            if (_Company.CompanyID == 0)
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                MessageBox.Show("Please Add Defualt Company Before Get Started", "Defualt Company not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
 
 
         private void frmMachineReqirement_Load(object sender, EventArgs e)
@@ -233,8 +265,11 @@ namespace EFTesting.UI.Asset
             btnClose.Hide();
             ItrackContext _context = new ItrackContext();
             _context.Database.Initialize(false);
+           
             grdStyleSearch.Hide();
             GetNewCode();
+            GetDefualtCompany();
+            FeedConmbo();
 
         }
 
@@ -419,8 +454,8 @@ namespace EFTesting.UI.Asset
             {
                 ItrackContext _context = new ItrackContext();
                 var items = (from item in _context.Style
-                             where item.StyleID.Contains(_key)
-                             select new { item.StyleID, item.Buyer.BuyerName, item.Remark }).ToList();
+                             where item.StyleID.Contains(_key) || item.StyleNo.Contains(_key)
+                             select new { item.StyleID,item.StyleNo, item.Buyer.BuyerName, item.Remark }).ToList();
 
                 grdStyleSearch.Show();
 
@@ -462,10 +497,47 @@ namespace EFTesting.UI.Asset
             }
         }
 
+
+
+
+
+        void FeedConmbo()
+        {
+            try
+            {
+
+                ComboBoxItemCollection coll = cmbLineNo.Properties.Items;
+
+                ItrackContext _context = new ItrackContext();
+                GenaricRepository<Department> _PoRepo = new GenaricRepository<Department>(new ItrackContext());
+
+                var items = (from item in _context.Department
+                            where item.CompanyID == _Company.CompanyID
+                            select item).ToList();
+                foreach (var item in items.Distinct())
+                {
+                    coll.Add(item.Name);
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
         private void grdStyleSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            txtStyleNo.Text = gridView4.GetFocusedRowCellValue("StyleID").ToString();
-            grdStyleSearch.Hide();
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtStyleNo.Text = gridView4.GetFocusedRowCellValue("StyleID").ToString();
+                grdStyleSearch.Hide();
+            }
+          
         }
     }
 }

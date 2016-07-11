@@ -3,16 +3,16 @@ namespace ITRACK.models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _lot : DbMigration
+    public partial class _st : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.CuttingItems", "LotNo", c => c.Int(nullable: false));
+            AddColumn("dbo.FabricLedgers", "StyleNo", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.CuttingItems", "LotNo");
+            DropColumn("dbo.FabricLedgers", "StyleNo");
         }
     }
 }

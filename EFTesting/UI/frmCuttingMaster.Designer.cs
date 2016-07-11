@@ -521,7 +521,7 @@
             this.grdRatio.Location = new System.Drawing.Point(46, 46);
             this.grdRatio.MainView = this.gridView6;
             this.grdRatio.Name = "grdRatio";
-            this.grdRatio.Size = new System.Drawing.Size(618, 113);
+            this.grdRatio.Size = new System.Drawing.Size(618, 279);
             this.grdRatio.TabIndex = 97;
             this.grdRatio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -958,7 +958,7 @@
             this.grdItemList.Location = new System.Drawing.Point(8, 114);
             this.grdItemList.MainView = this.gridView1;
             this.grdItemList.Name = "grdItemList";
-            this.grdItemList.Size = new System.Drawing.Size(1531, 185);
+            this.grdItemList.Size = new System.Drawing.Size(1586, 298);
             this.grdItemList.TabIndex = 57;
             this.grdItemList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1335,7 +1335,7 @@
             this.grdSearch.Location = new System.Drawing.Point(14, 44);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1243, 45);
+            this.grdSearch.Size = new System.Drawing.Size(1209, 432);
             this.grdSearch.TabIndex = 62;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

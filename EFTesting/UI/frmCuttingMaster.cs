@@ -292,7 +292,7 @@ namespace EFTesting.UI
             try {
                 ItrackContext _context = new ItrackContext();
                 var items = (from item in _context.CuttingHeader
-                             where item.Style.CompanyID == _Company.CompanyID && item.StyleID.Contains(_key)
+                             where item.Style.CompanyID == _Company.CompanyID && item.StyleID.Contains(_key) || item.Style.StyleNo.Contains(_key)
                              select new { item.CuttingHeaderID, item.StyleID,item.Style.StyleNo, item.Remark }).ToList();
 
                 if (items.Count >0)

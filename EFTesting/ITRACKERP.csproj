@@ -361,6 +361,12 @@
     <Compile Include="UI\Cutting report\frmCuttingDaliySelection.Designer.cs">
       <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Cutting report\frmFabricreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cutting report\frmFabricreport.Designer.cs">
+      <DependentUpon>frmFabricreport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\dailyProductionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -793,6 +799,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Cutting report\frmCuttingDaliySelection.resx">
       <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutting report\frmFabricreport.resx">
+      <DependentUpon>frmFabricreport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\dailyProductionDialog.resx">
       <DependentUpon>dailyProductionDialog.cs</DependentUpon>

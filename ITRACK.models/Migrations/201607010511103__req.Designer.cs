@@ -7,13 +7,13 @@ namespace ITRACK.models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class New : IMigrationMetadata
+    public sealed partial class _req : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(New));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_req));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606281019573_New"; }
+            get { return "201607010511103__req"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace ITRACK.models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class _remove_order_price : IMigrationMetadata
+    public sealed partial class _stId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_remove_order_price));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_stId));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606241141076__remove_order_price"; }
+            get { return "201607050538095__stId"; }
         }
         
         string IMigrationMetadata.Source
