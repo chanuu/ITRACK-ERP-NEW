@@ -203,6 +203,16 @@ namespace EFTesting.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap user_login_icon_14 {
+            get {
+                object obj = ResourceManager.GetObject("user-login-icon-14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap VideoBlend_icon {
             get {
                 object obj = ResourceManager.GetObject("VideoBlend-icon", resourceCulture);

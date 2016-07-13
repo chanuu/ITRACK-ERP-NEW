@@ -249,6 +249,7 @@ namespace EFTesting.UI
             gridView1.Columns["CuttingRatioID"].Visible = false;
             GetNewCode();
             grdSearch.Hide();
+            grdSearchStyle.Hide();
             txtSearchBox.Hide();
             btnClose.Hide();
 
@@ -419,7 +420,7 @@ namespace EFTesting.UI
         }
         private void txtTableCut_Leave(object sender, EventArgs e)
         {
-            LoadSizes(txtStyleNo.Text);
+            LoadSizes(this.StyleID);
         }
 
         private void btnpop_Click(object sender, EventArgs e)
@@ -528,6 +529,71 @@ namespace EFTesting.UI
                 btnClose.Hide();
                
             }
+        }
+
+
+
+        void searchStyle(string _key)
+        {
+            try {
+                ItrackContext _context = new ItrackContext();
+                var styles = (from item in _context.Style
+                              where item.StyleNo.Contains(_key) || item.StyleID.Contains(_key)
+                              select new { item.StyleID, item.StyleNo, item.Buyer.BuyerName, item.Remark }).ToList();
+
+                if (styles.Count > 0)
+                {
+                    grdSearchStyle.DataSource = styles;
+                    grdSearchStyle.Show();
+                }
+                else
+                {
+                    grdSearchStyle.DataSource = null;
+                }
+
+               
+            }
+            catch (Exception ex) {
+
+            }
+
+        }
+        private void txtRatioNo_EditValueChanged(object sender, EventArgs e)
+        {
+            searchStyle(txtRatioNo.Text);
+        }
+
+        private void txtRatioNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Up || e.KeyData == Keys.Down)
+            {
+                grdSearchStyle.Select();
+            }
+            else if (e.KeyData == Keys.Escape)
+            {
+                grdSearchStyle.Hide();
+
+            }
+        }
+
+        public string StyleID { get; set; }
+
+        private void grdSearchStyle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                this.StyleID = gridView3.GetFocusedRowCellValue("StyleID").ToString();
+                txtStyleNo.Text = gridView3.GetFocusedRowCellValue("StyleNo").ToString();
+                LoadSizes(this.StyleID);
+                grdSearchStyle.Hide();
+
+
+            }
+        }
+
+        private void txtStyleNo_EditValueChanged(object sender, EventArgs e)
+        {
+            searchStyle(txtStyleNo.Text);
         }
     }
 }

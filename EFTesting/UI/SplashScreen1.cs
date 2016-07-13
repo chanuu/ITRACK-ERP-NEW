@@ -33,5 +33,10 @@ namespace EFTesting.UI
         {
 
         }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

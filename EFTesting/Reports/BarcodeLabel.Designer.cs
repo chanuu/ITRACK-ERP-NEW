@@ -99,7 +99,7 @@
             this.xrLabel1.BorderColor = System.Drawing.Color.Transparent;
             this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Barcode")});
-            this.xrLabel1.Font = new System.Drawing.Font("Code39AzaleaNarrow3", 16F);
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0.1041641F, 18F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -397,10 +397,10 @@
             this.Margins = new System.Drawing.Printing.Margins(19, 19, 27, 27);
             this.PageHeight = 1169;
             this.PageWidth = 827;
-            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.ReportPrintOptions.DetailCountOnEmptyDataSource = 152;
             this.SnapToGrid = false;
-            this.Version = "14.1";
+            this.Version = "15.2";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

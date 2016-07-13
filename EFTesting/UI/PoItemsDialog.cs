@@ -57,6 +57,30 @@ namespace EFTesting.UI
         
         }
 
+
+        private PurchaseOrderItems Assign()
+        {
+            try
+            {
+
+                PurchaseOrderItems _Po = new PurchaseOrderItems();
+                _Po.PurchaseOrderID = txtPoNo.Text;
+                _Po.Color = txtColorCode.Text;
+                _Po.Size = txtSize.Text;
+                _Po.Length = txtLength.Text;
+                _Po.Quantity = Convert.ToInt16(txtQuntity.Text);
+                _Po.PurchaseOrderHeaderID = _Po.PurchaseOrderID;
+                return _Po;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error - B-0002", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+        }
+
+
         private void SetValues (){
           txtPoNo.Text =   PoItems.PurchaseOrderHeaderID;
           txtSize.Text = PoItems.Size;
@@ -86,8 +110,8 @@ namespace EFTesting.UI
         {
             try
             {
-
-                _PORepositorynew.Edit(AssignPoItems());
+                GenaricRepository<PurchaseOrderItems> _POR = new GenaricRepository<PurchaseOrderItems>(new ItrackContext());
+                _POR.Edit(Assign());
                 this.Close();
 
             }

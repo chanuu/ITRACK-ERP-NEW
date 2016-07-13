@@ -1342,8 +1342,8 @@ namespace EFTesting.UI
             {
                ItrackContext _context = new ItrackContext();
                 var items = (from item in _context.CuttingRatio
-                             where item.Style.CompanyID == _Company.CompanyID && item.StyleID.Contains(_key)
-                             select new { item.CuttingRatioID, item.StyleID, item.Remark }).ToList();
+                             where item.Style.CompanyID == _Company.CompanyID && item.StyleID== txtStyleNo.Text
+                             select new { item.CuttingRatioID, item.StyleID, item.Style.StyleNo, item.MarkerLength,item.Color,item.FabricType, item.Remark }).ToList();
 
                 if (items.Count > 0)
                 {

@@ -30,6 +30,10 @@
         {
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.grdSearchStyle = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cmbType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.label12 = new System.Windows.Forms.Label();
             this.cmbSize = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnremove = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
@@ -73,11 +77,12 @@
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchBox = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmbType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSearchStyle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdRatio)).BeginInit();
@@ -100,7 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -121,6 +125,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.grdSearchStyle);
             this.xtraTabPage1.Controls.Add(this.cmbType);
             this.xtraTabPage1.Controls.Add(this.label12);
             this.xtraTabPage1.Controls.Add(this.cmbSize);
@@ -150,6 +155,46 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(912, 392);
             this.xtraTabPage1.Text = "Header";
+            // 
+            // grdSearchStyle
+            // 
+            this.grdSearchStyle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.grdSearchStyle.Location = new System.Drawing.Point(57, 88);
+            this.grdSearchStyle.MainView = this.gridView3;
+            this.grdSearchStyle.Name = "grdSearchStyle";
+            this.grdSearchStyle.Size = new System.Drawing.Size(851, 220);
+            this.grdSearchStyle.TabIndex = 100;
+            this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            this.grdSearchStyle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearchStyle_KeyDown);
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.grdSearchStyle;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // cmbType
+            // 
+            this.cmbType.Location = new System.Drawing.Point(674, 62);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbType.Properties.Items.AddRange(new object[] {
+            "Body Fabric",
+            "Lining",
+            "Fusing"});
+            this.cmbType.Size = new System.Drawing.Size(153, 20);
+            this.cmbType.TabIndex = 99;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(671, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 13);
+            this.label12.TabIndex = 98;
+            this.label12.Text = "Type";
             // 
             // cmbSize
             // 
@@ -350,6 +395,8 @@
             this.txtRatioNo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtRatioNo.Size = new System.Drawing.Size(149, 20);
             this.txtRatioNo.TabIndex = 77;
+            this.txtRatioNo.EditValueChanged += new System.EventHandler(this.txtRatioNo_EditValueChanged);
+            this.txtRatioNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRatioNo_KeyDown);
             // 
             // label9
             // 
@@ -370,6 +417,7 @@
             this.txtStyleNo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtStyleNo.Size = new System.Drawing.Size(149, 20);
             this.txtStyleNo.TabIndex = 75;
+            this.txtStyleNo.EditValueChanged += new System.EventHandler(this.txtStyleNo_EditValueChanged);
             this.txtStyleNo.Leave += new System.EventHandler(this.txtTableCut_Leave);
             // 
             // label23
@@ -524,7 +572,7 @@
             this.grdSearch.Location = new System.Drawing.Point(12, 57);
             this.grdSearch.MainView = this.gridView2;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(951, 343);
+            this.grdSearch.Size = new System.Drawing.Size(951, 38);
             this.grdSearch.TabIndex = 82;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -567,28 +615,6 @@
             this.simpleButton1.Text = "Search";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(671, 46);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 13);
-            this.label12.TabIndex = 98;
-            this.label12.Text = "Type";
-            // 
-            // cmbType
-            // 
-            this.cmbType.Location = new System.Drawing.Point(674, 62);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbType.Properties.Items.AddRange(new object[] {
-            "Body Fabric",
-            "Lining",
-            "Fusing"});
-            this.cmbType.Size = new System.Drawing.Size(153, 20);
-            this.cmbType.TabIndex = 99;
-            // 
             // frmRatio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,6 +636,9 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSearchStyle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdRatio)).EndInit();
@@ -633,7 +662,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -687,5 +715,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.ComboBoxEdit cmbType;
         private System.Windows.Forms.Label label12;
+        private DevExpress.XtraGrid.GridControl grdSearchStyle;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
     }
 }
