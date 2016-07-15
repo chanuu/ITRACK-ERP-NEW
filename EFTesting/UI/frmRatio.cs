@@ -525,6 +525,7 @@ namespace EFTesting.UI
                 GetHeader(No);
                 SetItem(No);
                 grdSearch.Hide();
+                grdSearchStyle.Hide();
                 txtSearchBox.Hide();
                 btnClose.Hide();
                

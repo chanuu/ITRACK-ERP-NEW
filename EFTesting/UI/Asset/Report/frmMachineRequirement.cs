@@ -51,7 +51,7 @@ namespace EFTesting.UI.Asset.Report
                 ItrackContext con = new ItrackContext();
                
                 var styles = (from st in con.StyleLoading
-                              where st.EndDate > today && st.LineNo == _department.Name
+                              where st.EndDate > today  && st.LineNo == _department.Name
                               orderby st.StartDate
                               select new { st.Style.StyleNo,st.StyleID, st.LineNo, st.StartDate, st.EndDate }).ToList();
                 int i = 0;
@@ -66,7 +66,7 @@ namespace EFTesting.UI.Asset.Report
                         dtoCurrent.StartDate = selectedStyle.StartDate;
                         dtoCurrent.EndDate = selectedStyle.EndDate;
                         dtoCurrent.Type = "Current";
-                        feedDto(dtoCurrent.StyleNo, dtoCurrent);
+                        feedDto(dtoCurrent.StyleID, dtoCurrent);
                         
 
 
@@ -186,7 +186,7 @@ namespace EFTesting.UI.Asset.Report
                 if (row_Item.Count() > 0)
                 {
                     MachineRequirementReportDto newDto = new MachineRequirementReportDto();
-                    newDto.Type = "Required Mcs ";
+                    newDto.Type = "Required Mcs For:";
                     newDto.Location = _dto.Location;
                     newDto.StyleNo = _dto.StyleNo;
                     newDto.StyleID = _dto.StyleID;

@@ -86,8 +86,9 @@
             // 
             // fieldLocation1
             // 
-            this.fieldLocation1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldLocation1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldLocation1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldLocation1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldLocation1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldLocation1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.fieldLocation1.AreaIndex = 0;
             this.fieldLocation1.FieldName = "Location";
@@ -95,17 +96,23 @@
             // 
             // fieldStyleNo1
             // 
-            this.fieldStyleNo1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldStyleNo1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldStyleNo1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldStyleNo1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldStyleNo1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldStyleNo1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldStyleNo1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldStyleNo1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldStyleNo1.AreaIndex = 1;
+            this.fieldStyleNo1.AreaIndex = 2;
             this.fieldStyleNo1.FieldName = "StyleNo";
             this.fieldStyleNo1.Name = "fieldStyleNo1";
             // 
             // fieldStartDate1
             // 
-            this.fieldStartDate1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStartDate1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldStartDate1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldStartDate1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldStartDate1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldStartDate1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldStartDate1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.fieldStartDate1.AreaIndex = 3;
             this.fieldStartDate1.FieldName = "StartDate";
@@ -115,8 +122,12 @@
             // 
             // fieldEndDate1
             // 
-            this.fieldEndDate1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldEndDate1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldEndDate1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldEndDate1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldEndDate1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldEndDate1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldEndDate1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldEndDate1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldEndDate1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
             this.fieldEndDate1.AreaIndex = 4;
             this.fieldEndDate1.FieldName = "EndDate";
@@ -126,18 +137,26 @@
             // 
             // fieldType1
             // 
-            this.fieldType1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldType1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldType1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldType1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldType1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldType1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldType1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldType1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldType1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldType1.AreaIndex = 2;
+            this.fieldType1.AreaIndex = 1;
             this.fieldType1.FieldName = "Type";
             this.fieldType1.Name = "fieldType1";
             // 
             // fieldMachineType1
             // 
             this.fieldMachineType1.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldMachineType1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldMachineType1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldMachineType1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldMachineType1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldMachineType1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldMachineType1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldMachineType1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldMachineType1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldMachineType1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
             this.fieldMachineType1.AreaIndex = 0;
             this.fieldMachineType1.FieldName = "MachineType";
@@ -147,8 +166,15 @@
             // fieldQty1
             // 
             this.fieldQty1.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldQty1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldQty1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldQty1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldQty1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldQty1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldQty1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldQty1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldQty1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldQty1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8F);
+            this.fieldQty1.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldQty1.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
             this.fieldQty1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
             this.fieldQty1.AreaIndex = 0;
             this.fieldQty1.FieldName = "Qty";
