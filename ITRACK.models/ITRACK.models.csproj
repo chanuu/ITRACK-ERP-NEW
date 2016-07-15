@@ -87,6 +87,7 @@
     <Compile Include="DividingPlanItem.cs" />
     <Compile Include="DividingPlanTemp.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EstimateFabricConsumption.cs" />
     <Compile Include="ExpressionBuilder.cs" />
     <Compile Include="FabricConsumption.cs" />
     <Compile Include="FabricDetails.cs" />

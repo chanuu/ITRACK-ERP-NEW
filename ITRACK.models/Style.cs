@@ -69,5 +69,7 @@ namespace ITRACK.models
 
         public virtual ICollection<CuttingRatio> CuttingRatio { get; set; }
 
+        public virtual ICollection<EstimateFabricConsumption> EstimateFabricConsumption { get; set; }
+
     }
 }
