@@ -467,10 +467,10 @@
             // grdCutIssue
             // 
             this.grdCutIssue.Cursor = System.Windows.Forms.Cursors.Default;
-            this.grdCutIssue.Location = new System.Drawing.Point(305, 56);
+            this.grdCutIssue.Location = new System.Drawing.Point(27, 56);
             this.grdCutIssue.MainView = this.gridView3;
             this.grdCutIssue.Name = "grdCutIssue";
-            this.grdCutIssue.Size = new System.Drawing.Size(886, 394);
+            this.grdCutIssue.Size = new System.Drawing.Size(1164, 394);
             this.grdCutIssue.TabIndex = 54;
             this.grdCutIssue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

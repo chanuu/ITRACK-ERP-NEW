@@ -572,7 +572,7 @@
             this.grdSearch.Location = new System.Drawing.Point(12, 57);
             this.grdSearch.MainView = this.gridView2;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(951, 38);
+            this.grdSearch.Size = new System.Drawing.Size(951, 390);
             this.grdSearch.TabIndex = 82;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -631,6 +631,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "frmRatio";
             this.Text = "frmRatio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRatio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
