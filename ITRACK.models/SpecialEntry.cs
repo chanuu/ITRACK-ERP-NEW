@@ -18,6 +18,10 @@ namespace ITRACK.models
 
         public string DispatchNo { get; set; }
 
+        public string StyleNo { get; set; }
+
+        public string BOCNo { get; set; }
+
         public string TotalRollQty { get; set; }
 
         public string TotalLength { get; set; }

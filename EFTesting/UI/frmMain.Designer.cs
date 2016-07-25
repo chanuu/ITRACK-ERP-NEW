@@ -128,6 +128,7 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnActual = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -330,9 +331,10 @@
             this.barButtonItem36,
             this.btnRequirement,
             this.btnConsumtion,
-            this.btnOperation});
+            this.btnOperation,
+            this.btnActual});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 56;
+            this.ribbonControl1.MaxItemId = 57;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem36);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -849,6 +851,7 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.btncutPO);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnStatus);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnFab);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnActual);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Cutting Reports";
             // 
@@ -1026,6 +1029,15 @@
             this.barButtonItem34.Name = "barButtonItem34";
             this.barButtonItem34.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // btnActual
+            // 
+            this.btnActual.Caption = "Actual Vs Plan";
+            this.btnActual.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnActual.Id = 56;
+            this.btnActual.Name = "btnActual";
+            this.btnActual.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnActual.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnActual_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1149,5 +1161,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.BarButtonItem btnActual;
     }
 }

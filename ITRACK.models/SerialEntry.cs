@@ -18,6 +18,12 @@ namespace ITRACK.models
 
         public string Color { get; set; }
 
+        public double RollWidth { get; set; }
+
+        public string Shade { get; set; }
+
+        public double Shrinkage { get; set; }
+
         public virtual ICollection<SpecialEntry> SpecialEntry { get; set; }
 
         public string ItemsID { get; set; }

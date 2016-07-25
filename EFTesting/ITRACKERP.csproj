@@ -158,6 +158,18 @@
       <DependentUpon>BarcodeLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\clsProductionSummary.cs" />
+    <Compile Include="Reports\Cutting Report\rptFabricRoll.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cutting Report\rptFabricRoll.Designer.cs">
+      <DependentUpon>rptFabricRoll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Cutting Report\rptLayerFabricConsumtion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cutting Report\rptLayerFabricConsumtion.Designer.cs">
+      <DependentUpon>rptLayerFabricConsumtion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Cutting Report\rptRatio.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -354,6 +366,12 @@
     </Compile>
     <Compile Include="UI\Asset\frmStyleLoading.Designer.cs">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\Report\frmFabricConsumtionVsActual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\Report\frmFabricConsumtionVsActual.Designer.cs">
+      <DependentUpon>frmFabricConsumtionVsActual.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Asset\Report\frmMachineRequirement.cs">
       <SubType>Form</SubType>
@@ -715,6 +733,12 @@
     <EmbeddedResource Include="Reports\BarcodeLabel.resx">
       <DependentUpon>BarcodeLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cutting Report\rptFabricRoll.resx">
+      <DependentUpon>rptFabricRoll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cutting Report\rptLayerFabricConsumtion.resx">
+      <DependentUpon>rptLayerFabricConsumtion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Cutting Report\rptRatio.resx">
       <DependentUpon>rptRatio.cs</DependentUpon>
     </EmbeddedResource>
@@ -802,6 +826,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmStyleLoading.resx">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\Report\frmFabricConsumtionVsActual.resx">
+      <DependentUpon>frmFabricConsumtionVsActual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\Report\frmMachineRequirement.resx">
       <DependentUpon>frmMachineRequirement.cs</DependentUpon>
@@ -986,10 +1013,12 @@
     <None Include="Properties\DataSources\ITRACK.models.DayendHeader.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.DividingPlanHeader.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.DividingPlanItem.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.EstimateFabricConsumption.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.FabricLedger.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.LayinDetails.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.MachineRequirementItem.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.OprationBarcodes.datasource" />
+    <None Include="Properties\DataSources\ITRACK.models.SerialEntry.datasource" />
     <None Include="Properties\DataSources\ITRACK.models.StyleLoading.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

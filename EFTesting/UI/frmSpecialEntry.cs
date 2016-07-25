@@ -14,6 +14,8 @@ using EFTesting.ViewModel;
 using ITRACK.Validator;
 using MyTeamApp;
 using System.Linq.Expressions;
+using EFTesting.Reports.Cutting_Report;
+using DevExpress.XtraReports.UI;
 
 namespace EFTesting.UI
 {
@@ -70,6 +72,8 @@ namespace EFTesting.UI
             _SpecialEntry.CompanyID = _Company.CompanyID;
             _SpecialEntry.SpecialEntryID = txtSpecialEntryNo.Text;
             _SpecialEntry.PoNo = txtPo.Text;
+            _SpecialEntry.StyleNo = txtStyleNo.Text;
+            _SpecialEntry.BOCNo = txtBOCNo.Text;
             _SpecialEntry.GrnNo = txtGrnNo.Text;
             _SpecialEntry.DispatchNo = txtDispatchNo.Text;
             _SpecialEntry.Date = txtDate.Text;
@@ -325,6 +329,53 @@ namespace EFTesting.UI
         }
 
 
+        int getPoCount()
+        {
+            try
+            {
+                GenaricRepository<SerialEntry> _GRNRepo = new GenaricRepository<SerialEntry>(new ItrackContext());
+                return _GRNRepo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+
+
+        string GetCode()
+        {
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+                string _code = "";
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "SE"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                  _code =  _Engine.GenarateNo(_No, getPoCount());
+
+
+                }
+
+                return _code;
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
+
+        }
+
         private void AddFabricDetails()
         {
             try
@@ -341,7 +392,8 @@ namespace EFTesting.UI
                     _SerialEntry.Color = item.Color;
                     _SerialEntry.ItemsID = txtItemCode.Text;
                     _SerialEntry.RollNo = _SerialEntry.SerialEntryID;
-                    _SpecialEntry.SerialEntryID = _SerialEntry.RollNo;
+
+                    _SpecialEntry.SerialEntryID = GetCode();
 
 
                     _SerialEntry.SpecialEntryID = txtSpecialEntryNo.Text;
@@ -494,7 +546,8 @@ namespace EFTesting.UI
 
         private void frmSpecialEntry_Load(object sender, EventArgs e)
         {
-
+            grdSearchSpecialEntry.Hide();
+            grdItemSearch.Hide();
         }
 
 
@@ -580,6 +633,43 @@ namespace EFTesting.UI
             {
                 grdItemSearch.Hide();
             }
+        }
+
+
+        private void GetCuttingDetailsReport()
+        {
+            try
+            {
+                //   rptCuttingDetails report = new rptCuttingDetails();
+                //  report.DataSource = GetCuttingDetailsReport(txtStyleNo.Text);
+
+                rptFabricRoll report = new rptFabricRoll();
+
+                ItrackContext _context = new ItrackContext();
+
+                var list = (from item in _context.SerialEntry
+                           where item.SpecialEntryID == txtSpecialEntryNo.Text
+
+                           select item).ToList();
+
+                    report.DataSource = list;
+                   
+                    ReportPrintTool tool = new ReportPrintTool(report);
+                    tool.ShowPreview();
+           
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            GetCuttingDetailsReport();
         }
     }
 }

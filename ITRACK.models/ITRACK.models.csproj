@@ -111,6 +111,10 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607220422365__fab.cs" />
+    <Compile Include="Migrations\201607220422365__fab.Designer.cs">
+      <DependentUpon>201607220422365__fab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
     <Compile Include="OfflineAssetScan.cs" />
@@ -201,6 +205,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607220422365__fab.resx">
+      <DependentUpon>201607220422365__fab.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

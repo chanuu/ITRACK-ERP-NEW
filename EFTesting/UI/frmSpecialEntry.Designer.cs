@@ -30,6 +30,10 @@
         {
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.txtBOCNo = new DevExpress.XtraEditors.TextEdit();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtStyleNo = new DevExpress.XtraEditors.TextEdit();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtSpecialEntryNo = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRemarks = new DevExpress.XtraEditors.MemoEdit();
@@ -59,6 +63,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchBox = new DevExpress.XtraEditors.TextEdit();
@@ -71,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBOCNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpecialEntryNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalLength.Properties)).BeginInit();
@@ -87,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSearchSpecialEntry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -105,10 +114,15 @@
             this.xtraTabControl1.TabIndex = 86;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.txtBOCNo);
+            this.xtraTabPage1.Controls.Add(this.label10);
+            this.xtraTabPage1.Controls.Add(this.txtStyleNo);
+            this.xtraTabPage1.Controls.Add(this.label9);
             this.xtraTabPage1.Controls.Add(this.txtSpecialEntryNo);
             this.xtraTabPage1.Controls.Add(this.label6);
             this.xtraTabPage1.Controls.Add(this.txtRemarks);
@@ -130,6 +144,40 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(988, 414);
             this.xtraTabPage1.Text = "Header";
             // 
+            // txtBOCNo
+            // 
+            this.txtBOCNo.Location = new System.Drawing.Point(545, 97);
+            this.txtBOCNo.Name = "txtBOCNo";
+            this.txtBOCNo.Properties.NullValuePrompt = "Po Number or Dispatch No";
+            this.txtBOCNo.Size = new System.Drawing.Size(226, 20);
+            this.txtBOCNo.TabIndex = 72;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(445, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "BOC No";
+            // 
+            // txtStyleNo
+            // 
+            this.txtStyleNo.Location = new System.Drawing.Point(149, 97);
+            this.txtStyleNo.Name = "txtStyleNo";
+            this.txtStyleNo.Properties.NullValuePrompt = "Po Number or Dispatch No";
+            this.txtStyleNo.Size = new System.Drawing.Size(226, 20);
+            this.txtStyleNo.TabIndex = 70;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(49, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 71;
+            this.label9.Text = "Style No";
+            // 
             // txtSpecialEntryNo
             // 
             this.txtSpecialEntryNo.Location = new System.Drawing.Point(149, 28);
@@ -149,7 +197,7 @@
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(545, 104);
+            this.txtRemarks.Location = new System.Drawing.Point(545, 134);
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Properties.NullValuePrompt = "Please Enter Supplier Invoice No";
             this.txtRemarks.Size = new System.Drawing.Size(226, 105);
@@ -158,7 +206,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(445, 107);
+            this.label5.Location = new System.Drawing.Point(445, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 66;
@@ -166,7 +214,7 @@
             // 
             // txtTotalLength
             // 
-            this.txtTotalLength.Location = new System.Drawing.Point(149, 180);
+            this.txtTotalLength.Location = new System.Drawing.Point(149, 210);
             this.txtTotalLength.Name = "txtTotalLength";
             this.txtTotalLength.Properties.NullValuePrompt = "Po Number or Dispatch No";
             this.txtTotalLength.Size = new System.Drawing.Size(226, 20);
@@ -175,7 +223,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 183);
+            this.label4.Location = new System.Drawing.Point(49, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 61;
@@ -183,7 +231,7 @@
             // 
             // txtTotalRoll
             // 
-            this.txtTotalRoll.Location = new System.Drawing.Point(149, 140);
+            this.txtTotalRoll.Location = new System.Drawing.Point(149, 170);
             this.txtTotalRoll.Name = "txtTotalRoll";
             this.txtTotalRoll.Properties.NullValuePrompt = "Po Number or Dispatch No";
             this.txtTotalRoll.Size = new System.Drawing.Size(226, 20);
@@ -192,7 +240,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 143);
+            this.label3.Location = new System.Drawing.Point(49, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 59;
@@ -223,7 +271,7 @@
             // 
             // txtDispatchNo
             // 
-            this.txtDispatchNo.Location = new System.Drawing.Point(149, 102);
+            this.txtDispatchNo.Location = new System.Drawing.Point(149, 132);
             this.txtDispatchNo.Name = "txtDispatchNo";
             this.txtDispatchNo.Properties.NullValuePrompt = "Po Number or Dispatch No";
             this.txtDispatchNo.Size = new System.Drawing.Size(226, 20);
@@ -232,7 +280,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 105);
+            this.label2.Location = new System.Drawing.Point(49, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 55;
@@ -295,7 +343,7 @@
             this.grdItemSearch.Location = new System.Drawing.Point(33, 66);
             this.grdItemSearch.MainView = this.gridView3;
             this.grdItemSearch.Name = "grdItemSearch";
-            this.grdItemSearch.Size = new System.Drawing.Size(889, 316);
+            this.grdItemSearch.Size = new System.Drawing.Size(889, 345);
             this.grdItemSearch.TabIndex = 98;
             this.grdItemSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -395,6 +443,23 @@
             this.txtFileName.Size = new System.Drawing.Size(338, 21);
             this.txtFileName.TabIndex = 89;
             // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.btnPrint);
+            this.xtraTabPage3.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(988, 414);
+            this.xtraTabPage3.Text = "Report";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(57, 73);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 93;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // simpleButton2
             // 
             this.simpleButton2.Image = global::EFTesting.Properties.Resources.update;
@@ -468,7 +533,7 @@
             this.grdSearchSpecialEntry.Location = new System.Drawing.Point(36, 53);
             this.grdSearchSpecialEntry.MainView = this.gridView2;
             this.grdSearchSpecialEntry.Name = "grdSearchSpecialEntry";
-            this.grdSearchSpecialEntry.Size = new System.Drawing.Size(1022, 424);
+            this.grdSearchSpecialEntry.Size = new System.Drawing.Size(1089, 432);
             this.grdSearchSpecialEntry.TabIndex = 94;
             this.grdSearchSpecialEntry.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -500,6 +565,8 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBOCNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpecialEntryNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemarks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalLength.Properties)).EndInit();
@@ -517,6 +584,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSearchSpecialEntry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -566,5 +634,11 @@
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraGrid.GridControl grdSearchSpecialEntry;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.TextEdit txtBOCNo;
+        private System.Windows.Forms.Label label10;
+        private DevExpress.XtraEditors.TextEdit txtStyleNo;
+        private System.Windows.Forms.Label label9;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }

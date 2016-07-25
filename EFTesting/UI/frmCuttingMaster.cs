@@ -1385,6 +1385,7 @@ namespace EFTesting.UI
         {
             try
             {
+                _itemPerRatio = 0;
                 ItrackContext _context = new ItrackContext();
                 var items = (from item in _context.RatioItem
 
@@ -1421,6 +1422,7 @@ namespace EFTesting.UI
         {
             try
             {
+                _length = 0;
                 ItrackContext _context = new ItrackContext();
                 var result = (from item in _context.CuttingRatio
                               where item.CuttingRatioID == _ID
@@ -1543,13 +1545,13 @@ namespace EFTesting.UI
                         }
 
 
-                        MessageBox.Show("Save Sucessfully !", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                         FeedCuttingItem(txtCuttingTicketNo.Text);
 
                     }
 
+                    MessageBox.Show("Save Sucessfully !", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                   
 
 
 
@@ -1566,10 +1568,99 @@ namespace EFTesting.UI
           if(isValidRatio() == true)
             {
                 insertCutItem();
+                AddFabricEstimage();
             }
             
         }
 
+
+        string GetLastNo() {
+            try {
+                ItrackContext _context = new ItrackContext();
+
+                return (from item in _context.EstimateFabricConsumption
+                             select item.EstimateFabricConsumptionID).ToList().Last();
+
+               
+            }
+            catch (Exception ex) {
+                return "0";
+            }
+        }
+
+
+        int getCount()
+        {
+            try
+            {
+                GenaricRepository<EstimateFabricConsumption> _Repo = new GenaricRepository<EstimateFabricConsumption>(new ItrackContext());
+                return _Repo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+        void GetNewCode()
+        {
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "Fab"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    this.ConmsumtionID = _Engine.GenarateNo(_No, getCount());
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+    
+        string ConmsumtionID { get; set; }
+
+        void AddFabricEstimage() {
+            try {
+                EstimateFabricConsumption _consumtion = new EstimateFabricConsumption();
+
+                GenaricRepository<EstimateFabricConsumption> _ItemRepo = new GenaricRepository<EstimateFabricConsumption>(new ItrackContext());
+                GetNewCode();
+                    _consumtion.EstimateFabricConsumptionID = this.ConmsumtionID;
+                _consumtion.StyleID = txtStyleNo.Text;
+                _consumtion.MarkerNo = txtMkrNo.Text;
+                _consumtion.NoofPlys = Convert.ToInt16(txtNoOfFlys.Text);
+                _consumtion.Date = DateTime.Now;
+                _consumtion.CuttingRatioID = txtRatioNo.Text;
+                _consumtion.ActualFabUsed = _length * _consumtion.NoofPlys;
+                _consumtion.SinglePcsConsumtion = _length / _itemPerRatio;
+                _consumtion.TotalPcs = _itemPerRatio * _consumtion.NoofPlys;
+                _consumtion.TotalFabricUsed = _length * _consumtion.NoofPlys;
+                _consumtion.ActualFabUsed = 0;
+                _ItemRepo.Insert(_consumtion);
+
+
+
+            }
+            catch (Exception ex) {
+
+            }
+
+        }
 
 
         double GetBalance(string _id)

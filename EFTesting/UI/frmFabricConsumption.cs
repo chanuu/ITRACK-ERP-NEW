@@ -72,7 +72,9 @@ namespace EFTesting.UI
 
                 if (txtActualBalance.Text != "")
                 {
-                    txtNotedBalance.Text = Convert.ToString(_ledger.NotedLength - _ledger.FabricUsed);
+                    _ledger.ActualBalance = Convert.ToDouble(txtActualBalance.Text);
+                    _ledger.NotedBalance = Convert.ToDouble(txtNotedBalance.Text);
+
                 }
                 else
                 {
@@ -170,13 +172,16 @@ namespace EFTesting.UI
 
             
 
-            txtStyleNo.Text = "";
+          
             txtMNo.Text = "";
             txtRollWidth.Text = "";
             txtNoOfPlys.Text = "";
             txtRoleNo.Text = "";
             txtRollHegiht.Text = "";
             txtNotedBalance.Text = "";
+            txtNotedBalance.ReadOnly = false;
+            txtFabused.ReadOnly = false;
+            grdSearchStyle.Hide();
 
 
 
@@ -338,6 +343,7 @@ namespace EFTesting.UI
         {
             txtRollHegiht.Text = Convert.ToString(GetBalance(txtRoleNo.Text));
             txtAvailBal.Text = Convert.ToString(GetBalance(txtRoleNo.Text) - GetAvailBal(txtRoleNo.Text));
+           
         }
 
 
@@ -362,6 +368,10 @@ namespace EFTesting.UI
         private void txtNoOfPlys_Leave(object sender, EventArgs e)
         {
             txtFabused.Text = Convert.ToString(Convert.ToDouble(txtNoOfPlys.Text) * Convert.ToDouble(txtRollWidth.Text));
+            txtNotedBalance.Text = Convert.ToString(Convert.ToDouble(txtAvailBal.Text) - Convert.ToDouble(txtFabused.Text));
+
+            txtNotedBalance.ReadOnly = true;
+            txtFabused.ReadOnly = true;
         }
 
         private void txtSearchBox_KeyDown(object sender, KeyEventArgs e)
