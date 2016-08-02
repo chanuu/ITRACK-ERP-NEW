@@ -101,6 +101,7 @@
     <Compile Include="DTOs\AssetVerificationLocationdto.cs" />
     <Compile Include="DTOs\dtoCuttingLedgerSummary.cs" />
     <Compile Include="DTOs\dtoCuttingStatus.cs" />
+    <Compile Include="DTOs\FabricUtilizationdto.cs" />
     <Compile Include="DTOs\MachineListdto.cs" />
     <Compile Include="DTOs\MachineRequirementReportDto.cs" />
     <Compile Include="DTOs\PrintWorkOrder.cs" />
@@ -989,6 +990,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoCuttingLedgerSummary.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoCuttingStatusSummary.datasource" />
+    <None Include="Properties\DataSources\EFTesting.DTOs.FabricUtilizationdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineListdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineRequirementReportDto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.StyleLoadingDto.datasource" />

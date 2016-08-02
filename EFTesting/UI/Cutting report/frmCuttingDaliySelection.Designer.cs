@@ -41,6 +41,7 @@
             this.txtFrom = new DevExpress.XtraEditors.DateEdit();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::EFTesting.UI.WaitForm1), true, true, true);
             ((System.ComponentModel.ISupportInitialize)(this.chkByPo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDayCut.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPoNo.Properties)).BeginInit();
@@ -167,6 +168,10 @@
             this.lbl1.TabIndex = 102;
             this.lbl1.Text = "From";
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // frmCuttingDaliySelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,5 +222,6 @@
         private DevExpress.XtraEditors.DateEdit txtFrom;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

@@ -39,5 +39,10 @@ namespace EFTesting.UI
         public enum WaitFormCommand
         {
         }
+
+        private void progressPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

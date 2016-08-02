@@ -41,6 +41,7 @@
             this.progressPanel1.AppearanceCaption.Options.UseFont = true;
             this.progressPanel1.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.progressPanel1.AppearanceDescription.Options.UseFont = true;
+            this.progressPanel1.Caption = "Processing";
             this.progressPanel1.Description = "Initializing Database ...";
             this.progressPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressPanel1.ImageHorzOffset = 20;
@@ -50,6 +51,7 @@
             this.progressPanel1.Size = new System.Drawing.Size(246, 39);
             this.progressPanel1.TabIndex = 0;
             this.progressPanel1.Text = "progressPanel1";
+            this.progressPanel1.Click += new System.EventHandler(this.progressPanel1_Click);
             // 
             // tableLayoutPanel1
             // 

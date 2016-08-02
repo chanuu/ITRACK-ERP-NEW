@@ -14,6 +14,7 @@ using EFTesting.UI.User_Accounts;
 using System.Diagnostics;
 using EFTesting.Reports;
 using DevExpress.XtraReports.UI;
+using EFTesting.DTOs;
 
 namespace EFTesting.UI
 {
@@ -448,7 +449,7 @@ namespace EFTesting.UI
         }
 
 
-
+        List<FabricUtilizationdto> lstFabric = new List<FabricUtilizationdto>();
         private void GetCuttingDetailsReport()
         {
             try
@@ -465,7 +466,30 @@ namespace EFTesting.UI
                                 where item.StyleNo == _style.StyleID
                                 select item).ToList();
 
-                    report.DataSource = list;
+                    foreach(var item in list)
+                    {
+                        FabricUtilizationdto dto = new FabricUtilizationdto();
+                        dto.StyleNo = item.StyleRef;
+                        dto.MarkerNo = item.MarkerNo;
+                        dto.NoOfFlys = item.NoOfFlys;
+                        dto.Date = item.Date;
+                        dto.RollNo = item.RollNo;
+                        dto.NotedLength = item.NotedLength;
+                        dto.MarkerLength = item.MarkerLength;
+                        dto.FabricUsed = item.FabricUsed;
+                        dto.NotedBalance = item.NotedBalance;
+                        dto.ActualBalance = item.ActualBalance;
+
+                        if (dto.ActualBalance != 0)
+                        {
+                            // calcute balance shortage
+                            dto.Shortage = dto.NotedBalance - dto.ActualBalance;
+                        }
+
+                        lstFabric.Add(dto);
+                    }
+
+                    report.DataSource = lstFabric;
                     report.Landscape = true;
                     ReportPrintTool tool = new ReportPrintTool(report);
                     tool.ShowPreview();
@@ -474,10 +498,32 @@ namespace EFTesting.UI
                 {
                     DateTime _from = Convert.ToDateTime(txtFrom.Text);
                     DateTime _to = Convert.ToDateTime(txtTo.Text);
-                    var list = (from item in _context.FabricConsumption
+                    var list = (from item in _context.FabricLedger
                                 where item.Date > _from && item.Date < _to
                                 select item).ToList();
 
+                    foreach (var item in list)
+                    {
+                        FabricUtilizationdto dto = new FabricUtilizationdto();
+                        dto.StyleNo = item.StyleRef;
+                        dto.MarkerNo = item.MarkerNo;
+                        dto.NoOfFlys = item.NoOfFlys;
+                        dto.Date = item.Date;
+                        dto.RollNo = item.RollNo;
+                        dto.NotedLength = item.NotedLength;
+                        dto.MarkerLength = item.MarkerLength;
+                        dto.FabricUsed = item.FabricUsed;
+                        dto.NotedBalance = item.NotedBalance;
+                        dto.ActualBalance = item.ActualBalance;
+
+                        if (dto.ActualBalance != 0)
+                        {
+                            // calcute balance shortage
+                            dto.Shortage = dto.NotedBalance - dto.ActualBalance;
+                        }
+
+                        lstFabric.Add(dto);
+                    }
                     report.DataSource = list;
                     report.Landscape = true;
                     ReportPrintTool tool = new ReportPrintTool(report);
