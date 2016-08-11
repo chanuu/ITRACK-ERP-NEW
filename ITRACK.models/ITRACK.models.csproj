@@ -45,6 +45,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -86,6 +87,8 @@
     <Compile Include="DividingPlan.cs" />
     <Compile Include="DividingPlanItem.cs" />
     <Compile Include="DividingPlanTemp.cs" />
+    <Compile Include="EFAppointment.cs" />
+    <Compile Include="EFResource.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EstimateFabricConsumption.cs" />
     <Compile Include="ExpressionBuilder.cs" />
@@ -111,9 +114,29 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607220422365__fab.cs" />
-    <Compile Include="Migrations\201607220422365__fab.Designer.cs">
-      <DependentUpon>201607220422365__fab.cs</DependentUpon>
+    <Compile Include="Migrations\201608080943227_res_v.cs" />
+    <Compile Include="Migrations\201608080943227_res_v.Designer.cs">
+      <DependentUpon>201608080943227_res_v.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608080957082_res_v2.cs" />
+    <Compile Include="Migrations\201608080957082_res_v2.Designer.cs">
+      <DependentUpon>201608080957082_res_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608081034489_res_v4.cs" />
+    <Compile Include="Migrations\201608081034489_res_v4.Designer.cs">
+      <DependentUpon>201608081034489_res_v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608081044446_res_v5.cs" />
+    <Compile Include="Migrations\201608081044446_res_v5.Designer.cs">
+      <DependentUpon>201608081044446_res_v5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608090330141__v6.cs" />
+    <Compile Include="Migrations\201608090330141__v6.Designer.cs">
+      <DependentUpon>201608090330141__v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608100622144_V8.cs" />
+    <Compile Include="Migrations\201608100622144_V8.Designer.cs">
+      <DependentUpon>201608100622144_V8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201608020937297_NewUpdate.cs" />
     <Compile Include="Migrations\201608020937297_NewUpdate.Designer.cs">
@@ -210,8 +233,23 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607220422365__fab.resx">
-      <DependentUpon>201607220422365__fab.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608080943227_res_v.resx">
+      <DependentUpon>201608080943227_res_v.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608080957082_res_v2.resx">
+      <DependentUpon>201608080957082_res_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608081034489_res_v4.resx">
+      <DependentUpon>201608081034489_res_v4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608081044446_res_v5.resx">
+      <DependentUpon>201608081044446_res_v5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608090330141__v6.resx">
+      <DependentUpon>201608090330141__v6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608100622144_V8.resx">
+      <DependentUpon>201608100622144_V8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608020937297_NewUpdate.resx">
       <DependentUpon>201608020937297_NewUpdate.cs</DependentUpon>

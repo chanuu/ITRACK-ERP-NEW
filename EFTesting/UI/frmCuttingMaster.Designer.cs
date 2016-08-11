@@ -955,10 +955,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdItemList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.grdItemList.Location = new System.Drawing.Point(8, 114);
+            this.grdItemList.Location = new System.Drawing.Point(10, 124);
             this.grdItemList.MainView = this.gridView1;
             this.grdItemList.Name = "grdItemList";
-            this.grdItemList.Size = new System.Drawing.Size(1586, 298);
+            this.grdItemList.Size = new System.Drawing.Size(1188, 269);
             this.grdItemList.TabIndex = 57;
             this.grdItemList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1335,7 +1335,7 @@
             this.grdSearch.Location = new System.Drawing.Point(14, 44);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1209, 383);
+            this.grdSearch.Size = new System.Drawing.Size(1209, 367);
             this.grdSearch.TabIndex = 62;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

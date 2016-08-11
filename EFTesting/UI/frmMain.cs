@@ -388,7 +388,7 @@ namespace EFTesting.UI
         {
 
             splashScreenManager1.ShowWaitForm();
-            frmStyleLoading objfrmMChild = new frmStyleLoading();
+            frmStylePlaning objfrmMChild = new frmStylePlaning();
             objfrmMChild.MdiParent = this;
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();

@@ -11,6 +11,8 @@ namespace EFTesting.DTOs
     {
         public string StyleNo { get; set; }
 
+        public string Line { get; set; }
+
         public string LineNo { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -19,11 +21,11 @@ namespace EFTesting.DTOs
 
         public int Complete { get; set; }
 
-     
-
         public   int ColorLabel { get; set; }
 
         public string Description { get; set; }
+
+        public string ResourceIDs { get; set; }
 
 
     }

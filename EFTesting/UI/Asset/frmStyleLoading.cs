@@ -38,8 +38,8 @@ namespace EFTesting.UI.Asset
 
                 _style.LineNo = cmbLine.Text;
                 _style.StyleLoadingID = 99;
-               
-               
+              
+                
                 _style.StyleID = txtStyles.Text;
                 _style.StartDate =Convert.ToDateTime( txtFrom.Text);
                 _style.EndDate =Convert.ToDateTime( txtTo.Text);
@@ -102,61 +102,9 @@ namespace EFTesting.UI.Asset
         }
 
         List<StyleLoadingDto> list = new List<StyleLoadingDto>();
+     //   List<dtoResurces> lstResuorces = new List<dtoResurces>();
 
-        void LoadAppoiment() {
-            try {
-
-
-
-                ItrackContext _context = new ItrackContext();
-
-                var styles =( from style in _context.StyleLoading
-                             where style.Style.Status == "Pending"
-                             select style).ToList();
-
-                foreach(var style in styles)
-                {
-
-                    StyleLoadingDto loading = new StyleLoadingDto();
-                    loading.StartDate =  style.StartDate;
-                    loading.EndDate = style.EndDate;
-                    loading.StyleNo = style.StyleID;
-                    loading.LineNo = style.LineNo;
-                    loading.Description =style.StyleID +" Loading";
-                    loading.Complete = 0;
-
-                    //   loading.Label = 
-                    int i = 0;
-                    foreach (var l in schedulerStorage2.Appointments.Labels)
-                    {
-                        if (l.DisplayName == loading.LineNo)
-                        {
-
-                            loading.ColorLabel = i;
-
-                        }
-                        i++;
-
-                    }
-
-                    
-                    list.Add(loading);
-
-                }
-
-               
-
-                bindingSource1.DataSource = list;
-                schedulerControl1.ActiveViewType = SchedulerViewType.Gantt;
-                schedulerControl1.GroupType = SchedulerGroupType.Resource;
-                schedulerControl1.GanttView.ShowResourceHeaders = true;
-                schedulerControl1.GanttView.CellsAutoHeightOptions.Enabled = true;
-            }
-            catch (Exception ex) {
-
-            }
-
-        }
+      
 
         void GetStyleLoading() {
             try {
@@ -247,7 +195,7 @@ namespace EFTesting.UI.Asset
         private void frmStyleLoading_Load(object sender, EventArgs e)
         {
             GetStyleLoading();
-            LoadAppoiment();
+           
 
             grdStyleSearch.Hide();
             GetDefualtCompany();
