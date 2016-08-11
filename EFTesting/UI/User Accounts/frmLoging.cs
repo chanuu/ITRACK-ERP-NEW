@@ -41,7 +41,8 @@ namespace EFTesting.UI.User_Accounts
 
                 ItrackContext _context = new ItrackContext();
                 var users =( from item in _context.User
-                            where item.Password == _pword && item.UserName == _userName
+
+                             where item.Password == _pword && item.UserName == _userName
 
                             select item).ToList();
 

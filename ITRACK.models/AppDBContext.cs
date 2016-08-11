@@ -6,6 +6,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XtraSchedulerEFTest;
 
 namespace ITRACK.models
 {
@@ -172,6 +173,13 @@ namespace ITRACK.models
         public DbSet<FabricConsumption> FabricConsumption { get; set; }
 
         public DbSet<EstimateFabricConsumption> EstimateFabricConsumption { get; set; }
+
+
+     
+
+
+        public DbSet<EFAppointment> EFAppointments { get; set; }
+        public DbSet<EFResource> EFResources { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

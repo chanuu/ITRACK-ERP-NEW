@@ -153,7 +153,7 @@ namespace EFTesting.UI.Asset
             MachineRequirement _machine = new MachineRequirement();
             _machine.LineNo = cmbLineNo.Text;
             _machine.StyleNo = txtStyleNo.Text;
-            _machine.StyleID = txtStyleNo.Text;
+            _machine.StyleID = StyleRef;
             _machine.Remark = txtRemark.Text;
             _machine.MachineRequirementID = txtRequirementID.Text;
             return _machine;
@@ -162,12 +162,38 @@ namespace EFTesting.UI.Asset
 
         GenaricRepository<Company> _CompanyRepository = new GenaricRepository<Company>(new ItrackContext());
 
+
+       
+
+
+        private void UpdateLabel()
+        {
+            try
+            {
+                ItrackContext context = new ItrackContext();
+                
+
+
+                string _Query = "UPDATE EFAppointments set Label = '2' where StyleID = '"+ StyleRef +"' and Description = '"+ cmbLineNo.Text +"'";
+                context.Database.ExecuteSqlCommand(_Query);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
         private void AddType()
         {
             try
             {
                 GenaricRepository<MachineRequirement> _MachineReq = new GenaricRepository<MachineRequirement>(new ItrackContext());
-                _MachineReq.Insert(AssignMachine());
+              if(_MachineReq.Insert(AssignMachine()) == true)
+                {
+                    UpdateLabel();
+                }
             }
             catch (Exception ex)
             {
@@ -293,7 +319,7 @@ namespace EFTesting.UI.Asset
         }
 
 
-
+        string StyleRef = "";
         void GetByID(string _ID) {
             try {
                 ItrackContext _context = new ItrackContext();
@@ -301,7 +327,9 @@ namespace EFTesting.UI.Asset
                              where item.MachineRequirementID == _ID
                              select item).ToList().Last();
 
-                txtStyleNo.Text = items.StyleID;
+
+                txtStyleNo.Text = items.StyleNo;
+                StyleRef = items.StyleID;
                 txtRequirementID.Text = items.MachineRequirementID;
                 txtRemark.Text = items.Remark;
                 cmbLineNo.Text = items.LineNo;
@@ -534,7 +562,8 @@ namespace EFTesting.UI.Asset
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtStyleNo.Text = gridView4.GetFocusedRowCellValue("StyleID").ToString();
+                txtStyleNo.Text = gridView4.GetFocusedRowCellValue("StyleNo").ToString();
+                StyleRef = gridView4.GetFocusedRowCellValue("StyleID").ToString();
                 grdStyleSearch.Hide();
             }
           
