@@ -741,6 +741,7 @@
             this.grdSearchStyle.TabIndex = 38;
             this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.grdSearchStyle.Click += new System.EventHandler(this.grdSearchStyle_Click);
             this.grdSearchStyle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearchStyle_KeyDown);
             // 
             // gridView2
