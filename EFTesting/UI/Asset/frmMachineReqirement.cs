@@ -163,7 +163,33 @@ namespace EFTesting.UI.Asset
         GenaricRepository<Company> _CompanyRepository = new GenaricRepository<Company>(new ItrackContext());
 
 
-       
+        void FeedCombo(ComboBoxEdit combo)
+        {
+            try
+            {
+
+                ComboBoxItemCollection coll = combo.Properties.Items;
+                ItrackContext _context = new ItrackContext();
+                GenaricRepository<PurchaseOrderItems> _PoRepo = new GenaricRepository<PurchaseOrderItems>(new ItrackContext());
+
+                var items = (from item in _context.Department
+                            select item).ToList();
+                foreach (var item in items )
+                {
+                    coll.Add(item.Name);
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
 
 
         private void UpdateLabel()
@@ -467,6 +493,7 @@ namespace EFTesting.UI.Asset
             txtRequirementID.Focus();
             grdItems.DataSource = null;
             lstRItems.Clear();
+            GetNewCode();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

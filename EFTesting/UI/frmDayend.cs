@@ -24,11 +24,103 @@ namespace EFTesting.UI
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            addDayendHeader();
-            DateTime _now = Convert.ToDateTime(txtdate.Text);
-            clsProductionSummary.DoDayend(lblStatus,progressPanel1,_now);
-            
+            //   addDayendHeader();
+            //    DateTime _now = Convert.ToDateTime(txtdate.Text);
+            //    clsProductionSummary.DoDayend(lblStatus,progressPanel1,_now);
+
+            FinlizedFabricReport(Convert.ToDateTime(txtfrom.Text), Convert.ToDateTime(txtTo.Text));
+
         }
+
+
+
+
+
+        #region CUttingDPT
+
+        bool FinlizedFabricReport(DateTime _from,DateTime _to) {
+            try {
+                ItrackContext _context = new ItrackContext();
+
+                var items = (from item in _context.EstimateFabricConsumption
+                            where item.Date >= _from && item.Date <= _to
+                            select item).ToList();
+
+
+                foreach(var row in items)
+                {
+                //  Debug.WriteLine("Marker No- "+row.MarkerNo+ "  Estimate -" +row.TotalFabricUsed+"   Actual"+ GetFabricUsage(row.StyleID, row.MarkerNo));
+                    UpdateFabric(row.StyleID, row.MarkerNo, GetFabricUsage(row.StyleID, row.MarkerNo), GetFabricUsage(row.StyleID, row.MarkerNo) - row.TotalFabricUsed);
+                }
+
+                return true;
+            }
+            catch (Exception ex) {
+                return false;
+            }
+
+        }
+
+        private void UpdateFabric(string _styleNo,string _markerNo,double _Actual,double _def)
+        {
+            try
+            {
+                ItrackContext context = new ItrackContext();
+                string _Query = "Update EstimateFabricConsumptions set ActualFabUsed = '"+ _Actual +"' ,Defference = '"+ _def +"' where MarkerNo = '"+ _markerNo +"' and StyleID = '"+ _styleNo +"'";
+                context.Database.ExecuteSqlCommand(_Query);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
+        double GetFabricUsage(string _styleID,string _MkrNo)
+        {
+            try
+            {
+                ItrackContext _cntx = new ItrackContext();
+                var data = (from item in _cntx.FabricLedger
+
+                            where item.StyleNo == _styleID && item.MarkerNo == _MkrNo
+
+                            select item).ToList();
+
+
+              return  data.Select(c => c.FabricUsed).Sum();
+            
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+
+        }
+            
+        
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         #region CRUD
@@ -46,7 +138,7 @@ namespace EFTesting.UI
 
               _header.Date = DateTime.Now;
               _header.DayendBy = "Admin";
-              DateTime _now = Convert.ToDateTime(txtdate.Text);
+              DateTime _now = Convert.ToDateTime(txtfrom.Text);
               _header.DayendHeaderID =Convert.ToString( _now.Year + _now.Month + _now.Day);
               _header.DayendTime =Convert.ToString( DateTime.Now);
               _header.ApprovedBy = "None";

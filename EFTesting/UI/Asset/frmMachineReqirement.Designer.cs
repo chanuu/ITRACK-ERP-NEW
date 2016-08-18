@@ -116,7 +116,7 @@
             this.grdStyleSearch.Location = new System.Drawing.Point(63, 119);
             this.grdStyleSearch.MainView = this.gridView4;
             this.grdStyleSearch.Name = "grdStyleSearch";
-            this.grdStyleSearch.Size = new System.Drawing.Size(911, 259);
+            this.grdStyleSearch.Size = new System.Drawing.Size(911, 278);
             this.grdStyleSearch.TabIndex = 29;
             this.grdStyleSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -337,7 +337,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(85, 39);
             this.btnAdd.TabIndex = 29;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Save";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnNew
@@ -355,7 +355,7 @@
             this.grdSearch.Location = new System.Drawing.Point(21, 53);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1126, 391);
+            this.grdSearch.Size = new System.Drawing.Size(1126, 397);
             this.grdSearch.TabIndex = 35;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

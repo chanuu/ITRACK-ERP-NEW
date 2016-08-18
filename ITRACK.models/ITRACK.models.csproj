@@ -114,29 +114,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608080943227_res_v.cs" />
-    <Compile Include="Migrations\201608080943227_res_v.Designer.cs">
-      <DependentUpon>201608080943227_res_v.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608080957082_res_v2.cs" />
-    <Compile Include="Migrations\201608080957082_res_v2.Designer.cs">
-      <DependentUpon>201608080957082_res_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608081034489_res_v4.cs" />
-    <Compile Include="Migrations\201608081034489_res_v4.Designer.cs">
-      <DependentUpon>201608081034489_res_v4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608081044446_res_v5.cs" />
-    <Compile Include="Migrations\201608081044446_res_v5.Designer.cs">
-      <DependentUpon>201608081044446_res_v5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608090330141__v6.cs" />
-    <Compile Include="Migrations\201608090330141__v6.Designer.cs">
-      <DependentUpon>201608090330141__v6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608100622144_V8.cs" />
-    <Compile Include="Migrations\201608100622144_V8.Designer.cs">
-      <DependentUpon>201608100622144_V8.cs</DependentUpon>
+    <Compile Include="Migrations\201608110652102__v78.cs" />
+    <Compile Include="Migrations\201608110652102__v78.Designer.cs">
+      <DependentUpon>201608110652102__v78.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -229,23 +209,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608080943227_res_v.resx">
-      <DependentUpon>201608080943227_res_v.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608080957082_res_v2.resx">
-      <DependentUpon>201608080957082_res_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608081034489_res_v4.resx">
-      <DependentUpon>201608081034489_res_v4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608081044446_res_v5.resx">
-      <DependentUpon>201608081044446_res_v5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608090330141__v6.resx">
-      <DependentUpon>201608090330141__v6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608100622144_V8.resx">
-      <DependentUpon>201608100622144_V8.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608110652102__v78.resx">
+      <DependentUpon>201608110652102__v78.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -100,6 +100,7 @@
             this.btnRequirement = new DevExpress.XtraBars.BarButtonItem();
             this.btnConsumtion = new DevExpress.XtraBars.BarButtonItem();
             this.btnOperation = new DevExpress.XtraBars.BarButtonItem();
+            this.btnActual = new DevExpress.XtraBars.BarButtonItem();
             this.masters = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -128,7 +129,7 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnActual = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem37 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -332,9 +333,10 @@
             this.btnRequirement,
             this.btnConsumtion,
             this.btnOperation,
-            this.btnActual});
+            this.btnActual,
+            this.barButtonItem37});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 57;
+            this.ribbonControl1.MaxItemId = 58;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem36);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -805,6 +807,15 @@
             this.btnOperation.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnOperation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOperation_ItemClick);
             // 
+            // btnActual
+            // 
+            this.btnActual.Caption = "Actual Vs Plan";
+            this.btnActual.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.btnActual.Id = 56;
+            this.btnActual.Name = "btnActual";
+            this.btnActual.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnActual.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnActual_ItemClick);
+            // 
             // masters
             // 
             this.masters.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -842,6 +853,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnCuttingLedger);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRatio);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnConsumtion);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem37);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Mater Files";
             // 
@@ -1029,14 +1041,14 @@
             this.barButtonItem34.Name = "barButtonItem34";
             this.barButtonItem34.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // btnActual
+            // barButtonItem37
             // 
-            this.btnActual.Caption = "Actual Vs Plan";
-            this.btnActual.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
-            this.btnActual.Id = 56;
-            this.btnActual.Name = "btnActual";
-            this.btnActual.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnActual.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnActual_ItemClick);
+            this.barButtonItem37.Caption = "Day End";
+            this.barButtonItem37.Glyph = global::EFTesting.Properties.Resources.Checklist_icon;
+            this.barButtonItem37.Id = 57;
+            this.barButtonItem37.Name = "barButtonItem37";
+            this.barButtonItem37.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem37.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem37_ItemClick);
             // 
             // frmMain
             // 
@@ -1162,5 +1174,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem btnActual;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem37;
     }
 }

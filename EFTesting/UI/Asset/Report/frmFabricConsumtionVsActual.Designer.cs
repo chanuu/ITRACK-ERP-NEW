@@ -38,6 +38,7 @@
             this.txtStyleNo = new DevExpress.XtraEditors.TextEdit();
             this.chkByStyle = new DevExpress.XtraEditors.CheckEdit();
             this.chkAllL = new DevExpress.XtraEditors.CheckEdit();
+            this.chkByDate = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFrom.Properties.CalendarTimeProperties)).BeginInit();
@@ -45,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkByStyle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAllL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkByDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTo
@@ -138,11 +140,20 @@
             this.chkAllL.Size = new System.Drawing.Size(75, 19);
             this.chkAllL.TabIndex = 90;
             // 
+            // chkByDate
+            // 
+            this.chkByDate.Location = new System.Drawing.Point(234, 27);
+            this.chkByDate.Name = "chkByDate";
+            this.chkByDate.Properties.Caption = "By Date";
+            this.chkByDate.Size = new System.Drawing.Size(75, 19);
+            this.chkByDate.TabIndex = 100;
+            // 
             // frmFabricConsumtionVsActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 478);
+            this.Controls.Add(this.chkByDate);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.txtFrom);
             this.Controls.Add(this.lbl2);
@@ -162,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStyleNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkByStyle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAllL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkByDate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +191,6 @@
         private DevExpress.XtraEditors.TextEdit txtStyleNo;
         private DevExpress.XtraEditors.CheckEdit chkByStyle;
         private DevExpress.XtraEditors.CheckEdit chkAllL;
+        private DevExpress.XtraEditors.CheckEdit chkByDate;
     }
 }

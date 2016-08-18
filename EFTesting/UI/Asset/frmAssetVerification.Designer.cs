@@ -112,6 +112,7 @@
             this.txtLog.Properties.Appearance.Options.UseForeColor = true;
             this.txtLog.Size = new System.Drawing.Size(1064, 320);
             this.txtLog.TabIndex = 113;
+            this.txtLog.EditValueChanged += new System.EventHandler(this.txtLog_EditValueChanged);
             // 
             // txtLocation
             // 

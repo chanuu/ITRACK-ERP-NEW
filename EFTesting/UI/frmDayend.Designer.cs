@@ -40,15 +40,19 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnProcess = new DevExpress.XtraEditors.SimpleButton();
-            this.txtdate = new DevExpress.XtraEditors.DateEdit();
+            this.txtfrom = new DevExpress.XtraEditors.DateEdit();
             this.label11 = new System.Windows.Forms.Label();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTo = new DevExpress.XtraEditors.DateEdit();
+            this.label2 = new System.Windows.Forms.Label();
             this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtfrom.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtfrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -116,11 +120,13 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.label2);
+            this.xtraTabPage1.Controls.Add(this.txtTo);
             this.xtraTabPage1.Controls.Add(this.progressPanel1);
             this.xtraTabPage1.Controls.Add(this.lblStatus);
             this.xtraTabPage1.Controls.Add(this.label1);
             this.xtraTabPage1.Controls.Add(this.btnProcess);
-            this.xtraTabPage1.Controls.Add(this.txtdate);
+            this.xtraTabPage1.Controls.Add(this.txtfrom);
             this.xtraTabPage1.Controls.Add(this.label11);
             this.xtraTabPage1.Image = global::EFTesting.Properties.Resources.Folder_Accept_icon;
             this.xtraTabPage1.Name = "xtraTabPage1";
@@ -136,7 +142,7 @@
             this.progressPanel1.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.progressPanel1.AppearanceDescription.Options.UseFont = true;
             this.progressPanel1.Description = "Processing ...";
-            this.progressPanel1.Location = new System.Drawing.Point(231, 93);
+            this.progressPanel1.Location = new System.Drawing.Point(231, 118);
             this.progressPanel1.Name = "progressPanel1";
             this.progressPanel1.Size = new System.Drawing.Size(131, 66);
             this.progressPanel1.TabIndex = 67;
@@ -153,33 +159,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 70);
+            this.label1.Location = new System.Drawing.Point(124, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 65;
-            this.label1.Text = "Date";
+            this.label1.Text = "From";
             // 
             // btnProcess
             // 
             this.btnProcess.Image = global::EFTesting.Properties.Resources.save;
-            this.btnProcess.Location = new System.Drawing.Point(127, 107);
+            this.btnProcess.Location = new System.Drawing.Point(127, 132);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(85, 39);
             this.btnProcess.TabIndex = 64;
             this.btnProcess.Text = "Process ";
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
-            // txtdate
+            // txtfrom
             // 
-            this.txtdate.EditValue = null;
-            this.txtdate.Location = new System.Drawing.Point(127, 67);
-            this.txtdate.Name = "txtdate";
-            this.txtdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtfrom.EditValue = null;
+            this.txtfrom.Location = new System.Drawing.Point(127, 67);
+            this.txtfrom.Name = "txtfrom";
+            this.txtfrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtfrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtdate.Size = new System.Drawing.Size(214, 20);
-            this.txtdate.TabIndex = 38;
+            this.txtfrom.Size = new System.Drawing.Size(214, 20);
+            this.txtfrom.TabIndex = 38;
             // 
             // label11
             // 
@@ -217,6 +223,27 @@
             this.simpleButton2.Text = "H/P";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // txtTo
+            // 
+            this.txtTo.EditValue = null;
+            this.txtTo.Location = new System.Drawing.Point(347, 67);
+            this.txtTo.Name = "txtTo";
+            this.txtTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTo.Size = new System.Drawing.Size(214, 20);
+            this.txtTo.TabIndex = 68;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(344, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "To";
+            // 
             // frmDayend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,10 +261,12 @@
             this.Load += new System.EventHandler(this.frmDayend_Load);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtfrom.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtfrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,11 +284,12 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnProcess;
-        private DevExpress.XtraEditors.DateEdit txtdate;
+        private DevExpress.XtraEditors.DateEdit txtfrom;
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-
+        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.DateEdit txtTo;
     }
 }

@@ -805,5 +805,10 @@ namespace EFTesting.UI.Asset
         {
 
         }
+
+        private void txtLog_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

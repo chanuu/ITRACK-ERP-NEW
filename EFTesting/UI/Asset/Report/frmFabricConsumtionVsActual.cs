@@ -43,9 +43,43 @@ namespace EFTesting.UI.Asset.Report
 
             }
         }
+
+
+        void PrintByDay(DateTime _from,DateTime _to)
+        {
+            try
+            {
+
+                ItrackContext _Context = new ItrackContext();
+
+                var print = (from item in _Context.EstimateFabricConsumption
+                             where item.Date >= _from && item.Date <=_to
+                             select item).ToList();
+
+                rptLayerFabricConsumtion report = new rptLayerFabricConsumtion();
+                report.DataSource = print;
+                report.Landscape = true;
+                ReportPrintTool tool = new ReportPrintTool(report);
+                tool.ShowPreview();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            PrintAllStyle();
+            if(chkByDate.Checked == true && chkByStyle.Checked == false)
+            {
+                PrintByDay(Convert.ToDateTime(txtFrom.Text), Convert.ToDateTime(txtTo.Text));
+
+            }
+            else if(chkByStyle.Checked == true && chkByDate.Checked == false)
+            {
+                PrintAllStyle();
+            }
+            
         }
     }
 }

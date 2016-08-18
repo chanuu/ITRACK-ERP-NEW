@@ -50,10 +50,10 @@ namespace EFTesting.UI.Asset.Report
 
                 ItrackContext con = new ItrackContext();
                
-                var styles = (from st in con.StyleLoading
-                              where st.EndDate > today  && st.LineNo == _department.Name
+                var styles = (from st in con.EFAppointments
+                              where st.EndDate > today  && st.Description == _department.Name
                               orderby st.StartDate
-                              select new { st.Style.StyleNo,st.StyleID, st.LineNo, st.StartDate, st.EndDate }).ToList();
+                              select new { st.StyleID,st.StyleNo, st.Description, st.StartDate, st.EndDate }).ToList();
                 int i = 0;
                 foreach( var selectedStyle in styles)
                 {
@@ -62,7 +62,7 @@ namespace EFTesting.UI.Asset.Report
                          MachineRequirementReportDto dtoCurrent = new MachineRequirementReportDto();
                         dtoCurrent.StyleNo = selectedStyle.StyleNo;
                         dtoCurrent.StyleID = selectedStyle.StyleID;
-                        dtoCurrent.Location = selectedStyle.LineNo;
+                        dtoCurrent.Location = selectedStyle.Description;
                         dtoCurrent.StartDate = selectedStyle.StartDate;
                         dtoCurrent.EndDate = selectedStyle.EndDate;
                         dtoCurrent.Type = "Current";
@@ -75,7 +75,7 @@ namespace EFTesting.UI.Asset.Report
                        
                         MachineRequirementReportDto dtoNext = new MachineRequirementReportDto();
                         dtoNext.StyleNo = selectedStyle.StyleNo;
-                        dtoNext.Location = selectedStyle.LineNo;
+                        dtoNext.Location = selectedStyle.Description;
                         dtoNext.StartDate = selectedStyle.StartDate;
                         dtoNext.EndDate = selectedStyle.EndDate;
                         dtoNext.StyleID = selectedStyle.StyleID;

@@ -1594,7 +1594,7 @@ namespace EFTesting.UI
             try
             {
                 GenaricRepository<EstimateFabricConsumption> _Repo = new GenaricRepository<EstimateFabricConsumption>(new ItrackContext());
-                return _Repo.GetAll().ToList().Count;
+                return Convert.ToInt16(_Repo.GetAll().ToList().Last().EstimateFabricConsumptionID);
             }
             catch (Exception ex)
             {

@@ -403,10 +403,57 @@ namespace EFTesting.UI.Asset
             tbDescription.Size = new Size(tbDescription.Size.Width, tbDescription.Size.Height + intDeltaY);
         }
 
+
+
+        bool isAvailRequirement() {
+
+            try {
+                bool flag = false;
+                ItrackContext _cont = new ItrackContext();
+                var items = (from item in _cont.MachineRequirement
+                             where item.StyleID == tbSubject.Text && item.LineNo == tbDescription.Text
+                             select item).ToList();
+
+                if (items.Count > 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+                return flag;
+            }
+            catch (Exception ex) {
+                return false;
+            }
+        }
+
         private void CustomAppointmentForm1_Load(object sender, EventArgs e)
         {
             grdStyleSearch.Hide();
-            edtLabel.SelectedIndex = 1;
+
+
+
+            if(tbSubject.Text != "")
+            {
+               
+
+                if (isAvailRequirement() == true)
+                {
+                    edtLabel.SelectedIndex = 2;
+                }
+                else
+                {
+                    edtLabel.SelectedIndex = 1;
+                }
+            }
+            else
+            {
+               
+            }
+           
             edtLabel.ReadOnly = true;
             
             

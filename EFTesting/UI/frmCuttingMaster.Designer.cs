@@ -521,7 +521,7 @@
             this.grdRatio.Location = new System.Drawing.Point(46, 46);
             this.grdRatio.MainView = this.gridView6;
             this.grdRatio.Name = "grdRatio";
-            this.grdRatio.Size = new System.Drawing.Size(946, 373);
+            this.grdRatio.Size = new System.Drawing.Size(946, 339);
             this.grdRatio.TabIndex = 97;
             this.grdRatio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1335,7 +1335,7 @@
             this.grdSearch.Location = new System.Drawing.Point(14, 44);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1209, 367);
+            this.grdSearch.Size = new System.Drawing.Size(1209, 405);
             this.grdSearch.TabIndex = 62;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
