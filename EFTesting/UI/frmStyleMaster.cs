@@ -681,6 +681,9 @@ namespace EFTesting.UI
             }
         }
 
+        private void grdSearchStyle_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

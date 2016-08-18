@@ -275,8 +275,6 @@ namespace EFTesting.UI
             txtTotalRoll.Text = Convert.ToString(lstFabricItem.Count());
 
 
-
-
         }
 
 
@@ -570,6 +568,10 @@ namespace EFTesting.UI
                 _SpecialEntry.SpecialEntryID = gridView2.GetFocusedRowCellValue("SpecialEntryID").ToString();
                 getSpecialEntry(_SpecialEntry.SpecialEntryID);
                 getSerialItems();
+                grdSearchSpecialEntry.Hide();
+                btnClose.Hide();
+                txtSearchBox.Hide();
+
 
             }
         }
@@ -670,6 +672,19 @@ namespace EFTesting.UI
         private void btnPrint_Click(object sender, EventArgs e)
         {
             GetCuttingDetailsReport();
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            txtSearchBox.Show();
+            btnClose.Show();
+            txtSearchBox.Focus();
+
+        }
+
+        private void grdItemSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
