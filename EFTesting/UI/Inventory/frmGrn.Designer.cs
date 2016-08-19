@@ -190,6 +190,7 @@
             this.grdPOSearch.TabIndex = 76;
             this.grdPOSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
+            this.grdPOSearch.Click += new System.EventHandler(this.grdPOSearch_Click);
             this.grdPOSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdPOSearch_KeyDown);
             // 
             // gridView4
@@ -727,7 +728,7 @@
             this.grdSearch.Location = new System.Drawing.Point(12, 44);
             this.grdSearch.MainView = this.gridView2;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1067, 334);
+            this.grdSearch.Size = new System.Drawing.Size(1067, 448);
             this.grdSearch.TabIndex = 85;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

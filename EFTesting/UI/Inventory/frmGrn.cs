@@ -698,5 +698,10 @@ namespace EFTesting.UI.Inventory
             btnClose.Show();
             txtSearchBox.Focus();
         }
+
+        private void grdPOSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
