@@ -114,9 +114,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608110652102__v78.cs" />
-    <Compile Include="Migrations\201608110652102__v78.Designer.cs">
-      <DependentUpon>201608110652102__v78.cs</DependentUpon>
+    <Compile Include="Migrations\201608250405450_New.cs" />
+    <Compile Include="Migrations\201608250405450_New.Designer.cs">
+      <DependentUpon>201608250405450_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -209,8 +209,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608110652102__v78.resx">
-      <DependentUpon>201608110652102__v78.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608250405450_New.resx">
+      <DependentUpon>201608250405450_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

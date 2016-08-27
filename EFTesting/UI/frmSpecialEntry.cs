@@ -692,6 +692,7 @@ namespace EFTesting.UI
             }
         }
 
+
         private void grdSearchSpecialEntry_Click(object sender, EventArgs e)
         {
 
