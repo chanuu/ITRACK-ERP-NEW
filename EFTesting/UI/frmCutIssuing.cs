@@ -104,7 +104,8 @@ namespace EFTesting.UI
                     else
                         flag= false;
 
-                    UpdateLineNo(item.CutNo,cmbLineNo.Text);
+                    UpdateLineNo(item.CutID, cmbLineNo.Text);
+                    UpdateCutStatus(item.CutID);
 
                 }
                 return flag;
@@ -180,8 +181,9 @@ namespace EFTesting.UI
 
                     CutIssuItem _cutItem = new CutIssuItem();
                     _cutItem.CutNo = Convert.ToString(row.CutNo);
+                    _cutItem.CutID = row.CuttingItemID;
                     _cutItem.PONo = row.PoNo;
-                    _cutItem.LotNo = Convert.ToInt16(row.Length);
+                    _cutItem.LotNo = Convert.ToInt16(row.LotNo);
                     _cutItem.Color = row.Color;
                     _cutItem.Size = row.Size;
                     _cutItem.NoOfItem = row.NoOfItem;
@@ -361,6 +363,7 @@ namespace EFTesting.UI
             btnClose.Hide();
             _context.Database.Initialize(false);
             GetNewCode();
+            
         }
 
         private void txtStyleNo_KeyDown(object sender, KeyEventArgs e)
@@ -825,13 +828,14 @@ namespace EFTesting.UI
 
 
 
-        private void UpdateLineNo(string _cutID,string _LineNo)
+        private void UpdateLineNo(int _cutID,string _LineNo)
         {
             try
             {
-                ItrackContext context = new ItrackContext();
-                string _Query = "Update OprationBarcodes set [LineNo] = '"+ _LineNo +"' where CutNo ='"+ _cutID +"'";
-                context.Database.ExecuteSqlCommand(_Query);
+                ItrackContext con = new ItrackContext();
+                string _Query = "Update OprationBarcodes set [LineNo] = '"+ _LineNo + "' where CuttingItemID ='" + _cutID +"'";
+                con.Database.ExecuteSqlCommand(_Query);
+                con.Database.Connection.Close();
             }
             catch (Exception ex)
             {
@@ -840,6 +844,30 @@ namespace EFTesting.UI
 
 
         }
+
+
+
+        private int UpdateCutStatus(int _cutID)
+        {
+            try
+            {
+                ItrackContext _con = new ItrackContext();
+                string _Query = "Update CuttingItems set isPrinted = 'True' where CuttingItemID = '"+ _cutID +"'";
+               int row =  _con.Database.ExecuteSqlCommand(_Query);
+                _con.Database.Connection.Close();
+
+
+                return row;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+
+
+        }
+
+
 
 
 
@@ -873,6 +901,19 @@ namespace EFTesting.UI
         }
 
 
+        string GetLast() {
+
+            try {
+                ItrackContext _cntx = new ItrackContext();
+                var lat = (from item in _cntx.CutIssueHeader
+                          select item.CutIssueHeaderID).ToList().Last();
+
+                return lat;
+            }
+            catch (Exception ex) {
+                return "";
+            }
+        }
 
         void GetNewCode()
         {
@@ -889,8 +930,12 @@ namespace EFTesting.UI
                     _No.Starting = item.Starting;
                     _No.Length = item.Length;
 
-                    txtIssuNoteNo.Text = _Engine.GenarateNo(_No, getCount());
+                    string Code = GetLast();
+                    int last = 0;
+                    last = Convert.ToInt16(Code.Remove(0, _No.Prefix.Length));
 
+                    txtIssuNoteNo.Text = _Engine.GenarateNo(_No, last);
+                    txtIssuNoteNo.ReadOnly = true;
 
                 }
 

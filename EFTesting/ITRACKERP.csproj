@@ -99,6 +99,7 @@
     <Compile Include="DTOs\Assetlistdto.cs" />
     <Compile Include="DTOs\AssetVerificationdto.cs" />
     <Compile Include="DTOs\AssetVerificationLocationdto.cs" />
+    <Compile Include="DTOs\CutIssueDto.cs" />
     <Compile Include="DTOs\dtoCuttingLedgerSummary.cs" />
     <Compile Include="DTOs\dtoCuttingStatus.cs" />
     <Compile Include="DTOs\FabricUtilizationdto.cs" />
@@ -373,6 +374,12 @@
     </Compile>
     <Compile Include="UI\Asset\frmMachineType.Designer.cs">
       <DependentUpon>frmMachineType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asset\frmRentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\frmRentManagement.Designer.cs">
+      <DependentUpon>frmRentManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Asset\frmStyleLoading.cs">
       <SubType>Form</SubType>
@@ -849,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmMachineType.resx">
       <DependentUpon>frmMachineType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\frmRentManagement.resx">
+      <DependentUpon>frmRentManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmStyleLoading.resx">
       <DependentUpon>frmStyleLoading.cs</DependentUpon>

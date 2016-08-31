@@ -150,7 +150,7 @@
             this.grdSearchStyle.Location = new System.Drawing.Point(24, 124);
             this.grdSearchStyle.MainView = this.gridView1;
             this.grdSearchStyle.Name = "grdSearchStyle";
-            this.grdSearchStyle.Size = new System.Drawing.Size(993, 258);
+            this.grdSearchStyle.Size = new System.Drawing.Size(993, 63);
             this.grdSearchStyle.TabIndex = 104;
             this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

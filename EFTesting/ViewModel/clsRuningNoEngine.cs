@@ -18,7 +18,7 @@ namespace EFTesting.ViewModel
 
             try {
 
-                int CurrentNo = _Nos.Starting + Count+1;
+                int CurrentNo =   Count+1;
                 _Nos.Code = _Nos.Prefix + CurrentNo.ToString().PadLeft(_Nos.Length,'0');
                 return _Nos.Code;
             }
@@ -27,5 +27,31 @@ namespace EFTesting.ViewModel
                 return null;
             }
         }
+
+
+        public string Genarate(RunningNo _Nos, string Code)
+        {
+
+            try
+            {
+
+                int CurrentNo = Convert.ToInt16(Code.Remove(0, _Nos.Prefix.Length)) + 1;
+               _Nos.Code = _Nos.Prefix + CurrentNo.ToString().PadLeft(_Nos.Length, '0');
+                return _Nos.Code;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }

@@ -231,7 +231,7 @@ namespace EFTesting.UI
 
                 var items = (from item in context.BundleHeader
                              where item.isBundleTagsGerated == true && item.CuttingItem.CuttingHeader.StyleID == txtStyleNo.Text
-                             select new {item.GenaratedDate,item.BundleTagGenaratedTime, item.BundleHeaderID,  item.CuttingItem.PoNo,item.CuttingItemID, item.CuttingItem.MarkerNo, item.CuttingItem.Color, item.CuttingItem.Size,item.CuttingItem.Length, item.CuttingItem.NoOfItem }).ToList();
+                             select new {item.GenaratedDate,item.BundleTagGenaratedTime, item.BundleHeaderID,  item.CuttingItem.PoNo,item.CuttingItemID,item.CuttingItem.CutNo, item.CuttingItem.MarkerNo, item.CuttingItem.Color, item.CuttingItem.Size,item.CuttingItem.Length, item.CuttingItem.NoOfItem }).ToList();
                 grdBundleTicket.DataSource = items;
             }
             catch (Exception ex)

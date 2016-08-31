@@ -37,17 +37,17 @@ namespace EFTesting.UI
         GenaricRepository<RatioItem> _CuttingRatioItemRepo = new GenaricRepository<RatioItem>(new ItrackContext());
 
 
-        int getPoCount()
+        string getPoCount()
         {
             try
             {
                 GenaricRepository<CuttingRatio> _CuttingRatioRepo = new GenaricRepository<CuttingRatio>(new ItrackContext());
-                return _CuttingRatioRepo.GetAll().ToList().Count+1;
+                return _CuttingRatioRepo.GetAll().ToList().Last().CuttingRatioID;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                return 0;
+                return "";
             }
 
         }
@@ -83,8 +83,12 @@ namespace EFTesting.UI
                     _No.Starting = item.Starting;
                     _No.Length = item.Length;
 
-                    txtRatioNo.Text = _Engine.GenarateNo(_No, getPoCount());
+                    string Code = getPoCount();
+                    int last = 0;
+                    last = Convert.ToInt16(Code.Remove(0, _No.Prefix.Length));
 
+                    txtRatioNo.Text = _Engine.GenarateNo(_No, last);
+                    txtRatioNo.ReadOnly = true;
 
                 }
 

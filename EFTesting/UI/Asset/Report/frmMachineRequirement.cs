@@ -148,7 +148,7 @@ namespace EFTesting.UI.Asset.Report
             ItrackContext cntx = new ItrackContext();
             var items = from item in cntx.MachineRequirementItem
 
-                        where item.MachineRequirement.StyleID == _styleNo
+                        where item.MachineRequirement.StyleID == _styleNo && item.MachineRequirement.LineNo == _dto.Location
 
                         select new { item.MachineType, item.Nos };
 
