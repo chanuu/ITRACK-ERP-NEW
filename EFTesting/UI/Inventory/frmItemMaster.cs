@@ -12,6 +12,8 @@ using ITRACK.models;
 using System.IO;
 using System.Linq.Expressions;
 using ITRACK.Validator;
+using EFTesting.ViewModel;
+using System.Diagnostics;
 
 namespace EFTesting.UI.Inventory
 {
@@ -696,8 +698,63 @@ namespace EFTesting.UI.Inventory
             chkDiscount.Checked = false;
             chkCustomeReturnOrder.Checked = false;
             chkSerialItem.Checked = false;
+            GetNewCodeAsset();
 
             grdSearchItemType.Hide();
+        }
+
+        int getAssetCount()
+        {
+            try
+            {
+                GenaricRepository<Items> _ItemMasterRepo = new GenaricRepository<Items>(new ItrackContext());
+                return _ItemMasterRepo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+
+
+        void GetNewCodeAsset()
+        {
+
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "ITEM"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    txtItemCode.Text = _Engine.GenarateNo(_No, getAssetCount());
+                    txtSupplierItemCode.Text = _Engine.GenarateNo(_No, getAssetCount());
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+
+        }
+
+
+        private void txtItemCode_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -535,10 +535,11 @@
             this.grdSearchSpecialEntry.Location = new System.Drawing.Point(36, 53);
             this.grdSearchSpecialEntry.MainView = this.gridView2;
             this.grdSearchSpecialEntry.Name = "grdSearchSpecialEntry";
-            this.grdSearchSpecialEntry.Size = new System.Drawing.Size(1089, 418);
+            this.grdSearchSpecialEntry.Size = new System.Drawing.Size(1089, 415);
             this.grdSearchSpecialEntry.TabIndex = 94;
             this.grdSearchSpecialEntry.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.grdSearchSpecialEntry.Click += new System.EventHandler(this.grdSearchSpecialEntry_Click);
             this.grdSearchSpecialEntry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdSearchSpecialEntry_KeyDown);
             // 
             // gridView2

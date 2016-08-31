@@ -684,6 +684,17 @@ namespace EFTesting.UI
 
         private void grdItemSearch_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyData == Keys.Enter)
+            {
+                _item.ItemsID = gridView3.GetFocusedRowCellValue("ItemsID").ToString();
+                getItemMasterFeild(_item.ItemsID);
+                grdItemSearch.Hide();
+            }
+        }
+
+
+        private void grdSearchSpecialEntry_Click(object sender, EventArgs e)
+        {
 
         }
     }
