@@ -175,7 +175,10 @@ namespace ITRACK.models
         public DbSet<EstimateFabricConsumption> EstimateFabricConsumption { get; set; }
 
 
-     
+        public DbSet<RentManagement> RentManagement { get; set; }
+
+
+
 
 
         public DbSet<EFAppointment> EFAppointments { get; set; }

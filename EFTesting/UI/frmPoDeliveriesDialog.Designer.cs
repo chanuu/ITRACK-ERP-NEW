@@ -53,7 +53,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(158, 21);
+            this.checkBox1.Location = new System.Drawing.Point(135, 21);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(98, 17);
             this.checkBox1.TabIndex = 0;
@@ -155,7 +155,7 @@
             // chkFitToPage
             // 
             this.chkFitToPage.AutoSize = true;
-            this.chkFitToPage.Location = new System.Drawing.Point(47, 58);
+            this.chkFitToPage.Location = new System.Drawing.Point(255, 21);
             this.chkFitToPage.Name = "chkFitToPage";
             this.chkFitToPage.Size = new System.Drawing.Size(80, 17);
             this.chkFitToPage.TabIndex = 43;
@@ -168,7 +168,7 @@
             this.grdSearchStyle.Location = new System.Drawing.Point(38, 121);
             this.grdSearchStyle.MainView = this.gridView1;
             this.grdSearchStyle.Name = "grdSearchStyle";
-            this.grdSearchStyle.Size = new System.Drawing.Size(861, 325);
+            this.grdSearchStyle.Size = new System.Drawing.Size(861, 285);
             this.grdSearchStyle.TabIndex = 44;
             this.grdSearchStyle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -178,6 +178,7 @@
             // 
             this.gridView1.GridControl = this.grdSearchStyle;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // frmPoDeliveriesDialog
             // 

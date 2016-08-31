@@ -86,13 +86,22 @@ namespace EFTesting.UI.Asset
 
 
 
-                if (Line.Length == 4)
+                if (Line.Length == 7)
                 {
                     GenaricRepository<AssetBarcode> _AssetBardeRepos = new GenaricRepository<AssetBarcode>(new ItrackContext());
                     var astlist = _AssetBardeRepos.GetAll();
                     if (astlist.Count() > 0)
                     {
-                        _assetbarcode.AssetUsedBy = Line;
+                        
+
+                        ItrackContext _cx = new ItrackContext();
+                        var dep = from deps in _cx.Department
+                                  where deps.Remark == Line
+                                  select deps;
+
+                        _assetbarcode.AssetUsedBy = dep.ToList().Last().Name;
+
+
                         AssetUsedLocationID = Line;
 
                         txtLog.MaskBox.AppendText("Used Current Location  -> :" + _assetbarcode.AssetUsedBy + "" + "\r\n");

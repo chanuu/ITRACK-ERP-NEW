@@ -41,13 +41,13 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
-            this.fieldColor = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldCUT = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldDate = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldPcs = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldPoNo = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldSize = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.fieldStyleNo = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldDate1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldStyleNo1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldPoNo1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldSize1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldColor1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldPcs1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.fieldCutQty1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -149,270 +149,163 @@
             // 
             // xrPivotGrid1
             // 
+            this.xrPivotGrid1.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.xrPivotGrid1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.xrPivotGrid1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGrid1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGrid1.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.xrPivotGrid1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
             this.xrPivotGrid1.DataSource = this.bindingSource1;
             this.xrPivotGrid1.Fields.AddRange(new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField[] {
-            this.fieldColor,
-            this.fieldCUT,
-            this.fieldDate,
-            this.fieldPcs,
-            this.fieldPoNo,
-            this.fieldSize,
-            this.fieldStyleNo});
+            this.fieldDate1,
+            this.fieldStyleNo1,
+            this.fieldPoNo1,
+            this.fieldSize1,
+            this.fieldColor1,
+            this.fieldPcs1,
+            this.fieldCutQty1});
             this.xrPivotGrid1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 122.8333F);
             this.xrPivotGrid1.Name = "xrPivotGrid1";
             this.xrPivotGrid1.OptionsPrint.FilterSeparatorBarPadding = 3;
             this.xrPivotGrid1.SizeF = new System.Drawing.SizeF(1096F, 136.875F);
             // 
-            // fieldColor
+            // fieldDate1
             // 
-            this.fieldColor.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Appearance.FieldHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.fieldColor.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldColor.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldColor.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldColor.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldColor.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldColor.AreaIndex = 3;
-            this.fieldColor.FieldName = "Color";
-            this.fieldColor.Name = "fieldColor";
-            this.fieldColor.Width = 50;
+            this.fieldDate1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldDate1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldDate1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldDate1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldDate1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldDate1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldDate1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldDate1.AreaIndex = 0;
+            this.fieldDate1.Caption = "FOB DATE";
+            this.fieldDate1.CellFormat.FormatString = "d";
+            this.fieldDate1.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.fieldDate1.FieldName = "Date";
+            this.fieldDate1.Name = "fieldDate1";
+            this.fieldDate1.ValueFormat.FormatString = "d";
+            this.fieldDate1.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.fieldDate1.Width = 70;
             // 
-            // fieldCUT
+            // fieldStyleNo1
             // 
-            this.fieldCUT.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.FieldHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.fieldCUT.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldCUT.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.FieldValueGrandTotal.BackColor = System.Drawing.Color.Transparent;
-            this.fieldCUT.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.FieldValueTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldCUT.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.GrandTotalCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldCUT.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.GrandTotalCell.ForeColor = System.Drawing.Color.Black;
-            this.fieldCUT.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Appearance.TotalCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldCUT.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldCUT.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldCUT.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldCUT.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldCUT.AreaIndex = 1;
-            this.fieldCUT.FieldName = "CUT";
-            this.fieldCUT.Name = "fieldCUT";
-            this.fieldCUT.Width = 35;
+            this.fieldStyleNo1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldStyleNo1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldStyleNo1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldStyleNo1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldStyleNo1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldStyleNo1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldStyleNo1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldStyleNo1.AreaIndex = 1;
+            this.fieldStyleNo1.Caption = "STYLE";
+            this.fieldStyleNo1.FieldName = "StyleNo";
+            this.fieldStyleNo1.Name = "fieldStyleNo1";
+            this.fieldStyleNo1.Width = 70;
             // 
-            // fieldDate
+            // fieldPoNo1
             // 
-            this.fieldDate.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Appearance.FieldHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.fieldDate.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldDate.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Appearance.FieldValueGrandTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldDate.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Appearance.FieldValueTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldDate.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Appearance.TotalCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldDate.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldDate.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldDate.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldDate.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldDate.AreaIndex = 0;
-            this.fieldDate.Caption = "FOB Date";
-            this.fieldDate.FieldName = "Date";
-            this.fieldDate.Name = "fieldDate";
-            this.fieldDate.ValueFormat.FormatString = "d";
-            this.fieldDate.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.fieldDate.Width = 70;
+            this.fieldPoNo1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPoNo1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPoNo1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPoNo1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPoNo1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPoNo1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPoNo1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldPoNo1.AreaIndex = 2;
+            this.fieldPoNo1.Caption = "PO NO";
+            this.fieldPoNo1.FieldName = "PoNo";
+            this.fieldPoNo1.Name = "fieldPoNo1";
+            this.fieldPoNo1.Width = 70;
             // 
-            // fieldPcs
+            // fieldSize1
             // 
-            this.fieldPcs.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.FieldHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.fieldPcs.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldPcs.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.FieldValueGrandTotal.BackColor = System.Drawing.Color.Transparent;
-            this.fieldPcs.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.FieldValueTotal.BackColor = System.Drawing.Color.LightGray;
-            this.fieldPcs.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.GrandTotalCell.BackColor = System.Drawing.Color.LightGray;
-            this.fieldPcs.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.GrandTotalCell.ForeColor = System.Drawing.Color.Black;
-            this.fieldPcs.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Appearance.TotalCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fieldPcs.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPcs.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPcs.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPcs.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.fieldPcs.AreaIndex = 0;
-            this.fieldPcs.Caption = "ODR";
-            this.fieldPcs.FieldName = "Pcs";
-            this.fieldPcs.Name = "fieldPcs";
-            this.fieldPcs.Width = 35;
+            this.fieldSize1.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldSize1.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldSize1.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldSize1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fieldSize1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldSize1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldSize1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldSize1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldSize1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldSize1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.fieldSize1.AreaIndex = 0;
+            this.fieldSize1.Caption = "SIZE";
+            this.fieldSize1.FieldName = "Size";
+            this.fieldSize1.Name = "fieldSize1";
             // 
-            // fieldPoNo
+            // fieldColor1
             // 
-            this.fieldPoNo.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.FieldHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.fieldPoNo.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldPoNo.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldPoNo.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldPoNo.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldPoNo.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldPoNo.AreaIndex = 1;
-            this.fieldPoNo.FieldName = "PoNo";
-            this.fieldPoNo.Name = "fieldPoNo";
-            this.fieldPoNo.Width = 60;
+            this.fieldColor1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldColor1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldColor1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldColor1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldColor1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldColor1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldColor1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldColor1.AreaIndex = 3;
+            this.fieldColor1.Caption = "PCS";
+            this.fieldColor1.FieldName = "Color";
+            this.fieldColor1.Name = "fieldColor1";
+            this.fieldColor1.Width = 70;
             // 
-            // fieldSize
+            // fieldPcs1
             // 
-            this.fieldSize.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.fieldSize.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldSize.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldSize.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldSize.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldSize.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
-            this.fieldSize.AreaIndex = 0;
-            this.fieldSize.FieldName = "Size";
-            this.fieldSize.Name = "fieldSize";
-            this.fieldSize.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Value;
-            this.fieldSize.Width = 45;
+            this.fieldPcs1.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPcs1.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPcs1.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPcs1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPcs1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPcs1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPcs1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPcs1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPcs1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPcs1.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPcs1.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPcs1.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPcs1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPcs1.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPcs1.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPcs1.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldPcs1.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldPcs1.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldPcs1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldPcs1.AreaIndex = 0;
+            this.fieldPcs1.Caption = "ODR";
+            this.fieldPcs1.FieldName = "Pcs";
+            this.fieldPcs1.Name = "fieldPcs1";
+            this.fieldPcs1.Width = 50;
             // 
-            // fieldStyleNo
+            // fieldCutQty1
             // 
-            this.fieldStyleNo.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.CustomTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.CustomTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.CustomTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.fieldStyleNo.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.FieldHeader.ForeColor = System.Drawing.Color.White;
-            this.fieldStyleNo.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.fieldStyleNo.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.fieldStyleNo.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.fieldStyleNo.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.fieldStyleNo.AreaIndex = 2;
-            this.fieldStyleNo.FieldName = "StyleNo";
-            this.fieldStyleNo.Name = "fieldStyleNo";
-            this.fieldStyleNo.Width = 70;
+            this.fieldCutQty1.Appearance.Cell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.Cell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.Cell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldHeader.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldValue.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldValue.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.FieldValueGrandTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldValueGrandTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.FieldValueTotal.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.FieldValueTotal.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Appearance.GrandTotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.GrandTotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.GrandTotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Appearance.TotalCell.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.fieldCutQty1.Appearance.TotalCell.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fieldCutQty1.Appearance.TotalCell.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.fieldCutQty1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldCutQty1.AreaIndex = 1;
+            this.fieldCutQty1.Caption = "CUT QTY";
+            this.fieldCutQty1.FieldName = "CutQty";
+            this.fieldCutQty1.Name = "fieldCutQty1";
+            this.fieldCutQty1.Width = 50;
             // 
             // xtraTabbedMdiManager1
             // 
@@ -455,16 +348,16 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldColor;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldCUT;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldDate;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldPcs;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldPoNo;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldSize;
-        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldStyleNo;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldDate1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldStyleNo1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldPoNo1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldSize1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldColor1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldPcs1;
+        private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField fieldCutQty1;
     }
 }

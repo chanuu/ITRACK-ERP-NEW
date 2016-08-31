@@ -11,6 +11,8 @@ namespace ITRACK.models
 
         public int CutIssuItemID { get; set; }
 
+        public int CutID { get; set; }
+
         public string CutNo { get; set; }
 
         public string PONo { get; set; }

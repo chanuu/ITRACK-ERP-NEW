@@ -14,6 +14,7 @@ using DevExpress.XtraReports.UI;
 using DevExpress.Office.Utils;
 using System.Diagnostics;
 using ITRACK.models;
+using EFTesting.DTOs;
 
 namespace EFTesting.UI
 {
@@ -90,14 +91,37 @@ namespace EFTesting.UI
 
                 ItrackContext _con = new ItrackContext();
 
-                var items = (from item in _con.CuttingItem
-                             where item.CuttingItemID >= _from && item.CuttingItemID < _to
-                             select item
-                             ).ToList();
+                /*   var items = (from item in _con.CuttingItem
+                                where item.BundleHeader >= _from && item.CuttingItemID < _to
+                                select item
+                                ).ToList();
+                                */
+
+                List<CutIssueDto> lstDto = new List<CutIssueDto>();
+               
+
+
+                var items = (from item in _con.BundleDetails
+                             where item.BundleHeaderID >= _from && item.BundleHeaderID <= _to
+                             select item).ToList();
+
+
+                foreach(var rows in items)
+                {
+                    CutIssueDto _dto = new CutIssueDto();
+                    _dto.PoNo = rows.BundleHeader.CuttingItem.CuttingHeader.Style.StyleNo;
+                    _dto.CutNo = rows.BundleHeader.CuttingItem.CutNo;
+                    _dto.MarkerNo = rows.BundleHeader.CuttingItem.MarkerNo;
+                    _dto.NoOfItem =Convert.ToInt16( rows.NoOfItem);
+                    _dto.Color = rows.BundleHeader.CuttingItem.Color;
+                    lstDto.Add(_dto);
+
+                }
 
 
                 rptCutIssue lbl = new rptCutIssue();
-                lbl.DataSource = items;
+                lbl.DataSource = lstDto.GroupBy(x => x.CutNo)
+      .Select(g => g.First());
                 ReportPrintTool tool = new ReportPrintTool(lbl);
                 tool.ShowPreview();
 

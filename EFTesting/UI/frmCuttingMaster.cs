@@ -1589,17 +1589,17 @@ namespace EFTesting.UI
         }
 
 
-        int getCount()
+        string getCount()
         {
             try
             {
                 GenaricRepository<EstimateFabricConsumption> _Repo = new GenaricRepository<EstimateFabricConsumption>(new ItrackContext());
-                return Convert.ToInt16(_Repo.GetAll().ToList().Last().EstimateFabricConsumptionID);
+              return _Repo.GetAll().ToList().Last().EstimateFabricConsumptionID;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                return 0;
+                return "";
             }
 
         }
@@ -1617,8 +1617,11 @@ namespace EFTesting.UI
                     _No.Prefix = item.Prefix;
                     _No.Starting = item.Starting;
                     _No.Length = item.Length;
+                     string Code =    getCount();
+                    int last = 0;
+                     last = Convert.ToInt16(Code.Remove(0,  _No.Prefix.Length));
 
-                    this.ConmsumtionID = _Engine.GenarateNo(_No, getCount());
+                    this.ConmsumtionID = _Engine.GenarateNo(_No,last );
 
 
                 }

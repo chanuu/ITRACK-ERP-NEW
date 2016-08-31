@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Application_Configaration>
   <Connection>
-   <Connection_String>Data Source=NUWAN_IT-PC\SQLEXPRESS;Initial Catalog=ITRACK_NEW02;Integrated Security=True</Connection_String>
+    <Connection_String>Data Source=DESKTOP-IVOSM8U\SQLEXPRESS;Initial Catalog=ITRACK_V6;User id=itrack_user;Password=abc123;</Connection_String>  
   </Connection>
 </Application_Configaration>

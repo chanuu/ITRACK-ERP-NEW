@@ -411,7 +411,7 @@ namespace EFTesting.ViewModel
                     LastBundleNo = LastBundleNo + 1;
                 }
                
-               LastCutNo = GetLastCutNo();
+               LastCutNo = _cutNo;
                NoOfBundle = _noOfLayer / _bundleSize;
 
                Remain = _noOfLayer - NoOfBundle * _bundleSize;

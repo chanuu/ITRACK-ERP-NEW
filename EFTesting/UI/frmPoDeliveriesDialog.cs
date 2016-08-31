@@ -26,6 +26,87 @@ namespace EFTesting.UI
 
 
         List<PoDeliveries> lstPo = new List<PoDeliveries>();
+
+
+
+
+        void FeedReportDataByStyleNo(string _styleNo) {
+            try {
+                
+                ItrackContext _context = new ItrackContext();
+
+                var Pos = (from Item in _context.PurchaseOrderItems
+                           where Item.PurchaseOrderHeader.Style.StyleNo == _styleNo
+                           select Item).ToList();
+
+                foreach(var _rows in Pos)
+                {
+
+
+                    ItrackContext _cntx = new ItrackContext();
+                    var _Cut = (from x in _cntx.CuttingItem
+
+                                where x.PoNo == _rows.PurchaseOrderHeader.PoNo && x.Color == _rows.Color && x.Size == _rows.Size
+
+                                select x).ToList();
+
+
+                    foreach(var _c in _Cut)
+                    {
+
+                        PoDeliveries _do = new PoDeliveries();
+
+                        _do.Date = _rows.PurchaseOrderHeader.EndDate;
+                        _do.PoNo = _c.PoNo;
+                        _do.StyleNo = _c.CuttingHeader.Style.StyleNo;
+                        _do.Color = _c.Color;
+                        _do.Size = _c.Size;
+                        _do.Pcs = _rows.Quantity;
+                        _do.CutQty = _c.NoOfItem;
+
+                        lstPo.Add(_do);
+
+                   /*     lstPo.Add(new PoDeliveries
+                        {
+                            Date = _rows.PurchaseOrderHeader.EndDate,
+                            PoNo = _c.PoNo,
+                            StyleNo = _c.CuttingHeader.Style.StyleNo,
+                            Color = _c.Color,
+                            Size = _c.Size,
+                            Pcs = _rows.Quantity,
+                            CutQty =_c.NoOfItem
+                        });
+                        */
+                        Debug.WriteLine("Date:" + _c.Date + " " + "Color " + _c.Color + " " + "Size " + _c.Size + " Cut " + _c.NoOfItem + " ODR " + _c.PoNo);
+                    }
+
+
+
+
+
+                }
+
+
+                rptPoDiliveries report = new rptPoDiliveries();
+                report.DataSource = lstPo;
+                ReportPrintTool tool = new ReportPrintTool(report);
+                report.Landscape = true;
+                tool.ShowPreview();
+
+            }
+            catch (Exception ex) {
+
+            }
+
+
+        }
+
+
+
+
+
+
+
         private List<PoDeliveries> GetReportData(string _styleNo,int option)
         {
 
@@ -176,7 +257,8 @@ namespace EFTesting.UI
 
         private void btnGenarate_Click(object sender, EventArgs e)
         {
-            GenarateReport();
+            //  GenarateReport();
+            FeedReportDataByStyleNo(txtStyleNo.Text);
         }
 
 

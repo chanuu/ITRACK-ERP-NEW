@@ -504,5 +504,14 @@ namespace EFTesting.UI
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();
         }
+
+        private void barButtonItem38_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmRentManagement objfrmMChild = new frmRentManagement();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+        }
     }
 }
