@@ -179,5 +179,15 @@ namespace EFTesting.UI
         {
 
         }
+
+        private void chkBundleRange_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkCutIssueSticker_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

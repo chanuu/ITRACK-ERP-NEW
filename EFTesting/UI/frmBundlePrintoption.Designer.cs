@@ -72,6 +72,7 @@
             this.chkBundleRange.Properties.Caption = "Bundle Header Range";
             this.chkBundleRange.Size = new System.Drawing.Size(141, 19);
             this.chkBundleRange.TabIndex = 2;
+            this.chkBundleRange.CheckedChanged += new System.EventHandler(this.chkBundleRange_CheckedChanged);
             // 
             // txtFrom
             // 
@@ -131,6 +132,7 @@
             this.chkCutIssueSticker.Properties.Caption = "Cut Issue Sticker";
             this.chkCutIssueSticker.Size = new System.Drawing.Size(141, 19);
             this.chkCutIssueSticker.TabIndex = 65;
+            this.chkCutIssueSticker.CheckedChanged += new System.EventHandler(this.chkCutIssueSticker_CheckedChanged);
             // 
             // frmBundlePrintoption
             // 
