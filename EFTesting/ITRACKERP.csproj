@@ -352,6 +352,12 @@
     <Compile Include="UI\Asset\frmAsset.Designer.cs">
       <DependentUpon>frmAsset.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Asset\frmAssetBarcodeOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asset\frmAssetBarcodeOption.Designer.cs">
+      <DependentUpon>frmAssetBarcodeOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Asset\frmAssetVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -845,6 +851,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmAsset.resx">
       <DependentUpon>frmAsset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asset\frmAssetBarcodeOption.resx">
+      <DependentUpon>frmAssetBarcodeOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Asset\frmAssetVerification.resx">
       <DependentUpon>frmAssetVerification.cs</DependentUpon>

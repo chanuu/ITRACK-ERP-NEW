@@ -15,6 +15,7 @@ using System.Linq.Expressions;
 using ITRACK.Validator;
 using EFTesting.Reports;
 using DevExpress.XtraReports.UI;
+using EFTesting.ViewModel;
 
 namespace EFTesting.UI
 {
@@ -237,7 +238,7 @@ namespace EFTesting.UI
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            GetNewCodeAsset();
         }
 
 
@@ -510,6 +511,54 @@ namespace EFTesting.UI
         {
             Opration_List list = new Opration_List(Convert.ToInt16(txtDividingPlanNo.Text));
             list.ShowDialog();
+        }
+
+        int getAssetCount()
+        {
+            try
+            {
+                GenaricRepository<Items> _ItemMasterRepo = new GenaricRepository<Items>(new ItrackContext());
+                return _ItemMasterRepo.GetAll().ToList().Count;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return 0;
+            }
+
+        }
+
+
+        void GetNewCodeAsset()
+        {
+
+            try
+            {
+
+                RunningNo _No = new RunningNo();
+                clsRuningNoEngine _Engine = new clsRuningNoEngine();
+
+                GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
+                foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "DIV"))
+                {
+                    _No.Prefix = item.Prefix;
+                    _No.Starting = item.Starting;
+                    _No.Length = item.Length;
+
+                    txtDividingPlanNo.Text = _Engine.GenarateNo(_No, getAssetCount());
+                    
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+
         }
 
 

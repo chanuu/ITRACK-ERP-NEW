@@ -191,8 +191,9 @@ namespace EFTesting.UI.Asset
 
                 GenaricRepository<AssetBarcode> _BarcodeRepo = new GenaricRepository<AssetBarcode>(new ItrackContext());
                 var dataSource = from item in _BarcodeRepo.GetAll().ToList()
-                //                 where item.Company.CompanyID == 1
-                //                 //where item.AssetBarcodeID.CompareTo("000003564")>=0 && item.AssetBarcodeID.CompareTo("000003583") <=0
+                                     //                 where item.Company.CompanyID == 1
+                                 //where item.AlternetAsset == "VTWF-MM-0010"
+                                 //where item.AssetBarcodeID.CompareTo("000003564")>=0 && item.AssetBarcodeID.CompareTo("000003583") <=0
                                  select item;
 
                 report.DataSource = dataSource;
