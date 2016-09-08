@@ -879,7 +879,7 @@ namespace EFTesting.UI
                     //update Bundle Header Deta
                     // UpdateBundleStatus();
                     Cursor.Current = Cursors.Default;
-
+                   
                     
                 }
 
@@ -922,6 +922,7 @@ namespace EFTesting.UI
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            grdQue.DataSource = null;
             grdQue.DataSource = lstOrder;
             grdQue.Show();
             btnQue.Enabled = false;
@@ -942,6 +943,8 @@ namespace EFTesting.UI
                 if (ProcessAll() == true)
                 {
                     grdQue.Hide();
+                    lstOrder.Clear();
+                    btnQue.Show();
                     MessageBox.Show("Job Complete Sucessfuly !", "Done !", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }

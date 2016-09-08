@@ -3,7 +3,7 @@ namespace ITRACK.models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _cutiD : DbMigration
+    public partial class _tty : DbMigration
     {
         public override void Up()
         {

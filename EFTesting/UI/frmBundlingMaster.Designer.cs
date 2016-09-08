@@ -500,7 +500,7 @@
             this.grdSearch.Location = new System.Drawing.Point(9, 50);
             this.grdSearch.MainView = this.gridView3;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1164, 45);
+            this.grdSearch.Size = new System.Drawing.Size(1164, 375);
             this.grdSearch.TabIndex = 63;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -511,6 +511,7 @@
             // 
             this.gridView3.GridControl = this.grdSearch;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // frmBundlingMaster
             // 

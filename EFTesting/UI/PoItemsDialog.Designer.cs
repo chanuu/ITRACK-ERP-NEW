@@ -168,7 +168,7 @@
             this.grdSearchPo.Location = new System.Drawing.Point(149, 75);
             this.grdSearchPo.MainView = this.gridView2;
             this.grdSearchPo.Name = "grdSearchPo";
-            this.grdSearchPo.Size = new System.Drawing.Size(675, 36);
+            this.grdSearchPo.Size = new System.Drawing.Size(675, 196);
             this.grdSearchPo.TabIndex = 46;
             this.grdSearchPo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -178,6 +178,7 @@
             // 
             this.gridView2.GridControl = this.grdSearchPo;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // simpleButton1
             // 

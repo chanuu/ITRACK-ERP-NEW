@@ -1647,7 +1647,7 @@ namespace EFTesting.UI
                 _consumtion.StyleID = txtStyleNo.Text;
                 _consumtion.MarkerNo = txtMkrNo.Text;
                 _consumtion.NoofPlys = Convert.ToInt16(txtNoOfFlys.Text);
-                _consumtion.Date = DateTime.Now;
+                _consumtion.Date =Convert.ToDateTime(DateTime.Now.ToShortDateString());
                 _consumtion.CuttingRatioID = txtRatioNo.Text;
                 _consumtion.ActualFabUsed = _length * _consumtion.NoofPlys;
                 _consumtion.SinglePcsConsumtion = _length / _itemPerRatio;

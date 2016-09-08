@@ -102,6 +102,7 @@
     <Compile Include="DTOs\CutIssueDto.cs" />
     <Compile Include="DTOs\dtoCuttingLedgerSummary.cs" />
     <Compile Include="DTOs\dtoCuttingStatus.cs" />
+    <Compile Include="DTOs\FabricRollDto.cs" />
     <Compile Include="DTOs\FabricUtilizationdto.cs" />
     <Compile Include="DTOs\MachineListdto.cs" />
     <Compile Include="DTOs\MachineRequirementReportDto.cs" />
@@ -1029,6 +1030,7 @@
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoCuttingLedgerSummary.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoCuttingStatusSummary.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoResurces.datasource" />
+    <None Include="Properties\DataSources\EFTesting.DTOs.FabricRollDto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.FabricUtilizationdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineListdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineRequirementReportDto.datasource" />

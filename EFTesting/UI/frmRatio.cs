@@ -171,7 +171,7 @@ namespace EFTesting.UI
                 _ratio.MarkerWidth = Convert.ToDouble(txtMWidth.Text);
                 _ratio.MarkerLength = Convert.ToDouble(txtMLength.Text);
                 _ratio.Remark = txtRemark.Text;
-                _ratio.StyleID = txtStyleNo.Text;
+                _ratio.StyleID = this.StyleID;
                 _CuttingRatioRepo.Insert(_ratio);
                 return true;
             }

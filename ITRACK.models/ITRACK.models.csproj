@@ -114,9 +114,9 @@
     <Compile Include="Migrations\201605180643294_InitialCreate.Designer.cs">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608290930243__cutiD.cs" />
-    <Compile Include="Migrations\201608290930243__cutiD.Designer.cs">
-      <DependentUpon>201608290930243__cutiD.cs</DependentUpon>
+    <Compile Include="Migrations\201609070923425__tty.cs" />
+    <Compile Include="Migrations\201609070923425__tty.Designer.cs">
+      <DependentUpon>201609070923425__tty.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NestedExpression.cs" />
@@ -210,8 +210,8 @@
     <EmbeddedResource Include="Migrations\201605180643294_InitialCreate.resx">
       <DependentUpon>201605180643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608290930243__cutiD.resx">
-      <DependentUpon>201608290930243__cutiD.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609070923425__tty.resx">
+      <DependentUpon>201609070923425__tty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

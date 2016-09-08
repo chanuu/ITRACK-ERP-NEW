@@ -303,6 +303,7 @@
             // 
             this.gridView2.GridControl = this.grdSearchStyle;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // cmbType
             // 
@@ -470,7 +471,7 @@
             this.grdCutIssue.Location = new System.Drawing.Point(27, 56);
             this.grdCutIssue.MainView = this.gridView3;
             this.grdCutIssue.Name = "grdCutIssue";
-            this.grdCutIssue.Size = new System.Drawing.Size(1164, 360);
+            this.grdCutIssue.Size = new System.Drawing.Size(1164, 377);
             this.grdCutIssue.TabIndex = 54;
             this.grdCutIssue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -480,6 +481,7 @@
             // 
             this.gridView3.GridControl = this.grdCutIssue;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // frmCutIssuing
             // 

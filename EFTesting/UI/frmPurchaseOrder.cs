@@ -390,17 +390,17 @@ namespace EFTesting.UI
 
         }
 
-        int getPoCount()
+        string getPoCount()
         {
             try
             {
                 GenaricRepository<PurchaseOrderHeader> _GRNRepo = new GenaricRepository<PurchaseOrderHeader>(new ItrackContext());
-                return _GRNRepo.GetAll().ToList().Count;
+                return _GRNRepo.GetAll().ToList().Last().PurchaseOrderHeaderID;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                return 0;
+                return "";
             }
 
         }
@@ -420,8 +420,14 @@ namespace EFTesting.UI
                     _No.Prefix = item.Prefix;
                     _No.Starting = item.Starting;
                     _No.Length = item.Length;
+                    txtID.ReadOnly = false;
+                    string Code = getPoCount();
+                    int last = 0;
+                    last = Convert.ToInt16(Code.Remove(0, _No.Prefix.Length));
 
-                    txtID.Text = _Engine.GenarateNo(_No, getPoCount());
+
+                    txtID.Text = _Engine.GenarateNo(_No, last+1);
+                    txtID.ReadOnly = true;
 
 
                 }

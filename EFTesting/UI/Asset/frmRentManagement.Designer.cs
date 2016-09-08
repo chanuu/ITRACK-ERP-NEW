@@ -333,7 +333,7 @@
             this.grdSearch.Location = new System.Drawing.Point(34, 56);
             this.grdSearch.MainView = this.gridView1;
             this.grdSearch.Name = "grdSearch";
-            this.grdSearch.Size = new System.Drawing.Size(1069, 33);
+            this.grdSearch.Size = new System.Drawing.Size(1069, 381);
             this.grdSearch.TabIndex = 100;
             this.grdSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -343,6 +343,7 @@
             // 
             this.gridView1.GridControl = this.grdSearch;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // frmRentManagement
             // 

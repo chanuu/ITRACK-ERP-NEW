@@ -267,7 +267,7 @@ namespace EFTesting.ViewModel
 
                            GenaricRepository<OprationBarcodes> _OprationTagsRepo = new GenaricRepository<OprationBarcodes>(new ItrackContext());
 
-                           _barcode.OprationBarcodesID = LastTagNo.ToString().PadLeft(6, '0');
+                           _barcode.OprationBarcodesID = LastTagNo.ToString().PadLeft(8, '0');
                            _barcode.OprationNO = item.OprationNo;
                         //   _barcode.OprationRole =  GetOprationRole(_barcode.OprationNO);
 

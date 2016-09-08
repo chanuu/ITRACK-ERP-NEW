@@ -7,13 +7,13 @@ namespace ITRACK.models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class _cutiD : IMigrationMetadata
+    public sealed partial class _tty : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_cutiD));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_tty));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608290930243__cutiD"; }
+            get { return "201609070923425__tty"; }
         }
         
         string IMigrationMetadata.Source

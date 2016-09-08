@@ -112,7 +112,7 @@ namespace EFTesting.UI
                     _dto.PoNo = rows.BundleHeader.CuttingItem.CuttingHeader.Style.StyleNo;
                     _dto.CutNo = rows.BundleHeader.CuttingItem.CutNo;
                     _dto.MarkerNo = rows.BundleHeader.CuttingItem.MarkerNo;
-                    _dto.NoOfItem =Convert.ToInt16( rows.NoOfItem);
+                    _dto.NoOfItem =Convert.ToInt16( rows.BundleHeader.CuttingItem.NoOfItem);
                     _dto.Color = rows.BundleHeader.CuttingItem.Color;
                     lstDto.Add(_dto);
 
@@ -150,7 +150,18 @@ namespace EFTesting.UI
 
                 BarcodeLabel lbl = new BarcodeLabel();
                 lbl.DataSource = list.StickerBarcodeList(_barcode.Options, _barcode.CutNo, _barcode.From, _barcode.To);
-                ReportPrintTool tool = new ReportPrintTool(lbl);
+                lbl.CreateDocument();
+                XtraReport report = new XtraReport();
+                report.PrintingSystem.ContinuousPageNumbering = false;
+
+                int pageCount = lbl.Pages.Count;
+
+                for (int i = lbl.Pages.Count; i > 0; i--)
+                {
+                    report.Pages.Add(lbl.Pages[i - 1]);
+                }
+
+                ReportPrintTool tool = new ReportPrintTool(report);
                 tool.ShowPreview();
 
 

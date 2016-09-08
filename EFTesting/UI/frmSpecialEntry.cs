@@ -16,6 +16,7 @@ using MyTeamApp;
 using System.Linq.Expressions;
 using EFTesting.Reports.Cutting_Report;
 using DevExpress.XtraReports.UI;
+using EFTesting.DTOs;
 
 namespace EFTesting.UI
 {
@@ -638,6 +639,27 @@ namespace EFTesting.UI
         }
 
 
+
+
+        string GetStyleBySpecialEntryID(string _iD) {
+
+            try {
+                ItrackContext _contex = new ItrackContext();
+
+               return (from item in _contex.SpecialEntry
+
+                            where item.SpecialEntryID == _iD
+
+                            select item.StyleNo).ToList().Last();
+
+            }
+            catch (Exception ex) {
+                return "";
+            }
+
+        }
+       
+
         private void GetCuttingDetailsReport()
         {
             try
@@ -648,13 +670,27 @@ namespace EFTesting.UI
                 rptFabricRoll report = new rptFabricRoll();
 
                 ItrackContext _context = new ItrackContext();
-
+                List<FabricRollDto> lst = new List<FabricRollDto>();
                 var list = (from item in _context.SerialEntry
                            where item.SpecialEntryID == txtSpecialEntryNo.Text
 
                            select item).ToList();
 
-                    report.DataSource = list;
+
+                foreach(var _roll in list)
+                {
+                    FabricRollDto _dto = new FabricRollDto();
+
+                    _dto.Color = _roll.Color;
+                    _dto.RollNo = _roll.RollNo;
+                    _dto.RollWidth = _roll.TotalMeters;
+                    _dto.SerialEntryID = _roll.SerialEntryID;
+                    _dto.SRNo = _roll.SRNo;
+                    _dto.StyleNo = GetStyleBySpecialEntryID(_roll.SpecialEntryID);
+                    lst.Add(_dto);
+                }
+
+                    report.DataSource = lst;
                    
                     ReportPrintTool tool = new ReportPrintTool(report);
                     tool.ShowPreview();

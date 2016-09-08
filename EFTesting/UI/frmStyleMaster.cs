@@ -467,8 +467,10 @@ namespace EFTesting.UI
             catch (Exception ex) {
                 Debug.WriteLine(ex.Message);
             }
-          
-            
+
+            GetNewCode();
+
+
         }
 
 
@@ -532,17 +534,17 @@ namespace EFTesting.UI
 
         }
 
-        int getPoCount()
+        string getPoCount()
         {
             try
             {
                 GenaricRepository<Style> _GRNRepo = new GenaricRepository<Style>(new ItrackContext());
-                return _GRNRepo.GetAll().ToList().Count;
+                return _GRNRepo.GetAll().ToList().Last().StyleID;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                return 0;
+                return "";
             }
 
         }
@@ -557,11 +559,18 @@ namespace EFTesting.UI
                 GenaricRepository<RunningNo> _RunningNoRepo = new GenaricRepository<RunningNo>(new ItrackContext());
                 foreach (var item in _RunningNoRepo.GetAll().ToList().Where(x => x.Venue == "Style"))
                 {
+
+                    txtID.ReadOnly = false;
                     _No.Prefix = item.Prefix;
                     _No.Starting = item.Starting;
                     _No.Length = item.Length;
 
-                    txtID.Text = _Engine.GenarateNo(_No, getPoCount());
+                    string Code = getPoCount();
+                    int last = 0;
+                    last = Convert.ToInt16(Code.Remove(0, _No.Prefix.Length));
+
+                    txtID.Text = _Engine.GenarateNo(_No, last+1);
+                    txtID.ReadOnly = true;
 
 
                 }
