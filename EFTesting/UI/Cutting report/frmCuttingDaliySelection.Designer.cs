@@ -82,7 +82,7 @@
             // 
             this.chkDayCut.Location = new System.Drawing.Point(31, 34);
             this.chkDayCut.Name = "chkDayCut";
-            this.chkDayCut.Properties.Caption = "Daily Cut";
+            this.chkDayCut.Properties.Caption = "Daily Input";
             this.chkDayCut.Size = new System.Drawing.Size(75, 19);
             this.chkDayCut.TabIndex = 66;
             // 

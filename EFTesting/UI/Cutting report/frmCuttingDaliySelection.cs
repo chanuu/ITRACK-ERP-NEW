@@ -131,6 +131,16 @@ namespace EFTesting.UI.Cutting_report
 
         }
 
+
+
+
+
+
+
+
+
+
+
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();

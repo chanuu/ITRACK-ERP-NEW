@@ -104,6 +104,7 @@
     <Compile Include="DTOs\dtoCuttingStatus.cs" />
     <Compile Include="DTOs\FabricRollDto.cs" />
     <Compile Include="DTOs\FabricUtilizationdto.cs" />
+    <Compile Include="DTOs\InputIssuingRecorddto.cs" />
     <Compile Include="DTOs\MachineListdto.cs" />
     <Compile Include="DTOs\MachineRequirementReportDto.cs" />
     <Compile Include="DTOs\PrintWorkOrder.cs" />
@@ -178,6 +179,12 @@
     </Compile>
     <Compile Include="Reports\Cutting Report\rptRatio.Designer.cs">
       <DependentUpon>rptRatio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Cutting Report\rtInputIssuingRecord.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cutting Report\rtInputIssuingRecord.Designer.cs">
+      <DependentUpon>rtInputIssuingRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Report\rptMachineRequirement.cs">
       <SubType>Component</SubType>
@@ -417,6 +424,12 @@
     </Compile>
     <Compile Include="UI\Cutting report\frmCuttingDaliySelection.Designer.cs">
       <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Cutting report\frmCuttingInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cutting report\frmCuttingInput.Designer.cs">
+      <DependentUpon>frmCuttingInput.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Cutting report\frmFabricreport.cs">
       <SubType>Form</SubType>
@@ -775,6 +788,9 @@
     <EmbeddedResource Include="Reports\Cutting Report\rptRatio.resx">
       <DependentUpon>rptRatio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cutting Report\rtInputIssuingRecord.resx">
+      <DependentUpon>rtInputIssuingRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report\rptMachineRequirement.resx">
       <DependentUpon>rptMachineRequirement.cs</DependentUpon>
     </EmbeddedResource>
@@ -884,6 +900,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Cutting report\frmCuttingDaliySelection.resx">
       <DependentUpon>frmCuttingDaliySelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cutting report\frmCuttingInput.resx">
+      <DependentUpon>frmCuttingInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Cutting report\frmFabricreport.resx">
       <DependentUpon>frmFabricreport.cs</DependentUpon>
@@ -1041,6 +1060,7 @@
     <None Include="Properties\DataSources\EFTesting.DTOs.dtoResurces.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.FabricRollDto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.FabricUtilizationdto.datasource" />
+    <None Include="Properties\DataSources\EFTesting.DTOs.InputIssuingRecorddto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineListdto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.MachineRequirementReportDto.datasource" />
     <None Include="Properties\DataSources\EFTesting.DTOs.StyleLoadingDto.datasource" />

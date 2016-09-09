@@ -513,5 +513,15 @@ namespace EFTesting.UI
             objfrmMChild.Show();
             splashScreenManager1.CloseWaitForm();
         }
+
+        private void btnInput_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager1.ShowWaitForm();
+            frmCuttingInput objfrmMChild = new frmCuttingInput();
+            objfrmMChild.MdiParent = this;
+            objfrmMChild.Show();
+            splashScreenManager1.CloseWaitForm();
+
+        }
     }
 }

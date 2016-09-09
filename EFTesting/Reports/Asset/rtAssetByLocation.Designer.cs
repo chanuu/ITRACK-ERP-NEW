@@ -34,24 +34,24 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrRichText10 = new DevExpress.XtraReports.UI.XRRichText();
+            this.xrRichText11 = new DevExpress.XtraReports.UI.XRRichText();
             this.xrPivotGrid1 = new DevExpress.XtraReports.UI.XRPivotGrid();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fieldModel1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldAssetLocation1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.fieldAvailable1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrRichText10 = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrRichText11 = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel33 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrRichText11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -59,6 +59,7 @@
             // 
             // Detail
             // 
+            this.Detail.Expanded = false;
             this.Detail.HeightF = 1.041667F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -92,10 +93,79 @@
             this.ReportHeader.HeightF = 368.75F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // PageHeader
+            // xrLabel4
             // 
-            this.PageHeader.HeightF = 0F;
-            this.PageHeader.Name = "PageHeader";
+            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 8F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(665.6665F, 64.2532F);
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(210.7501F, 14F);
+            this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.Text = "Report Generated Based On Stock Verification at:";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 8F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(645.8334F, 36.31198F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(231.5834F, 14F);
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.Text = "Report Generated Based On Stock Verification at:";
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Date")});
+            this.xrLabel1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(877.4168F, 36.31198F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(124.9998F, 14F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.Text = "txtDate";
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "AssetVerificationNo")});
+            this.xrLabel2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(876.4166F, 64.2532F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(126F, 14F);
+            this.xrLabel2.StylePriority.UseFont = false;
+            this.xrLabel2.Text = "xrLabel2";
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(1.999998F, 22.12715F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(120.75F, 66.41235F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // xrRichText10
+            // 
+            this.xrRichText10.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrRichText10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrRichText10.LocationFloat = new DevExpress.Utils.PointFloat(95.04164F, 22.12715F);
+            this.xrRichText10.Name = "xrRichText10";
+            this.xrRichText10.SerializableRtfString = resources.GetString("xrRichText10.SerializableRtfString");
+            this.xrRichText10.SizeF = new System.Drawing.SizeF(441.5834F, 46.12607F);
+            this.xrRichText10.StylePriority.UseBorders = false;
+            this.xrRichText10.StylePriority.UseFont = false;
+            // 
+            // xrRichText11
+            // 
+            this.xrRichText11.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrRichText11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrRichText11.LocationFloat = new DevExpress.Utils.PointFloat(113.4999F, 64.2532F);
+            this.xrRichText11.Name = "xrRichText11";
+            this.xrRichText11.SerializableRtfString = resources.GetString("xrRichText11.SerializableRtfString");
+            this.xrRichText11.SizeF = new System.Drawing.SizeF(333.2499F, 30.2863F);
+            this.xrRichText11.StylePriority.UseBorders = false;
+            this.xrRichText11.StylePriority.UseFont = false;
             // 
             // xrPivotGrid1
             // 
@@ -119,6 +189,10 @@
             this.xrPivotGrid1.Name = "xrPivotGrid1";
             this.xrPivotGrid1.OptionsPrint.FilterSeparatorBarPadding = 3;
             this.xrPivotGrid1.SizeF = new System.Drawing.SizeF(1053F, 197.5F);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(EFTesting.UI.DTO.AssetVerificationLocationdto);
             // 
             // fieldModel1
             // 
@@ -187,71 +261,10 @@
             this.fieldAvailable1.FieldName = "Available";
             this.fieldAvailable1.Name = "fieldAvailable1";
             // 
-            // xrRichText10
+            // PageHeader
             // 
-            this.xrRichText10.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRichText10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrRichText10.LocationFloat = new DevExpress.Utils.PointFloat(95.04164F, 22.12715F);
-            this.xrRichText10.Name = "xrRichText10";
-            this.xrRichText10.SerializableRtfString = resources.GetString("xrRichText10.SerializableRtfString");
-            this.xrRichText10.SizeF = new System.Drawing.SizeF(441.5834F, 46.12607F);
-            this.xrRichText10.StylePriority.UseBorders = false;
-            this.xrRichText10.StylePriority.UseFont = false;
-            // 
-            // xrRichText11
-            // 
-            this.xrRichText11.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRichText11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrRichText11.LocationFloat = new DevExpress.Utils.PointFloat(113.4999F, 64.2532F);
-            this.xrRichText11.Name = "xrRichText11";
-            this.xrRichText11.SerializableRtfString = resources.GetString("xrRichText11.SerializableRtfString");
-            this.xrRichText11.SizeF = new System.Drawing.SizeF(333.2499F, 30.2863F);
-            this.xrRichText11.StylePriority.UseBorders = false;
-            this.xrRichText11.StylePriority.UseFont = false;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Date")});
-            this.xrLabel1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(877.4168F, 36.31198F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(124.9998F, 14F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.Text = "txtDate";
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "AssetVerificationNo")});
-            this.xrLabel2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(876.4166F, 64.2532F);
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(126F, 14F);
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.Text = "xrLabel2";
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 8F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(645.8334F, 36.31198F);
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(231.5834F, 14F);
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.Text = "Report Generated Based On Stock Verification at:";
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 8F);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(665.6665F, 64.2532F);
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(210.7501F, 14F);
-            this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.Text = "Report Generated Based On Stock Verification at:";
+            this.PageHeader.HeightF = 0F;
+            this.PageHeader.Name = "PageHeader";
             // 
             // ReportFooter
             // 
@@ -308,18 +321,6 @@
             this.xrLabel33.StylePriority.UseTextAlignment = false;
             this.xrLabel33.Text = "ALL RIGHT RESERVED COPY RIGHTS 2016";
             this.xrLabel33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // xrPictureBox1
-            // 
-            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(1.999998F, 22.12715F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(120.75F, 66.41235F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(EFTesting.UI.DTO.AssetVerificationLocationdto);
             // 
             // rtAssetByLocation
             // 
